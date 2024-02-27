@@ -1,18 +1,136 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-input[type='number'] {
-  -moz-appearance: textfield;
-  appearance: textfield;
+body {
+  background: rgb(41, 255, 255);
+  background: linear-gradient(90deg, rgba(41, 255, 255, 1) 13%, rgba(70, 138, 241, 1) 100%);
 }
 
-input[type='number']::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
+h1 {
+  font-size: 18px;
+  font-family: 'Montserrat', sans-serif;
 }
 
-input[type='number']::-webkit-outer-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
+h2 {
+  font-size: 18px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+h3 {
+  font-size: 14px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+p {
+  font-size: 10px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+.container {
+  width: 100vw;
+  height: 100vh;
+}
+
+.header {
+  margin: auto;
+  margin-top: 50px;
+  text-align: center;
+  color: white;
+}
+
+.logo {
+  width: 520px;
+}
+
+.card {
+  margin: auto;
+  margin-top: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.arrows {
+  margin: auto;
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bottom-nav {
+  margin: auto;
+  margin-top: 20px;
+  width: auto;
+  height: 100px;
+  background-color: white;
+  box-shadow: 0px 2px 7px 0px #757575;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+
+/* Matches Page */
+
+.message-card {
+  width: auto;
+  height: 100px;
+  margin: 20px 50px;
+  background: whitesmoke;
+  border-radius: 20px;
+  box-shadow: 0px 2px 7px 0px #757575;
+  display: flex;
+}
+
+.matches-icon {
+  margin: 15px 20px;
+  width: auto;
+  height: 70%;
+}
+
+.matches-card-text {
+  display: block;
+}
+
+.matches-type {
+  margin-top: -8px;
+}
+
+.matches-location {
+  margin-top: -6px;
+}
+
+.message-card-containter {
+  height: 60vh;
+}
+
+/* Messages Page */
+
+.messages-container {
+  height: 500px;
+  background: white;
+  margin: auto 20px;
+  margin-top: 30px;
+  box-shadow: 0px 2px 7px 0px #757575;
+}
+
+.messages-name {
+  margin: auto;
+  padding: 30px;
+  font-size: 42px;
+  text-align: center;
+}
+
+.messages-text {
+  margin-left: 40px;
+  font-size: 14px;
 }
