@@ -7,7 +7,7 @@ import BottomNavigation from '@mui/material/BottomNavigation';
 import BottomNavigationAction from '@mui/material/BottomNavigationAction';
 import RestoreIcon from '@mui/icons-material/Restore';
 import FavoriteIcon from '@mui/icons-material/Favorite';
-import LocationOnIcon from '@mui/icons-material/LocationOn';
+import SearchIcon from '@mui/icons-material/Search';
 import Link from 'next/link';
 
 
@@ -23,8 +23,18 @@ export default function BottomNav() {
           setValue(newValue);
         }}
       >
-          <BottomNavigationAction label="Browse" component={Link} icon={<RestoreIcon />} />
-        <BottomNavigationAction label="Matches" icon={<FavoriteIcon />} />
+        <BottomNavigationAction
+          label="Browse"
+          component={Link}
+          href={'/browse'}
+          icon={<SearchIcon />}
+        />
+        <BottomNavigationAction
+          label="Matches"
+          component={Link}
+          href={'/browse/matches'}
+          icon={<FavoriteIcon />}
+        />
       </BottomNavigation>
     </Box>
   );
