@@ -28,10 +28,10 @@ a {
   color: black;
 }
 
-.container {
+/* .container {
   width: 100vw;
   height: 100vh;
-}
+} */
 
 .header {
   margin: auto;
@@ -66,18 +66,6 @@ a {
   justify-content: center;
 }
 
-.bottom-nav {
-  margin: auto;
-  margin-top: 20px;
-  width: auto;
-  height: 100px;
-  background-color: white;
-  box-shadow: 0px 2px 7px 0px #757575;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 1;
-}
 
 /* Matches Page */
 
