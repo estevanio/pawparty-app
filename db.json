@@ -1,0 +1,26 @@
+{
+    "pets": [
+        {
+            "id": "1",
+            "name": "Chewy",
+            "age": 7,
+            "location": "Fort Collins, CO",
+            "img_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRuIsL7_GpHTP-oLGGcFvzMZxbLxaMzLNlW8pJNaBkP1A&s",
+            "breed": ["dog", "cockapoo"],
+            "tags": [
+                "playful", "kid friendly", "hypoalergenic"
+            ] 
+        },
+        {
+            "id": "2",
+            "name": "Butters",
+            "age": 27,
+            "location": "Fort Collins, CO",
+            "img_url": "https://catinaflat.blog/wp-content/uploads/2023/01/calico_cat.jpg",
+            "breed": ["cat", "calico"],
+            "tags": [
+                "playful", "kid friendly", "hypoalergenic"
+            ] 
+        }
+    ]
+}
