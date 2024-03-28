@@ -13,13 +13,46 @@
         },
         {
             "id": "2",
-            "name": "Butters",
-            "age": 27,
+            "name": "Guisepe",
+            "age": 6,
             "location": "Fort Collins, CO",
             "img_url": "https://catinaflat.blog/wp-content/uploads/2023/01/calico_cat.jpg",
             "breed": ["cat", "calico"],
             "tags": [
-                "playful", "kid friendly", "hypoalergenic"
+                "playful", "kid friendly"
+            ] 
+        },
+        {
+            "id": "3",
+            "name": "Senator",
+            "age": 8,
+            "location": "Fort Collins, CO",
+            "img_url": "https://catinaflat.blog/wp-content/uploads/2023/01/calico_cat.jpg",
+            "breed": ["dog", "jack-russel mix"],
+            "tags": [
+                "playful", "kid friendly"
+            ] 
+        },
+        {
+            "id": "4",
+            "name": "Butters",
+            "age": 27,
+            "location": "Fort Collins, CO",
+            "img_url": "https://catinaflat.blog/wp-content/uploads/2023/01/calico_cat.jpg",
+            "breed": ["cat", "long hair"],
+            "tags": [
+                "kid friendly", "senior pet"
+            ] 
+        },
+        {
+            "id": "5",
+            "name": "Doggo",
+            "age": 5,
+            "location": "Fort Collins, CO",
+            "img_url": "https://catinaflat.blog/wp-content/uploads/2023/01/calico_cat.jpg",
+            "breed": ["dog", "retriever mix"],
+            "tags": [
+                "playful", "kid friendly"
             ] 
         }
     ]
