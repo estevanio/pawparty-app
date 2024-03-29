@@ -18,7 +18,7 @@ export default function PetCard () {
     }
 
     useEffect(()=> {
-        console.log('hello')
+        getPets()
     }, [])
 
     const getPets = async function () {
@@ -51,12 +51,11 @@ export default function PetCard () {
             </TinderCard>
         )
     })
+
+    console.log(pets)
   
     return (
       <div>
-        <link href='https://fonts.googleapis.com/css?family=Damion&display=swap' rel='stylesheet' />
-        <link href='https://fonts.googleapis.com/css?family=Alatsi&display=swap' rel='stylesheet' />
-        <h1>React Tinder Card</h1>
         <div className='cardContainer'>
           {displayPets}
         </div>
