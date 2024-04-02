@@ -45,14 +45,15 @@ export default function PetCard () {
                 key={pet.id} 
                 onSwipe={(dir) => swiped(dir, pet.name)} 
                 onCardLeftScreen={() => outOfFrame(pet.name)}>
-                <div style={{ backgroundImage: 'url(' + pet.img_url + ')' }} className='card'>
+                <div className='card'>                    
+                  <img className='card-img' draggable='false' src={pet.img_url}/>
+                  <div className='card-details'>
                     <h3>{pet.name}</h3>
+                  </div>
                 </div>
             </TinderCard>
         )
     })
-
-    console.log(pets)
   
     return (
       <div>
