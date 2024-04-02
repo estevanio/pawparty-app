@@ -1,5 +1,3 @@
-## Next.js App Router Course - Starter
+## JSON server
 
-This is the starter template for the Next.js App Router Course. It contains the starting code for the dashboard application.
-
-For more information, see the [course curriculum](https://nextjs.org/learn) on the Next.js Website.
+To run the json server, use the terminal to run `$npm install json-server` if needed, then run `npx json-server db.json --port 3001`.

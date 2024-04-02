@@ -1,6 +1,17 @@
-body {
-  background: rgb(41, 255, 255);
-  background: linear-gradient(90deg, rgba(41, 255, 255, 1) 13%, rgba(70, 138, 241, 1) 100%);
+html {
+  max-height: 100%;
+  max-width: 100%;
+  background: linear-gradient(90deg, rgba(41, 255, 255, 1) 13%, rgba(70, 138, 241, 1) 100%) no-repeat;
+  background: -moz-linear-gradient(90deg, rgba(41, 255, 255, 1) 13%, rgba(70, 138, 241, 1) 100%) no-repeat;
+  background: -webkit-linear-gradient(90deg, rgba(41, 255, 255, 1) 13%, rgba(70, 138, 241, 1) 100%) no-repeat;
+  background: -o-linear-gradient(90deg, rgba(41, 255, 255, 1) 13%, rgba(70, 138, 241, 1) 100%) no-repeat;
+  background: linear-gradient(90deg, rgba(41, 255, 255, 1) 13%, rgba(70, 138, 241, 1) 100%) no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+.logo {
+  width: 520px;
 }
 
 h1 {
@@ -40,24 +51,6 @@ a {
   color: white;
 }
 
-.logo {
-  width: 520px;
-}
-
-.card {
-  margin: auto;
-  margin-top: 50px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.card-img {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
-
 .arrows {
   margin: auto;
   margin-top: 20px;
@@ -65,7 +58,6 @@ a {
   align-items: center;
   justify-content: center;
 }
-
 
 /* Matches Page */
 
@@ -122,3 +114,82 @@ a {
   margin-left: 40px;
   font-size: 14px;
 }
+
+.swiperContainer {  
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+}
+
+.cardContainer { 
+  width: 90vw;
+  max-width: 260px;
+  height: 300px;
+  display: block;
+}
+
+.card-img {
+  display: block;
+  height: 400px;
+  width: auto;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.swipe {
+  position: fixed
+}
+
+.card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80vw;
+  max-width: 260px;
+  height: 300px;
+  box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.30);
+  border-radius: 20px;
+  user-select: none;
+  contain: strict;
+}
+
+.infoText {
+  margin-top: 3rem ;
+  width: 100%;
+  justify-content: center;
+  display: flex;
+  color: #fff;
+  animation-name: popup;
+  animation-duration: 800ms;
+}
+
+.card-details {
+  position: fixed;
+  width: 100%;
+  background-color: #ffffff;
+}
+
+.card h3 {
+  position: absolute;
+  bottom: 0;
+  margin: 10px;
+  color: #000000;
+}
+
+@media screen and (max-width: 900px) {
+  html {
+    max-height: 100%;
+    max-width: 100%;
+    display: flex;
+    background: linear-gradient(90deg, rgba(41, 255, 255, 1) 13%, rgba(70, 138, 241, 1) 100%) no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    justify-content: center;
+  }
+
+  .logo {
+    width: 350px;
+  }
+}
+
+
