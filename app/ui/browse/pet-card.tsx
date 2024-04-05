@@ -2,6 +2,7 @@
 
 import React, { useEffect, useState } from "react";
 import TinderCard from 'react-tinder-card'
+import { Card, CardContent, CardMedia, Typography } from "@mui/material";
 
 export default function PetCard () {
     
@@ -45,12 +46,22 @@ export default function PetCard () {
                 key={pet.id} 
                 onSwipe={(dir) => swiped(dir, pet.name)} 
                 onCardLeftScreen={() => outOfFrame(pet.name)}>
-                <div className='card'>                    
-                  <img className='card-img' draggable='false' src={pet.img_url}/>
-                  <div className='card-details'>
-                    <h3>{pet.name}</h3>
-                  </div>
-                </div>
+                <Card raised={true}>
+                  <CardMedia
+                    sx={{height: 250, width: "250px"}}
+                    image={pet.img_url}/>
+                  <CardContent sx={{paddingTop: 0, paddingLeft: 1}}>
+                    <Typography
+                      sx={{fontSize: 16, fontWeight: "bold"}}>
+                      {pet.name}
+                    </Typography>
+                    <Typography
+                      sx={{fontSize: 12}}>
+                      {pet.age} years old.<br/>
+                      {pet.breed[1]}
+                    </Typography>
+                  </CardContent>
+                </Card>
             </TinderCard>
         )
     })
