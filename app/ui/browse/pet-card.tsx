@@ -1,13 +1,13 @@
 'use client'
 
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import TinderCard from 'react-tinder-card'
 import { Card, CardContent, CardMedia, Typography } from "@mui/material";
+import { pets } from '@/app/lib/mockdb'
 
 export default function PetCard () {
     
     const [lastDirection, setLastDirection] = useState('')
-    const [pets, setPets] = useState([])
   
     const swiped: any = (direction: string, nameToDelete: string) => {
       console.log('removing: ' + nameToDelete)
@@ -18,27 +18,9 @@ export default function PetCard () {
       console.log(name + ' left the screen!')
     }
 
-    useEffect(()=> {
-        getPets()
-    }, [])
+    console.log(pets)
 
-    const getPets = async function () {
-        const resp = await fetch('http://localhost:3001/pets')
-
-        if (resp.ok) {
-            setPets(await resp.json())
-        }
-    }
-
-    const displayPets = pets.map((pet: {
-        id: number, 
-        name: string, 
-        img_url: string, 
-        age: number, 
-        location: string,
-        tags: string[],
-        breed: string[]
-    }) => {        
+    const displayPets = pets.map((pet) => {        
         
         return(
             <TinderCard 
@@ -52,7 +34,10 @@ export default function PetCard () {
                     image={pet.img_url}/>
                   <CardContent sx={{paddingTop: 0, paddingLeft: 1}}>
                     <Typography
-                      sx={{fontSize: 16, fontWeight: "bold"}}>
+                      sx={{
+                        fontSize: 16, 
+                        fontWeight: "bold"
+                        }}>
                       {pet.name}
                     </Typography>
                     <Typography
