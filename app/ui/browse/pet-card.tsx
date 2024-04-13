@@ -37,7 +37,7 @@ export default function PetCard () {
                     borderRadius: '16px', 
                     userSelect:'none'}}>
                   <CardMedia
-                    sx={{height: 375, width: '90vw'}}
+                    sx={{height: 375, width: '90vw', maxWidth: {lg: 300}}}
                     image={pet.img_url}/>
                     <Container sx={{display: 'flex', justifyContent:'space-between'}}>
                       <CardContent 
@@ -77,7 +77,7 @@ export default function PetCard () {
   
     return (
       <>
-        <Container sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', height:475, width: '100vw' }}>
+        <Container sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', height:475, width: '100vw'}}>
           {displayPets}
         </Container>
         {/* {lastDirection ? <h2 className='infoText'>You swiped {lastDirection}</h2> : <h2 className='infoText' />} */}
