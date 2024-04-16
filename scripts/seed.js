@@ -22,7 +22,7 @@ async function seedAnimals() {
           primary_color: animal.primary_color,
           secondary_color: animal.secondary_color,
           intake_date: new Date(animal.intake_date),
-          shelter_id: "43ff709b-2c6d-4087-8179-b61b87bfe36e"
+          shelter_id: "43ff709b-2c6d-4087-8179-b61b87bfe36e" //bad practice, this shouldn't be hardcoded
         },
       })),
     );
