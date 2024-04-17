@@ -65,6 +65,7 @@ async function seedShelters() {
       shelters.map((shelter) => prisma.shelter.create({
         data: {
           name: shelter.name,
+          shelter_id: shelter.shelter_id,
           location: shelter.location,
           location: shelter.location,
           phone_number: shelter.phone_number,
