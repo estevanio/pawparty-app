@@ -19,8 +19,6 @@ export default function PetCard () {
       console.log(name + ' left the screen!')
     }
 
-    console.log(pets)
-
     const displayPets = pets.map((pet) => {        
         
         return(
@@ -34,39 +32,39 @@ export default function PetCard () {
                   id={'card itself'} 
                   raised={true}
                   sx={{
-                    borderRadius: '16px', 
+                    borderRadius: '25px', 
                     userSelect:'none'}}>
                   <CardMedia
-                    sx={{height: 375, width: '90vw', maxWidth: {lg: 300}}}
+                    sx={{height: 379, width: '350px', maxWidth: {lg: 300}}}
                     image={pet.img_url}/>
                     <Container sx={{display: 'flex', justifyContent:'space-between'}}>
                       <CardContent 
-                        sx={{paddingTop: 0, paddingLeft: 1, height: 'auto'}}>
+                        sx={{paddingTop: 0, paddingLeft: 1, height: '109px'}}>
                         <Typography
                           sx={{
-                            fontSize: 18, 
+                            fontSize: 24, 
                             fontWeight: "bold"
                             }}>
                           {pet.name}
                         </Typography>
                         <Typography
-                          sx={{fontSize: 12}}>
+                          sx={{fontSize: 14}}>
                           {pet.breed[1]}
                         </Typography>
                         <Typography
-                          sx={{fontSize: 12}}>
+                          sx={{fontSize: 14}}>
                           {pet.location[0] + ', ' + pet.location[1]}
                         </Typography>
                       </CardContent>
                       <CardContent>
-                        <Typography sx={{fontSize: 12}}>
+                        <Typography sx={{fontSize: 14}}>
                             {pet.tags[0]}
                         </Typography>
-                        <Typography sx={{fontSize: 12}}>
+                        <Typography sx={{fontSize: 14}}>
                             {pet.tags[1]}
                         </Typography>
-                        <Typography sx={{fontSize: 12}}>
-                            {pet.tags[2] ? pet.tags[2] : '-'}
+                        <Typography sx={{fontSize: 14}}>
+                            {pet.tags[2] ? pet.tags[2] : null}
                         </Typography>
                       </CardContent>
                     </Container>
