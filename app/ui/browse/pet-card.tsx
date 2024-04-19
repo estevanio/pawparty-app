@@ -32,6 +32,7 @@ export default function PetCard () {
                   id={'card itself'} 
                   raised={true}
                   sx={{
+                    height: '484px',
                     borderRadius: '25px', 
                     userSelect:'none'}}>
                   <CardMedia
@@ -42,13 +43,16 @@ export default function PetCard () {
                         sx={{paddingTop: 0, paddingLeft: 1, height: '109px'}}>
                         <Typography
                           sx={{
+                            paddingTop: 1,
+                            fontFamily: "Montserrat",
                             fontSize: 24, 
-                            fontWeight: "bold"
+                            fontWeight: 700,
+                            lineHeight: '30px'
                             }}>
                           {pet.name}
                         </Typography>
                         <Typography
-                          sx={{fontSize: 14}}>
+                          sx={{fontFamily:'Montserrat', fontSize: 14}}>
                           {pet.breed[1]}
                         </Typography>
                         <Typography
@@ -57,13 +61,16 @@ export default function PetCard () {
                         </Typography>
                       </CardContent>
                       <CardContent>
-                        <Typography sx={{fontSize: 14}}>
+                        <Typography sx={{
+                            fontFamily: "Montserrat", fontSize: 14}}>
                             {pet.tags[0]}
                         </Typography>
-                        <Typography sx={{fontSize: 14}}>
+                        <Typography sx={{
+                            fontFamily: "Montserrat", fontSize: 14}}>
                             {pet.tags[1]}
                         </Typography>
-                        <Typography sx={{fontSize: 14}}>
+                        <Typography sx={{
+                            fontFamily: "Montserrat", fontSize: 14}}>
                             {pet.tags[2] ? pet.tags[2] : null}
                         </Typography>
                       </CardContent>
