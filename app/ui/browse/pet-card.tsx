@@ -30,7 +30,7 @@ export default function PetCard () {
                 preventSwipe={['up', 'down']}>
                 <Card
                   id={'card itself'} 
-                  raised={true}
+                  raised={false}
                   sx={{
                     height: '484px',
                     borderRadius: '25px', 
@@ -47,7 +47,7 @@ export default function PetCard () {
                             fontFamily: "Montserrat",
                             fontSize: 24, 
                             fontWeight: 700,
-                            lineHeight: '30px'
+                            lineHeight: '29.26px'
                             }}>
                           {pet.name}
                         </Typography>
