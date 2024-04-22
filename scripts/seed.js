@@ -1,174 +1,136 @@
-const { db } = require('@vercel/postgres');
-const {
-  invoices,
-  customers,
-  revenue,
-  users,
-} = require('../app/lib/placeholder-data.js');
-const bcrypt = require('bcrypt');
+const { PrismaClient } = require('@prisma/client');
 
-async function seedUsers(client) {
+const animals = require('./mock-animals.json');
+const attributes = require('./mock-attributes.json');
+const shelters = require('./mock-shelters.json');
+const photos = require('./mock-photos.json');
+
+const prisma = new PrismaClient();
+
+
+async function seedAnimals() {
   try {
-    await client.sql`CREATE EXTENSION IF NOT EXISTS "uuid-ossp"`;
-    // Create the "users" table if it doesn't exist
-    const createTable = await client.sql`
-      CREATE TABLE IF NOT EXISTS users (
-        id UUID DEFAULT uuid_generate_v4() PRIMARY KEY,
-        name VARCHAR(255) NOT NULL,
-        email TEXT NOT NULL UNIQUE,
-        password TEXT NOT NULL
-      );
-    `;
-
-    console.log(`Created "users" table`);
-
-    // Insert data into the "users" table
-    const insertedUsers = await Promise.all(
-      users.map(async (user) => {
-        const hashedPassword = await bcrypt.hash(user.password, 10);
-        return client.sql`
-        INSERT INTO users (id, name, email, password)
-        VALUES (${user.id}, ${user.name}, ${user.email}, ${hashedPassword})
-        ON CONFLICT (id) DO NOTHING;
-      `;
-      }),
+    // Insert data into the "animals" table
+    const insertedAnimals = await Promise.all(
+      animals.map((animal) => prisma.animal.create({
+        data: {
+          animal_id: animal.uniqueId,
+          name: animal.name,
+          species: animal.species,
+          breed: animal.breed,
+          secondary_breed: animal.secondary_breed,
+          primary_color: animal.primary_color,
+          secondary_color: animal.secondary_color,
+          intake_date: new Date(animal.intake_date),
+          shelter_id: "43ff709b-2c6d-4087-8179-b61b87bfe36e" //bad practice, this shouldn't be hardcoded
+        },
+      })),
     );
 
-    console.log(`Seeded ${insertedUsers.length} users`);
+    console.log(`Seeded ${insertedAnimals.length} animals`);
 
-    return {
-      createTable,
-      users: insertedUsers,
-    };
+    return insertedAnimals;
   } catch (error) {
-    console.error('Error seeding users:', error);
+    console.error('Error seeding animals:', error);
+    throw error;
+  }
+
+}
+
+async function seedAttributes() {
+  try {
+    // Insert data into the "attributes" table
+    const insertedAttributes = await Promise.all(
+      attributes.map((attribute) => prisma.attribute.create({
+        data: {
+          animal_id: attribute.animal_id,
+          attribute: attribute.attribute,
+        },
+      })),
+    );
+
+    console.log(`Seeded ${insertedAttributes.length} attributes`);
+
+    return insertedAttributes;
+  } catch (error) {
+    console.error('Error seeding attributes:', error);
     throw error;
   }
 }
 
-async function seedInvoices(client) {
+async function seedShelters() {
   try {
-    await client.sql`CREATE EXTENSION IF NOT EXISTS "uuid-ossp"`;
-
-    // Create the "invoices" table if it doesn't exist
-    const createTable = await client.sql`
-    CREATE TABLE IF NOT EXISTS invoices (
-    id UUID DEFAULT uuid_generate_v4() PRIMARY KEY,
-    customer_id UUID NOT NULL,
-    amount INT NOT NULL,
-    status VARCHAR(255) NOT NULL,
-    date DATE NOT NULL
-  );
-`;
-
-    console.log(`Created "invoices" table`);
-
-    // Insert data into the "invoices" table
-    const insertedInvoices = await Promise.all(
-      invoices.map(
-        (invoice) => client.sql`
-        INSERT INTO invoices (customer_id, amount, status, date)
-        VALUES (${invoice.customer_id}, ${invoice.amount}, ${invoice.status}, ${invoice.date})
-        ON CONFLICT (id) DO NOTHING;
-      `,
-      ),
+    // Insert data into the "shelters" table
+    const insertedShelters = await Promise.all(
+      shelters.map((shelter) => prisma.shelter.create({
+        data: {
+          name: shelter.name,
+          shelter_id: shelter.shelter_id,
+          location: shelter.location,
+          location: shelter.location,
+          phone_number: shelter.phone_number,
+          email: shelter.email,
+          website_url: shelter.website_url,
+          opening_hours: shelter.opening_hours,
+          days_of_operation: shelter.days_of_operation,
+          cat_facilities: shelter.cat_facilities,
+          dog_facilities: shelter.dog_facilities,
+          volunteer_opportunities: shelter.volunteer_opportunities,
+          volunteer_coordinator_contact: shelter.volunteer_coordinator_contact,
+          adoption_process_details: shelter.adoption_process_details,
+          adoption_fees: shelter.adoption_fees,
+          veterinary_services: shelter.veterinary_services,
+          exercise_programs: shelter.exercise_programs,
+          educational_programs: shelter.educational_programs,
+          community_outreach: shelter.community_outreach,
+          donation_methods: shelter.donation_methods,
+          donation_collection_points: shelter.donation_collection_points,
+          donation_needs: shelter.donation_needs,
+          licensing_details: shelter.licensing_details,
+          shelter_history: shelter.shelter_history,
+          mission_statement: shelter.mission_statement,
+        },
+      })),
     );
 
-    console.log(`Seeded ${insertedInvoices.length} invoices`);
+    console.log(`Seeded ${insertedShelters.length} shelters`);
 
-    return {
-      createTable,
-      invoices: insertedInvoices,
-    };
+    return insertedShelters;
   } catch (error) {
-    console.error('Error seeding invoices:', error);
+    console.error('Error seeding shelters:', error);
     throw error;
   }
 }
 
-async function seedCustomers(client) {
+async function seedPhotos() {
   try {
-    await client.sql`CREATE EXTENSION IF NOT EXISTS "uuid-ossp"`;
+    // Insert data into the "photos" table
+    const insertedPhotos = await prisma.photo.createMany({ data: photos.map((photo) => ({
+        photo_id: photo.id,
+        url: photo.url,
+        name: photo.name,
+        animal_id: photo.animal_id,
+        is_cover: photo.is_cover,
+      }))
+    });
 
-    // Create the "customers" table if it doesn't exist
-    const createTable = await client.sql`
-      CREATE TABLE IF NOT EXISTS customers (
-        id UUID DEFAULT uuid_generate_v4() PRIMARY KEY,
-        name VARCHAR(255) NOT NULL,
-        email VARCHAR(255) NOT NULL,
-        image_url VARCHAR(255) NOT NULL
-      );
-    `;
+    console.log(`Seeded ${insertedPhotos.count} photos`);
 
-    console.log(`Created "customers" table`);
-
-    // Insert data into the "customers" table
-    const insertedCustomers = await Promise.all(
-      customers.map(
-        (customer) => client.sql`
-        INSERT INTO customers (id, name, email, image_url)
-        VALUES (${customer.id}, ${customer.name}, ${customer.email}, ${customer.image_url})
-        ON CONFLICT (id) DO NOTHING;
-      `,
-      ),
-    );
-
-    console.log(`Seeded ${insertedCustomers.length} customers`);
-
-    return {
-      createTable,
-      customers: insertedCustomers,
-    };
+    return insertedPhotos;
   } catch (error) {
-    console.error('Error seeding customers:', error);
+    console.error('Error seeding photos:', error);
     throw error;
   }
 }
 
-async function seedRevenue(client) {
-  try {
-    // Create the "revenue" table if it doesn't exist
-    const createTable = await client.sql`
-      CREATE TABLE IF NOT EXISTS revenue (
-        month VARCHAR(4) NOT NULL UNIQUE,
-        revenue INT NOT NULL
-      );
-    `;
-
-    console.log(`Created "revenue" table`);
-
-    // Insert data into the "revenue" table
-    const insertedRevenue = await Promise.all(
-      revenue.map(
-        (rev) => client.sql`
-        INSERT INTO revenue (month, revenue)
-        VALUES (${rev.month}, ${rev.revenue})
-        ON CONFLICT (month) DO NOTHING;
-      `,
-      ),
-    );
-
-    console.log(`Seeded ${insertedRevenue.length} revenue`);
-
-    return {
-      createTable,
-      revenue: insertedRevenue,
-    };
-  } catch (error) {
-    console.error('Error seeding revenue:', error);
-    throw error;
-  }
-}
 
 async function main() {
-  const client = await db.connect();
+  await seedShelters();
+  await seedAnimals();
+  await seedPhotos();
+  await seedAttributes();
 
-  await seedUsers(client);
-  await seedCustomers(client);
-  await seedInvoices(client);
-  await seedRevenue(client);
-
-  await client.end();
+  await prisma.$disconnect();
 }
 
 main().catch((err) => {
