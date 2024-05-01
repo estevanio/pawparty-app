@@ -1,4 +1,4 @@
-html {
+body {
   max-height: 100%;
   max-width: 100%;
   background: linear-gradient(90deg, rgba(41, 255, 255, 1) 13%, rgba(70, 138, 241, 1) 100%) no-repeat;
@@ -46,7 +46,6 @@ a {
 
 .header {
   margin: auto;
-  margin-top: 50px;
   text-align: center;
   color: white;
 }
@@ -115,15 +114,15 @@ a {
   font-size: 14px;
 }
 
-.swiperContainer {  
+.swiperContainer { 
+  width: 100%; 
   display: flex;
   justify-content: center;
   align-items: center; 
 }
 
 .cardContainer { 
-  width: 90vw;
-  max-width: 260px;
+  width: 85vw;
   height: 300px;
   display: block;
 }
