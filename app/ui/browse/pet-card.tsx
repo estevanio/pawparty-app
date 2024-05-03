@@ -2,11 +2,15 @@
 
 import { Card, CardContent, CardMedia, Typography, Container } from "@mui/material";
 import TinderCard from 'react-tinder-card'
+import { Pet } from "@/app/lib/definitions";
 
-export default function PetCard ({ pet }) {
+interface InterfaceProps {
+  pet: Pet
+}
+
+export default function PetCard ({ pet }: InterfaceProps)  {
 
     return (
-
         <Card
             id={'card itself'} 
             raised={false}
