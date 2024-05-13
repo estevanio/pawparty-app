@@ -1,5 +1,3 @@
-'use client'
-
 import { Card, CardContent, CardMedia, Typography, Container } from "@mui/material";
 import TinderCard from 'react-tinder-card'
 import { Pet } from "@/app/lib/definitions";
