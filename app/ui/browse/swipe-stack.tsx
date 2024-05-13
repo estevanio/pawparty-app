@@ -6,7 +6,6 @@ import PetCard from "./pet-card";
 import { Card, CardContent, CardMedia, Typography, Container } from "@mui/material";
 import { pets } from '@/app/lib/mockdb'
 import { uptime } from "process";
-import { Pet } from "@/app/lib/definitions";
 
 export default function SwipeStack () {
     
@@ -21,7 +20,7 @@ export default function SwipeStack () {
       console.log(name + ' left the screen!')
     }
 
-    const displayPets = pets.map((pet: Pet) => {        
+    const displayPets = pets.map((pet) => {        
         
         return(
             <TinderCard
