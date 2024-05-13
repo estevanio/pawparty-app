@@ -54,7 +54,7 @@ model Shelter {
 model Animal {
   animal_id          String       @id @map("animal_id") @default(uuid())
   name               String
-  unique_id          String?
+  external_id         String?
   sex                String?
   weight             Float?
   weight_units       String?
