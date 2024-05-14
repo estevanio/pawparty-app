@@ -6,17 +6,19 @@ import {
     Container, 
     CardActionArea 
 } from "@mui/material";
-import TinderCard from 'react-tinder-card'
 import { Pet } from "@/app/lib/definitions";
 
 interface InterfaceProps {
-  pet: Pet
+  pet: Pet,
+  swipeInProgress: boolean
 }
 
-export default function PetCard ({ pet }: InterfaceProps)  {
+export default function PetCard ({ pet, swipeInProgress }: InterfaceProps)  {
 
     const handleClick = () => {
-        console.log(`${pet.name} was clicked.`)
+        if (swipeInProgress == false){ 
+            console.log(`${pet.name} was clicked.`)
+        }        
     }
 
     return (
@@ -27,13 +29,26 @@ export default function PetCard ({ pet }: InterfaceProps)  {
                 height: '484px',
                 borderRadius: '25px', 
                 userSelect:'none'}}>
-            <CardActionArea onClick={() => handleClick()}>
+            <CardActionArea 
+                onClick={() => handleClick()}
+                onTouchEnd={() => handleClick()}>
                 <CardMedia
-                    sx={{height: 379, width: '350px', maxWidth: {lg: 300}}}
+                    sx={{
+                        height: 379, 
+                        width: '350px',
+                        maxWidth: {lg: 300},
+                        pointerEvents: 'none'}}
                     image={pet.img_url}/>
-                <Container sx={{display: 'flex', justifyContent:'space-between'}}>
+                <Container sx={{
+                    display: 'flex', 
+                    justifyContent:'space-between', 
+                    pointerEvents: 'none'}}>
                     <CardContent 
-                        sx={{paddingTop: 0, paddingLeft: 1, height: '109px'}}>
+                        sx={{
+                            paddingTop: 0, 
+                            paddingLeft: 1, 
+                            height: '109px',
+                            pointerEvents: 'none'}}>
                         <Typography
                             sx={{
                                 paddingTop: 1,
@@ -45,27 +60,38 @@ export default function PetCard ({ pet }: InterfaceProps)  {
                             {pet.name}
                         </Typography>
                         <Typography
-                            sx={{fontFamily:'Montserrat', fontSize: 14}}>
+                            sx={{
+                                fontFamily:'Montserrat', 
+                                pointerEvents: 'none', 
+                                fontSize: 14}}>
                             {pet.breed[1]}
                         </Typography>
                         <Typography
-                            sx={{fontSize: 14}}>
+                            sx={{
+                                pointerEvents: 'none', 
+                                fontSize: 14}}>
                             {pet.location[0] + ', ' + pet.location[1]}
                         </Typography>
                     </CardContent>
-                    <CardContent>
+                    <CardContent sx={{pointerEvents: 'none'}}>
                         <Typography 
                             sx={{
-                                fontFamily: "Montserrat", fontSize: 14}}>
+                                fontFamily: "Montserrat", 
+                                fontSize: 14, 
+                                pointerEvents: 'none'}}>
                             {pet.tags[0]}
                         </Typography>
                         <Typography sx={{
-                            fontFamily: "Montserrat", fontSize: 14}}>
+                            fontFamily: "Montserrat", 
+                            fontSize: 14, 
+                            pointerEvents: 'none'}}>
                             {pet.tags[1]}
                         </Typography>
                         <Typography 
                             sx={{
-                                fontFamily: "Montserrat", fontSize: 14}}>
+                                fontFamily: "Montserrat", 
+                                pointerEvents: 'none', 
+                                fontSize: 14}}>
                                 {pet.tags[2] ? pet.tags[2] : null}
                         </Typography>
                     </CardContent>
