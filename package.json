@@ -20,6 +20,7 @@
     "autoprefixer": "10.4.15",
     "bcrypt": "^5.1.1",
     "clsx": "^2.0.0",
+    "jarallax": "^2.2.1",
     "json-server": "^1.0.0-alpha.23",
     "next": "^14.0.2",
     "postcss": "8.4.31",
