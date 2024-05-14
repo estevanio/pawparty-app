@@ -13,14 +13,18 @@ export default function SwipeStack () {
     const [lastDirection, setLastDirection] = useState('')
     const [swipeInProgress, setSwipeInProgress] = useState(false)
     const [questionsOpen, setQuestionsOpen] = useState(false)
-    const [lookingFor, setLookingFor] = useState('')
+    const [questionAnswer, setQuestionAnswer] = useState('')
 
     useEffect(() => {
       setQuestionsOpen(true)
     }, [])
   
-    const swiped: any = (direction: string, nameToDelete: string) => {
-      console.log('removing: ' + nameToDelete)
+    const swiped: any = (direction: string, name: string, breed: string[]) => {
+
+      console.log('removing: ' + name)
+      console.log('swiped species: ' + breed[0])
+      console.log('match: ' + (breed[0] == questionAnswer))
+
       setLastDirection(direction)
       setSwipeInProgress(true)
     }
@@ -36,7 +40,7 @@ export default function SwipeStack () {
             <TinderCard
                 className="swipe"
                 key={pet.id} 
-                onSwipe={(dir) => swiped(dir, pet.name)} 
+                onSwipe={(dir) => swiped(dir, pet.name, pet.breed)} 
                 onCardLeftScreen={() => outOfFrame(pet.name)}
                 preventSwipe={['up', 'down']}>
                 <PetCard pet={pet} swipeInProgress={swipeInProgress}/>
@@ -49,7 +53,10 @@ export default function SwipeStack () {
         <Container sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', height:475, width: '100vw'}}>
           {displayPets}
         </Container>
-        <BrowseQuestionsDialogue questionsOpen={questionsOpen} setQuestionsOpen={setQuestionsOpen}/>
+        <BrowseQuestionsDialogue 
+        questionsOpen={questionsOpen} 
+        setQuestionsOpen={setQuestionsOpen}
+        setQuestionAnswer={setQuestionAnswer}/>
         {/* {lastDirection ? <h2 className='infoText'>You swiped {lastDirection}</h2> : <h2 className='infoText' />} */}
       </>
     )
