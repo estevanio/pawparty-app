@@ -16,10 +16,22 @@ export default function BrowseQuestionsDialogue ({questionsOpen, setQuestionsOpe
 
     return (
         <Dialog onClose={() => setQuestionsOpen(false)} open={questionsOpen}>
-            <Container sx={{height: 400, width: '90vw', borderRadius: '25px'}}>
-                <Typography>What species of friend are you looking for?</Typography>
-                <Button onClick={() => handleButtonPress('cat')}>Cats</Button>
-                <Button onClick={() => handleButtonPress('dog')}>Dogs</Button>
+            <Container sx={{
+                display: 'flex', 
+                flexDirection: 'column', 
+                alignItems:'center', 
+                height: 400, 
+                width: '90vw', 
+                borderRadius: '25px'}}>
+                <Typography sx={{fontFamily: 'Montserrat', fontSize: 16}}>What species of friend are you looking for?</Typography>
+                <Button 
+                    sx={{width: 100, marginTop:2}}
+                    variant='contained' 
+                    onClick={() => handleButtonPress('cat')}>Cats</Button>
+                <Button 
+                    sx={{width: 100, marginTop:2}}
+                    variant='contained' 
+                    onClick={() => handleButtonPress('dog')}>Dogs</Button>
             </Container>
         </Dialog>        
     )
