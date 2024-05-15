@@ -22,10 +22,12 @@ export default function SwipeStack () {
   
     const swiped: any = (direction: string, name: string, breed: string[]) => {
 
+      console.log('----------------------')
       console.log('swiped name: ' + name)
       console.log('swiped species: ' + breed[0])
       console.log(browserStorage.getItem('questionAnswer'))
       console.log('match: ' + (breed[0] == browserStorage.getItem('questionAnswer')))
+      console.log('----------------------')
 
       setLastDirection(direction)
       setSwipeInProgress(true)
