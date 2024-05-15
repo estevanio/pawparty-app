@@ -13,17 +13,19 @@ export default function SwipeStack () {
     const [lastDirection, setLastDirection] = useState('')
     const [swipeInProgress, setSwipeInProgress] = useState(false)
     const [questionsOpen, setQuestionsOpen] = useState(false)
-    const [questionAnswer, setQuestionAnswer] = useState('')
+
+    const browserStorage = localStorage
 
     useEffect(() => {
-      setQuestionsOpen(true)
+      browserStorage.getItem('questionsAnswered') ? null : setQuestionsOpen(true)
     }, [])
   
     const swiped: any = (direction: string, name: string, breed: string[]) => {
 
-      console.log('removing: ' + name)
+      console.log('swiped name: ' + name)
       console.log('swiped species: ' + breed[0])
-      console.log('match: ' + (breed[0] == questionAnswer))
+      console.log(browserStorage.getItem('questionAnswer'))
+      console.log('match: ' + (breed[0] == browserStorage.getItem('questionAnswer')))
 
       setLastDirection(direction)
       setSwipeInProgress(true)
@@ -55,8 +57,7 @@ export default function SwipeStack () {
         </Container>
         <BrowseQuestionsDialogue 
         questionsOpen={questionsOpen} 
-        setQuestionsOpen={setQuestionsOpen}
-        setQuestionAnswer={setQuestionAnswer}/>
+        setQuestionsOpen={setQuestionsOpen}/>
         {/* {lastDirection ? <h2 className='infoText'>You swiped {lastDirection}</h2> : <h2 className='infoText' />} */}
       </>
     )
