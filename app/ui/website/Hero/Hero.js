@@ -5,11 +5,16 @@ import { useTheme } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Grid from '@mui/material/Grid';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
+
 // import LaptopSkeletonIllustration from 'app/ui/website/svg/illustrations/LaptopSkeleton.js';
 
 import Container from '../Container';
+import { Button } from '@mui/material';
 
 const Hero = () => {
+  const pathname=usePathname()
   // useEffect(() => {
   //   const jarallaxInit = async () => {
   //     const jarallaxElems = document.querySelectorAll('.jarallax');
@@ -26,66 +31,13 @@ const Hero = () => {
 
   const theme = useTheme();
 
+  const infocontent = { 
+    title: "Designed secure. Built for anything", 
+    subtitle: "Forward thinking businesses use our cloud backup service to ensure data reliability and safety.",
+    image: "https://assets.maccarianagency.com/screenshots/dashboard.png"
+  };
+
   return (
-    // <Box
-    //   className={'jarallax'}
-    //   data-jarallax
-    //   data-speed="0.2"
-    //   position={'relative'}
-    //   minHeight={{ xs: 400, sm: 500, md: 600 }}
-    //   display={'flex'}
-    //   alignItems={'center'}
-    //   marginTop={-13}
-    //   paddingTop={13}
-    //   id="agency__portfolio-item--js-scroll"
-    // >
-    //   <Box
-    //     className={'jarallax-img'}
-    //     sx={{
-    //       position: 'absolute',
-    //       objectFit: 'cover',
-    //       /* support for plugin https://github.com/bfred-it/object-fit-images */
-    //       fontFamily: 'object-fit: cover;',
-    //       top: 0,
-    //       left: 0,
-    //       width: '100%',
-    //       height: '100%',
-    //       zIndex: -1,
-    //       backgroundRepeat: 'no-repeat',
-    //       backgroundSize: 'cover',
-    //       backgroundPosition: 'center center',
-    //       backgroundImage:
-    //         'url(https://assets.maccarianagency.com/backgrounds/img44.jpg)',
-    //       filter: theme.palette.mode === 'dark' ? 'brightness(0.7)' : 'none',
-    //     }}
-    //   />
-    //   <Container position={'relative'} zIndex={2}>
-    //     <Box>
-    //       <Typography
-    //         variant="h2"
-    //         gutterBottom
-    //         sx={{
-    //           fontWeight: 900,
-    //           color: 'common.white',
-    //           textTransform: 'uppercase',
-    //         }}
-    //       >
-    //         Our work
-    //       </Typography>
-    //       <Typography
-    //         variant="h5"
-    //         component="p"
-    //         color="text.primary"
-    //         sx={{
-    //           color: 'common.white',
-    //         }}
-    //       >
-    //         We are founded by a leading academic and researcher in the field of
-    //         Industrial Systems Engineering.
-    //       </Typography>
-    //     </Box>
-    //   </Container>
-    // </Box>
     <Box
       position={'relative'}
       sx={{
@@ -105,7 +57,7 @@ const Hero = () => {
                   variant="h3"
                   sx={{ fontWeight: 700, color: 'common.white' }}
                 >
-                  Designed secure. Built for anything
+                  {infocontent.title}
                 </Typography>
               </Box>
               <Typography
@@ -113,8 +65,7 @@ const Hero = () => {
                 component="p"
                 sx={{ color: 'common.white' }}
               >
-                Forward thinking businesses use our cloud backup service to
-                ensure data reliability and safety.
+                {infocontent.subtitle}
               </Typography>
               <Box
                 display="flex"
@@ -122,27 +73,14 @@ const Hero = () => {
                 justifyContent={'flex-start'}
                 marginTop={2}
               >
-                {[
-                  'https://assets.maccarianagency.com/svg/logos/airbnb-original.svg',
-                  'https://assets.maccarianagency.com/svg/logos/amazon-original.svg',
-                  'https://assets.maccarianagency.com/svg/logos/fitbit-original.svg',
-                  'https://assets.maccarianagency.com/svg/logos/netflix-original.svg',
-                  'https://assets.maccarianagency.com/svg/logos/google-original.svg',
-                  'https://assets.maccarianagency.com/svg/logos/paypal-original.svg',
-                ].map((item, i) => (
-                  <Box maxWidth={90} marginTop={2} marginRight={4} key={i}>
-                    <Box
-                      component="img"
-                      height={1}
-                      width={1}
-                      src={item}
-                      alt="..."
-                      sx={{
-                        filter: 'brightness(0) invert(1)',
-                      }}
-                    />
-                  </Box>
-                ))}
+                  <Button type = "button" id= "linkToBrowse" variant='contained' size= 'large' color='success'>
+                    <Link
+                      href={pathname.concat("browse")}
+                      className="flex h-10 items-center rounded-lg bg-blue-600 px-4 text-sm font-large text-white transition-colors hover:bg-blue-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600"
+                      >
+                      <span className="hidden md:block">Click here to find your new friend</span>
+                    </Link> 
+                  </Button>
               </Box>
             </Box>
           </Grid>
@@ -161,15 +99,6 @@ const Hero = () => {
               >
                 <Box>
                   <Box
-                    position={'relative'}
-                    zIndex={2}
-                    maxWidth={1}
-                    height={'auto'}
-                    sx={{ verticalAlign: 'middle' }}
-                  >
-                    {/* <LaptopSkeletonIllustration /> */}
-                  </Box>
-                  <Box
                     position={'absolute'}
                     top={'8.4%'}
                     left={'12%'}
@@ -180,10 +109,10 @@ const Hero = () => {
                   >
                     <Box
                       component={'img'}
-                      src="https://assets.maccarianagency.com/screenshots/dashboard.png"
+                      src={infocontent.image}
                       alt="Image Description"
-                      width={1}
-                      height={1}
+                      width={450}
+                      height={325}
                       sx={{
                         objectFit: 'cover',
                         filter:
@@ -207,7 +136,7 @@ const Hero = () => {
         y="0px"
         viewBox="0 0 1921 273"
         sx={{
-          position: 'absolute',
+          position: 'relative',
           width: '100%',
           left: 0,
           bottom: 0,
