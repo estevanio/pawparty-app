@@ -1,0 +1,97 @@
+generator client {
+  provider = "prisma-client-js"
+}
+ 
+datasource db {
+  provider = "postgresql"
+  // Uses connection pooling
+  url = env("POSTGRES_PRISMA_URL")
+  // Uses direct connection, ⚠️ make sure to keep this to `POSTGRES_URL_NON_POOLING`
+  // or you'll have dangling databases from migrations
+  directUrl = env("POSTGRES_URL_NON_POOLING")
+}
+ 
+// Define the Shelter model
+model Shelter {
+  shelter_id         String       @id @map("shelter_id") @default(uuid()) 
+  name               String
+  location           String
+  phone_number       String?
+  email              String?
+  website_url        String?
+  opening_hours      String?
+  closing_hours      String?
+  days_of_operation  String?
+  facility_size      String?
+  num_enclosures     Int?
+  cat_facilities     String?
+  dog_facilities     String?
+  staff_names        String?
+  volunteer_opportunities String?
+  volunteer_coordinator_contact String?
+  adoption_process_details String?
+  intake_process_details String?
+  adoption_fees      String?
+  veterinary_services String?
+  feeding_schedules  String?
+  exercise_programs  String?
+  adoption_events_schedule String?
+  educational_programs String?
+  community_outreach String?
+  donation_methods   String?
+  donation_collection_points String?
+  donation_needs     String?
+  licensing_details  String?
+  regulatory_compliance String?
+  insurance_coverage String?
+  shelter_history    String?
+  mission_statement  String?
+  // Define the one-to-many relationship between Shelter and Animal
+  animals            Animal[]  @relation("shelter_animals")
+}
+
+// Define the Animal model
+model Animal {
+  animal_id          String       @id @map("animal_id") @default(uuid())
+  name               String
+  external_id         String?
+  sex                String?
+  weight             Float?
+  weight_units       String?
+  weight_group       String?
+  birthday           DateTime?
+  age_group          String?
+  species            String
+  breed              String?
+  secondary_breed    String?
+  primary_color      String?
+  secondary_color    String?
+  intake_date        DateTime
+  public_url         String?
+  // Define the many-to-one relationship between Animal and Shelter
+  shelter            Shelter   @relation("shelter_animals", fields: [shelter_id], references: [shelter_id])
+  shelter_id         String
+  // Define the one-to-many relationship between Animal and Attributes
+  attributes         Attribute[]
+  // Define the one-to-many relationship between Animal and Photos
+  photos             Photo[]
+}
+
+// Define the Attribute model
+model Attribute {
+  animal_id          String
+  attribute          String
+  animal             Animal    @relation(fields: [animal_id], references: [animal_id])
+  @@id([animal_id, attribute])
+}
+
+// Define the Photo model
+model Photo {
+  photo_id           String       @id @default(uuid())
+  animal_id          String
+  name               String
+  url                String
+  is_cover           Boolean
+  // Define the many-to-one relationship between Photo and Animal
+  animal             Animal    @relation(fields: [animal_id], references: [animal_id])
+}
