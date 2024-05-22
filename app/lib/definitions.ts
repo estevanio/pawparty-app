@@ -4,15 +4,12 @@
 // However, these types are generated automatically if you're using an ORM such as Prisma.
 
 
-// We probably don't need to define the types for the data in the app/lib/definitions.ts file because prisma automatically creates types for us.
-// We're doing it here for the sake of teaching.
-
-// export type Invoice = {
-//   id: string;
-//   customer_id: string;
-//   amount: number;
-//   date: string;
-//   // In TypeScript, this is called a string union type.
-//   // It means that the "status" property can only be one of the two strings: 'pending' or 'paid'.
-//   status: 'pending' | 'paid';
-// };
+export type Pet = {
+  id: string;
+  name: string, 
+  age: number,
+  location: string[], 
+  img_url: string,   
+  breed: string[],
+  tags: string[]
+}

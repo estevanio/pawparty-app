@@ -1,4 +1,5 @@
 import { sql } from '@vercel/postgres';
+
 // import {
 //   CustomerField,
 //   CustomersTableType,
@@ -22,3 +23,4 @@ export async function fetchAnimals() {
     throw new Error('Failed to fetch animal data.');
   }
 }
+
