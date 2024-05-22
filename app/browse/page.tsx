@@ -1,5 +1,5 @@
 import React from "react";
-import PetCard from "../ui/browse/pet-card";
+import SwipeStack from "../ui/browse/swipe-stack";
 import { Container, Typography } from "@mui/material";
 
 export default function Page() {
@@ -10,7 +10,7 @@ export default function Page() {
         <Typography>FIND YOUR PERFECT MATCH</Typography>
       </Container>
       <Container sx={{paddingLeft: 0, paddingRight: 0}}>
-        <PetCard/>        
+        <SwipeStack/>        
       </Container>
       <div className="arrows">
         <img className="left-arrow" src="/left-arrow.svg" alt="left arrow" />
