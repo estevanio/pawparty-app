@@ -1,0 +1,28 @@
+[
+    {
+        "name": "Animal Friends Alliance",
+        "location": "2200 N Taft Hill Rd, Fort Collins, CO 80524",
+        "phone_number": "970.484.8516",
+        "shelter_id": "43ff709b-2c6d-4087-8179-b61b87bfe36e",
+        "email": "adopt@savinganimalstoday.org",
+        "website_url": "https://www.savinganimalstoday.org/",
+        "opening_hours": "Monday–Friday 10a–6p, Saturday & Sunday 10a–5p",
+        "days_of_operation": "Monday through Sunday",
+        "cat_facilities": "Yes, including a clinic",
+        "dog_facilities": "Yes, specific facilities",
+        "volunteer_opportunities": "Fostering, cleaning, laundry, community service, community outreach, handiwork, landscaping",
+        "volunteer_coordinator_contact": "volunteer@savinganimalstoday.org",
+        "adoption_process_details": "Adoption involves filling out a questionnaire, followed by a meet & greet; payments are made via credit or debit card",
+        "adoption_fees": "Varies, higher for high-demand dogs or puppies; fees help offset costs for animals with special needs",
+        "veterinary_services": "Subsidized services including spay/neuter, vaccinations, testing, flea/tick and heartworm prevention",
+        "exercise_programs": "Includes walking, playtime, and socialization",
+        "educational_programs": "Educational initiatives on pet care and ownership responsibilities",
+        "community_outreach": "Outreach events, event flyers, photographs, staffing booths at events and supply drives",
+        "donation_methods": "Monetary and in-kind donations, fundraising, grants",
+        "donation_collection_points": "Kibble Supply Pet Food Pantry at Mulberry Campus",
+        "donation_needs": "Pet food and supplies, especially during designated distribution days",
+        "licensing_details": "Follow local laws on animal ownership including licensing and vaccinating",
+        "shelter_history": "Founded in 2006, merger in 2020 of Fort Collins Cat Rescue & Spay/Neuter Clinic and Animal House Rescue & Grooming",
+        "mission_statement": "To provide comprehensive companion animal resources, services, and education to the community to prevent homelessness and promote the human-animal bond."
+    }
+]

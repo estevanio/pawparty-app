@@ -1,0 +1,1717 @@
+[
+  {
+    "nid": 79153632,
+    "name": "Caddy",
+    "uniqueId": "CAFA-A-48449",
+    "sex": "Female",
+    "weight": "25.6",
+    "weight_units": "lbs",
+    "weight_group": "Medium (20-59 lbs)",
+    "birthday": "1668963894",
+    "age_group": "Young Adult ",
+    "species": "Dog",
+    "breed": "Cattle Dog",
+    "secondary_breed": "Mixed Breed (Medium)",
+    "primary_color": "Tan",
+    "secondary_color": "Black",
+    "attributes": [
+      "Crate trained",
+      "House Trained"
+    ],
+    "photos": [
+      {
+        "id": 13444380,
+        "name": "20231122094140.png",
+        "url": "https://sl-prod-v2-cdn.shelterluv.com/sites/default/files/animal_pics/4337/2023/11/22/09/20231122094140.png",
+        "isCover": false
+      },
+      {
+        "id": 13444397,
+        "name": "20231122094226.png",
+        "url": "https://sl-prod-v2-cdn.shelterluv.com/sites/default/files/animal_pics/4337/2023/11/22/09/20231122094226.png",
+        "isCover": false
+      },
+      {
+        "id": 13444400,
+        "name": "20231122094238.png",
+        "url": "https://sl-prod-v2-cdn.shelterluv.com/sites/default/files/animal_pics/4337/2023/11/22/09/20231122094238.png",
+        "isCover": false
+      },
+      {
+        "id": 13458840,
+        "name": "20231124105703.png",
+        "url": "https://sl-prod-v2-cdn.shelterluv.com/sites/default/files/animal_pics/4337/2023/11/24/10/20231124105703.png",
+        "isCover": false
+      },
+      {
+        "id": 13458849,
+        "name": "20231124105740.png",
+        "url": "https://sl-prod-v2-cdn.shelterluv.com/sites/default/files/animal_pics/4337/2023/11/24/10/20231124105740.png",
+        "isCover": false
+      },
+      {
+        "id": 13458854,
+        "name": "20231124105814.png",
+        "url": "https://sl-prod-v2-cdn.shelterluv.com/sites/default/files/animal_pics/4337/2023/11/24/10/20231124105814.png",
+        "isCover": false
+      },
+      {
+        "id": 14753736,
+        "name": "20240314133125.png",
+        "url": "https://sl-prod-v2-cdn.shelterluv.com/sites/default/files/animal_pics/4337/2024/03/14/13/20240314133125.png",
+        "isCover": false
+      },
+      {
+        "id": 14785155,
+        "name": "20240317110203.png",
+        "url": "https://sl-prod-v2-cdn.shelterluv.com/sites/default/files/animal_pics/4337/2024/03/17/11/20240317110203.png",
+        "isCover": false
+      },
+      {
+        "id": 14833024,
+        "name": "20240321084852.png",
+        "url": "https://sl-prod-v2-cdn.shelterluv.com/sites/default/files/animal_pics/4337/2024/03/21/08/20240321084852.png",
+        "isCover": false
+      },
+      {
+        "id": 14930330,
+        "name": "20240328231300.png",
+        "url": "https://sl-prod-v2-cdn.shelterluv.com/sites/default/files/animal_pics/4337/2024/03/28/23/20240328231300.png",
+        "isCover": false
+      },
+      {
+        "id": 14930332,
+        "name": "20240328231341.png",
+        "url": "https://sl-prod-v2-cdn.shelterluv.com/sites/default/files/animal_pics/4337/2024/03/28/23/20240328231341.png",
+        "isCover": false
+      },
+      {
+        "id": 13444393,
+        "name": "20231122094211.png",
+        "url": "https://sl-prod-v2-cdn.shelterluv.com/sites/default/files/animal_pics/4337/2023/11/22/09/20231122094211.png",
+        "isCover": true
+      }
+    ],
+    "intake_date": 1710003894,
+    "public_url": "https://www.shelterluv.com/embed/animal/CAFA-A-48449"
+  },
+  {
+    "nid": 81431912,
+    "name": "Troy",
+    "uniqueId": "CAFA-A-48802",
+    "sex": "Male",
+    "weight": "76.6",
+    "weight_units": "lbs",
+    "weight_group": "Large (60-99 lbs)",
+    "birthday": "1483046365",
+    "age_group": "Senior ",
+    "species": "Dog",
+    "breed": "Terrier, Pit Bull",
+    "secondary_breed": null,
+    "primary_color": "Red/Mahogany",
+    "secondary_color": "White",
+    "attributes": [
+      "House Trained",
+      "Not good with cats"
+    ],
+    "photos": {
+      "12": {
+        "id": 13854731,
+        "name": "20231231092610.png",
+        "url": "https://sl-prod-v2-cdn.shelterluv.com/sites/default/files/animal_pics/4337/2023/12/31/09/20231231092610.png",
+        "isCover": false
+      },
+      "13": {
+        "id": 13854734,
+        "name": "20231231092624.png",
+        "url": "https://sl-prod-v2-cdn.shelterluv.com/sites/default/files/animal_pics/4337/2023/12/31/09/20231231092624.png",
+        "isCover": false
+      },
+      "14": {
+        "id": 14339781,
+        "name": "20240209142826.png",
+        "url": "https://sl-prod-v2-cdn.shelterluv.com/sites/default/files/animal_pics/4337/2024/02/09/14/20240209142826.png",
+        "isCover": false
+      },
+      "15": {
+        "id": 14339785,
+        "name": "20240209142839.png",
+        "url": "https://sl-prod-v2-cdn.shelterluv.com/sites/default/files/animal_pics/4337/2024/02/09/14/20240209142839.png",
+        "isCover": false
+      },
+      "16": {
+        "id": 14339792,
+        "name": "20240209142907.png",
+        "url": "https://sl-prod-v2-cdn.shelterluv.com/sites/default/files/animal_pics/4337/2024/02/09/14/20240209142907.png",
+        "isCover": false
+      },
+      "17": {
+        "id": 14339797,
+        "name": "20240209142922.png",
+        "url": "https://sl-prod-v2-cdn.shelterluv.com/sites/default/files/animal_pics/4337/2024/02/09/14/20240209142922.png",
+        "isCover": false
+      },
+      "18": {
+        "id": 14339800,
+        "name": "20240209142937.png",
+        "url": "https://sl-prod-v2-cdn.shelterluv.com/sites/default/files/animal_pics/4337/2024/02/09/14/20240209142937.png",
+        "isCover": false
+      },
+      "19": {
+        "id": 14339835,
+        "name": "20240209143212.png",
+        "url": "https://sl-prod-v2-cdn.shelterluv.com/sites/default/files/animal_pics/4337/2024/02/09/14/20240209143212.png",
+        "isCover": false
+      },
+      "20": {
+        "id": 14339839,
+        "name": "20240209143228.png",
+        "url": "https://sl-prod-v2-cdn.shelterluv.com/sites/default/files/animal_pics/4337/2024/02/09/14/20240209143228.png",
+        "isCover": false
+      },
+      "21": {
+        "id": 14339844,
+        "name": "20240209143303.png",
+        "url": "https://sl-prod-v2-cdn.shelterluv.com/sites/default/files/animal_pics/4337/2024/02/09/14/20240209143303.png",
+        "isCover": false
+      },
+      "22": {
+        "id": 14391842,
+        "name": "20240214095533.png",
+        "url": "https://sl-prod-v2-cdn.shelterluv.com/sites/default/files/animal_pics/4337/2024/02/14/09/20240214095533.png",
+        "isCover": false
+      },
+      "23": {
+        "id": 14413612,
+        "name": "20240215162258.png",
+        "url": "https://sl-prod-v2-cdn.shelterluv.com/sites/default/files/animal_pics/4337/2024/02/15/16/20240215162258.png",
+        "isCover": false
+      },
+      "24": {
+        "id": 14413618,
+        "name": "20240215162304.png",
+        "url": "https://sl-prod-v2-cdn.shelterluv.com/sites/default/files/animal_pics/4337/2024/02/15/16/20240215162304.png",
+        "isCover": false
+      },
+      "25": {
+        "id": 14413620,
+        "name": "20240215162311.png",
+        "url": "https://sl-prod-v2-cdn.shelterluv.com/sites/default/files/animal_pics/4337/2024/02/15/16/20240215162311.png",
+        "isCover": false
+      },
+      "26": {
+        "id": 14413623,
+        "name": "20240215162333.png",
+        "url": "https://sl-prod-v2-cdn.shelterluv.com/sites/default/files/animal_pics/4337/2024/02/15/16/20240215162333.png",
+        "isCover": false
+      },
+      "27": {
+        "id": 14413668,
+        "name": "20240215162634.png",
+        "url": "https://sl-prod-v2-cdn.shelterluv.com/sites/default/files/animal_pics/4337/2024/02/15/16/20240215162634.png",
+        "isCover": false
+      },
+      "28": {
+        "id": 14413674,
+        "name": "20240215162642.png",
+        "url": "https://sl-prod-v2-cdn.shelterluv.com/sites/default/files/animal_pics/4337/2024/02/15/16/20240215162642.png",
+        "isCover": false
+      },
+      "29": {
+        "id": 14514947,
+        "name": "20240224082644.png",
+        "url": "https://sl-prod-v2-cdn.shelterluv.com/sites/default/files/animal_pics/4337/2024/02/24/08/20240224082644.png",
+        "isCover": false
+      },
+      "30": {
+        "id": 14514951,
+        "name": "20240224082655.png",
+        "url": "https://sl-prod-v2-cdn.shelterluv.com/sites/default/files/animal_pics/4337/2024/02/24/08/20240224082655.png",
+        "isCover": false
+      },
+      "31": {
+        "id": 14514958,
+        "name": "20240224082705.png",
+        "url": "https://sl-prod-v2-cdn.shelterluv.com/sites/default/files/animal_pics/4337/2024/02/24/08/20240224082705.png",
+        "isCover": false
+      },
+      "32": {
+        "id": 14514962,
+        "name": "20240224082718.png",
+        "url": "https://sl-prod-v2-cdn.shelterluv.com/sites/default/files/animal_pics/4337/2024/02/24/08/20240224082718.png",
+        "isCover": false
+      },
+      "33": {
+        "id": 14514966,
+        "name": "20240224082728.png",
+        "url": "https://sl-prod-v2-cdn.shelterluv.com/sites/default/files/animal_pics/4337/2024/02/24/08/20240224082728.png",
+        "isCover": false
+      },
+      "34": {
+        "id": 14791969,
+        "name": "20240318075113.png",
+        "url": "https://sl-prod-v2-cdn.shelterluv.com/sites/default/files/animal_pics/4337/2024/03/18/07/20240318075113.png",
+        "isCover": false
+      },
+      "35": {
+        "id": 14927693,
+        "name": "20240328160409.png",
+        "url": "https://sl-prod-v2-cdn.shelterluv.com/sites/default/files/animal_pics/4337/2024/03/28/16/20240328160409.png",
+        "isCover": false
+      },
+      "36": {
+        "id": 14927699,
+        "name": "20240328160433.png",
+        "url": "https://sl-prod-v2-cdn.shelterluv.com/sites/default/files/animal_pics/4337/2024/03/28/16/20240328160433.png",
+        "isCover": false
+      },
+      "37": {
+        "id": 15004591,
+        "name": "20240404115723.png",
+        "url": "https://sl-prod-v2-cdn.shelterluv.com/sites/default/files/animal_pics/4337/2024/04/04/11/20240404115723.png",
+        "isCover": false
+      },
+      "38": {
+        "id": 15004595,
+        "name": "20240404115729.png",
+        "url": "https://sl-prod-v2-cdn.shelterluv.com/sites/default/files/animal_pics/4337/2024/04/04/11/20240404115729.png",
+        "isCover": false
+      },
+      "39": {
+        "id": 15006561,
+        "name": "20240404132018.png",
+        "url": "https://sl-prod-v2-cdn.shelterluv.com/sites/default/files/animal_pics/4337/2024/04/04/13/20240404132018.png",
+        "isCover": false
+      },
+      "40": {
+        "id": 15006563,
+        "name": "20240404132031.png",
+        "url": "https://sl-prod-v2-cdn.shelterluv.com/sites/default/files/animal_pics/4337/2024/04/04/13/20240404132031.png",
+        "isCover": false
+      },
+      "41": {
+        "id": 14927686,
+        "name": "20240328160344.png",
+        "url": "https://sl-prod-v2-cdn.shelterluv.com/sites/default/files/animal_pics/4337/2024/03/28/16/20240328160344.png",
+        "isCover": true
+      }
+    },
+    "intake_date": 1703884765,
+    "public_url": "https://www.shelterluv.com/embed/animal/CAFA-A-48802"
+  },
+  {
+    "nid": 82805258,
+    "name": "Dakotah",
+    "uniqueId": "CAFA-A-48913",
+    "sex": "Female",
+    "weight": "41.6",
+    "weight_units": "lbs",
+    "weight_group": "Medium (20-59 lbs)",
+    "birthday": "1481306946",
+    "age_group": "Senior ",
+    "species": "Dog",
+    "breed": "Collie, Border",
+    "secondary_breed": "Mixed Breed (Medium)",
+    "primary_color": "White",
+    "secondary_color": "Black",
+    "attributes": [
+      "Good with Cats",
+      "House Trained"
+    ],
+    "photos": {
+      "45": {
+        "id": 14046272,
+        "name": "20240117093530.png",
+        "url": "https://sl-prod-v2-cdn.shelterluv.com/sites/default/files/animal_pics/4337/2024/01/17/09/20240117093530.png",
+        "isCover": false
+      },
+      "46": {
+        "id": 14046276,
+        "name": "20240117093550.png",
+        "url": "https://sl-prod-v2-cdn.shelterluv.com/sites/default/files/animal_pics/4337/2024/01/17/09/20240117093550.png",
+        "isCover": false
+      },
+      "47": {
+        "id": 14463175,
+        "name": "20240220100908.png",
+        "url": "https://sl-prod-v2-cdn.shelterluv.com/sites/default/files/animal_pics/4337/2024/02/20/10/20240220100908.png",
+        "isCover": false
+      },
+      "48": {
+        "id": 14463180,
+        "name": "20240220100917.png",
+        "url": "https://sl-prod-v2-cdn.shelterluv.com/sites/default/files/animal_pics/4337/2024/02/20/10/20240220100917.png",
+        "isCover": false
+      },
+      "49": {
+        "id": 14463186,
+        "name": "20240220100930.png",
+        "url": "https://sl-prod-v2-cdn.shelterluv.com/sites/default/files/animal_pics/4337/2024/02/20/10/20240220100930.png",
+        "isCover": false
+      },
+      "50": {
+        "id": 14463198,
+        "name": "20240220100959.png",
+        "url": "https://sl-prod-v2-cdn.shelterluv.com/sites/default/files/animal_pics/4337/2024/02/20/10/20240220100959.png",
+        "isCover": false
+      },
+      "51": {
+        "id": 14463207,
+        "name": "20240220101016.png",
+        "url": "https://sl-prod-v2-cdn.shelterluv.com/sites/default/files/animal_pics/4337/2024/02/20/10/20240220101016.png",
+        "isCover": false
+      },
+      "52": {
+        "id": 14463212,
+        "name": "20240220101028.png",
+        "url": "https://sl-prod-v2-cdn.shelterluv.com/sites/default/files/animal_pics/4337/2024/02/20/10/20240220101028.png",
+        "isCover": false
+      },
+      "53": {
+        "id": 14463219,
+        "name": "20240220101048_0.png",
+        "url": "https://sl-prod-v2-cdn.shelterluv.com/sites/default/files/animal_pics/4337/2024/02/20/10/20240220101048_0.png",
+        "isCover": false
+      },
+      "54": {
+        "id": 14463225,
+        "name": "20240220101112.png",
+        "url": "https://sl-prod-v2-cdn.shelterluv.com/sites/default/files/animal_pics/4337/2024/02/20/10/20240220101112.png",
+        "isCover": false
+      },
+      "55": {
+        "id": 14463236,
+        "name": "20240220101127.png",
+        "url": "https://sl-prod-v2-cdn.shelterluv.com/sites/default/files/animal_pics/4337/2024/02/20/10/20240220101127.png",
+        "isCover": false
+      },
+      "56": {
+        "id": 14463240,
+        "name": "20240220101140.png",
+        "url": "https://sl-prod-v2-cdn.shelterluv.com/sites/default/files/animal_pics/4337/2024/02/20/10/20240220101140.png",
+        "isCover": false
+      },
+      "57": {
+        "id": 14463251,
+        "name": "20240220101206.png",
+        "url": "https://sl-prod-v2-cdn.shelterluv.com/sites/default/files/animal_pics/4337/2024/02/20/10/20240220101206.png",
+        "isCover": false
+      },
+      "58": {
+        "id": 14736462,
+        "name": "20240313112527.png",
+        "url": "https://sl-prod-v2-cdn.shelterluv.com/sites/default/files/animal_pics/4337/2024/03/13/11/20240313112527.png",
+        "isCover": false
+      },
+      "59": {
+        "id": 14948783,
+        "name": "20240330134216.png",
+        "url": "https://sl-prod-v2-cdn.shelterluv.com/sites/default/files/animal_pics/4337/2024/03/30/13/20240330134216.png",
+        "isCover": false
+      },
+      "60": {
+        "id": 14948787,
+        "name": "20240330134223.png",
+        "url": "https://sl-prod-v2-cdn.shelterluv.com/sites/default/files/animal_pics/4337/2024/03/30/13/20240330134223.png",
+        "isCover": false
+      },
+      "61": {
+        "id": 14948790,
+        "name": "20240330134231.png",
+        "url": "https://sl-prod-v2-cdn.shelterluv.com/sites/default/files/animal_pics/4337/2024/03/30/13/20240330134231.png",
+        "isCover": false
+      },
+      "62": {
+        "id": 14948795,
+        "name": "20240330134240.png",
+        "url": "https://sl-prod-v2-cdn.shelterluv.com/sites/default/files/animal_pics/4337/2024/03/30/13/20240330134240.png",
+        "isCover": false
+      },
+      "63": {
+        "id": 14948798,
+        "name": "20240330134247.png",
+        "url": "https://sl-prod-v2-cdn.shelterluv.com/sites/default/files/animal_pics/4337/2024/03/30/13/20240330134247.png",
+        "isCover": false
+      },
+      "64": {
+        "id": 14755224,
+        "name": "20240314144632.png",
+        "url": "https://sl-prod-v2-cdn.shelterluv.com/sites/default/files/animal_pics/4337/2024/03/14/14/20240314144632.png",
+        "isCover": true
+      }
+    },
+    "intake_date": 1705428546,
+    "public_url": "https://www.shelterluv.com/embed/animal/CAFA-A-48913"
+  },
+  {
+    "nid": 83568848,
+    "name": "Cookie Crisp",
+    "uniqueId": "CAFA-A-49071",
+    "sex": "Female",
+    "weight": "87.2",
+    "weight_units": "lbs",
+    "weight_group": "Large (60-99 lbs)",
+    "birthday": "1485912320",
+    "age_group": "Senior ",
+    "species": "Dog",
+    "breed": "Husky",
+    "secondary_breed": null,
+    "primary_color": "White",
+    "secondary_color": "None",
+    "attributes": [
+      "Good with Dogs"
+    ],
+    "photos": {
+      "65": {
+        "id": 14230640,
+        "name": "20240201103620.png",
+        "url": "https://sl-prod-v2-cdn.shelterluv.com/sites/default/files/animal_pics/4337/2024/02/01/10/20240201103620.png",
+        "isCover": false
+      },
+      "66": {
+        "id": 14549576,
+        "name": "20240227110952.png",
+        "url": "https://sl-prod-v2-cdn.shelterluv.com/sites/default/files/animal_pics/4337/2024/02/27/11/20240227110952.png",
+        "isCover": false
+      },
+      "67": {
+        "id": 14549579,
+        "name": "20240227111001.png",
+        "url": "https://sl-prod-v2-cdn.shelterluv.com/sites/default/files/animal_pics/4337/2024/02/27/11/20240227111001.png",
+        "isCover": false
+      },
+      "68": {
+        "id": 14549590,
+        "name": "20240227111012.png",
+        "url": "https://sl-prod-v2-cdn.shelterluv.com/sites/default/files/animal_pics/4337/2024/02/27/11/20240227111012.png",
+        "isCover": false
+      },
+      "69": {
+        "id": 14230651,
+        "name": "20240201103644.png",
+        "url": "https://sl-prod-v2-cdn.shelterluv.com/sites/default/files/animal_pics/4337/2024/02/01/10/20240201103644.png",
+        "isCover": true
+      }
+    },
+    "intake_date": 1706750720,
+    "public_url": "https://www.shelterluv.com/embed/animal/CAFA-A-49071"
+  },
+  {
+    "nid": 83568911,
+    "name": "Apple Jack",
+    "uniqueId": "CAFA-A-49072",
+    "sex": "Male",
+    "weight": "75.1",
+    "weight_units": "lbs",
+    "weight_group": "Large (60-99 lbs)",
+    "birthday": "1580520536",
+    "age_group": "Adult ",
+    "species": "Dog",
+    "breed": "Husky",
+    "secondary_breed": null,
+    "primary_color": "Grey",
+    "secondary_color": "White",
+    "attributes": [
+      "Good with Dogs"
+    ],
+    "photos": {
+      "74": {
+        "id": 14228018,
+        "name": "20240201083324.png",
+        "url": "https://sl-prod-v2-cdn.shelterluv.com/sites/default/files/animal_pics/4337/2024/02/01/08/20240201083324.png",
+        "isCover": false
+      },
+      "75": {
+        "id": 14228025,
+        "name": "20240201083341.png",
+        "url": "https://sl-prod-v2-cdn.shelterluv.com/sites/default/files/animal_pics/4337/2024/02/01/08/20240201083341.png",
+        "isCover": false
+      },
+      "76": {
+        "id": 14228030,
+        "name": "20240201083352.png",
+        "url": "https://sl-prod-v2-cdn.shelterluv.com/sites/default/files/animal_pics/4337/2024/02/01/08/20240201083352.png",
+        "isCover": false
+      },
+      "77": {
+        "id": 14228032,
+        "name": "20240201083403.png",
+        "url": "https://sl-prod-v2-cdn.shelterluv.com/sites/default/files/animal_pics/4337/2024/02/01/08/20240201083403.png",
+        "isCover": false
+      },
+      "78": {
+        "id": 14228035,
+        "name": "20240201083416.png",
+        "url": "https://sl-prod-v2-cdn.shelterluv.com/sites/default/files/animal_pics/4337/2024/02/01/08/20240201083416.png",
+        "isCover": false
+      },
+      "79": {
+        "id": 14228039,
+        "name": "20240201083425.png",
+        "url": "https://sl-prod-v2-cdn.shelterluv.com/sites/default/files/animal_pics/4337/2024/02/01/08/20240201083425.png",
+        "isCover": false
+      },
+      "80": {
+        "id": 14246238,
+        "name": "20240202110507.png",
+        "url": "https://sl-prod-v2-cdn.shelterluv.com/sites/default/files/animal_pics/4337/2024/02/02/11/20240202110507.png",
+        "isCover": false
+      },
+      "81": {
+        "id": 14368634,
+        "name": "20240212122420.png",
+        "url": "https://sl-prod-v2-cdn.shelterluv.com/sites/default/files/animal_pics/4337/2024/02/12/12/20240212122420.png",
+        "isCover": false
+      },
+      "82": {
+        "id": 14465233,
+        "name": "20240220113918.png",
+        "url": "https://sl-prod-v2-cdn.shelterluv.com/sites/default/files/animal_pics/4337/2024/02/20/11/20240220113918.png",
+        "isCover": false
+      },
+      "83": {
+        "id": 14465240,
+        "name": "20240220113929.png",
+        "url": "https://sl-prod-v2-cdn.shelterluv.com/sites/default/files/animal_pics/4337/2024/02/20/11/20240220113929.png",
+        "isCover": false
+      },
+      "84": {
+        "id": 14465249,
+        "name": "20240220113940.png",
+        "url": "https://sl-prod-v2-cdn.shelterluv.com/sites/default/files/animal_pics/4337/2024/02/20/11/20240220113940.png",
+        "isCover": false
+      },
+      "85": {
+        "id": 14465254,
+        "name": "20240220113951.png",
+        "url": "https://sl-prod-v2-cdn.shelterluv.com/sites/default/files/animal_pics/4337/2024/02/20/11/20240220113951.png",
+        "isCover": false
+      },
+      "86": {
+        "id": 14465261,
+        "name": "20240220114002.png",
+        "url": "https://sl-prod-v2-cdn.shelterluv.com/sites/default/files/animal_pics/4337/2024/02/20/11/20240220114002.png",
+        "isCover": false
+      },
+      "87": {
+        "id": 14465268,
+        "name": "20240220114011.png",
+        "url": "https://sl-prod-v2-cdn.shelterluv.com/sites/default/files/animal_pics/4337/2024/02/20/11/20240220114011.png",
+        "isCover": false
+      },
+      "88": {
+        "id": 14497771,
+        "name": "20240222154254.png",
+        "url": "https://sl-prod-v2-cdn.shelterluv.com/sites/default/files/animal_pics/4337/2024/02/22/15/20240222154254.png",
+        "isCover": false
+      },
+      "89": {
+        "id": 14515072,
+        "name": "20240224083152.png",
+        "url": "https://sl-prod-v2-cdn.shelterluv.com/sites/default/files/animal_pics/4337/2024/02/24/08/20240224083152.png",
+        "isCover": false
+      },
+      "90": {
+        "id": 14515074,
+        "name": "20240224083202.png",
+        "url": "https://sl-prod-v2-cdn.shelterluv.com/sites/default/files/animal_pics/4337/2024/02/24/08/20240224083202.png",
+        "isCover": false
+      },
+      "91": {
+        "id": 14522960,
+        "name": "20240224211359.png",
+        "url": "https://sl-prod-v2-cdn.shelterluv.com/sites/default/files/animal_pics/4337/2024/02/24/21/20240224211359.png",
+        "isCover": false
+      },
+      "92": {
+        "id": 14522967,
+        "name": "20240224211516.png",
+        "url": "https://sl-prod-v2-cdn.shelterluv.com/sites/default/files/animal_pics/4337/2024/02/24/21/20240224211516.png",
+        "isCover": false
+      },
+      "93": {
+        "id": 14522975,
+        "name": "20240224211613.png",
+        "url": "https://sl-prod-v2-cdn.shelterluv.com/sites/default/files/animal_pics/4337/2024/02/24/21/20240224211613.png",
+        "isCover": false
+      },
+      "94": {
+        "id": 14737540,
+        "name": "20240313120951.png",
+        "url": "https://sl-prod-v2-cdn.shelterluv.com/sites/default/files/animal_pics/4337/2024/03/13/12/20240313120951.png",
+        "isCover": false
+      },
+      "95": {
+        "id": 14737546,
+        "name": "20240313121004.png",
+        "url": "https://sl-prod-v2-cdn.shelterluv.com/sites/default/files/animal_pics/4337/2024/03/13/12/20240313121004.png",
+        "isCover": false
+      },
+      "96": {
+        "id": 14737571,
+        "name": "20240313121101.png",
+        "url": "https://sl-prod-v2-cdn.shelterluv.com/sites/default/files/animal_pics/4337/2024/03/13/12/20240313121101.png",
+        "isCover": false
+      },
+      "97": {
+        "id": 14737574,
+        "name": "20240313121114.png",
+        "url": "https://sl-prod-v2-cdn.shelterluv.com/sites/default/files/animal_pics/4337/2024/03/13/12/20240313121114.png",
+        "isCover": false
+      },
+      "98": {
+        "id": 14737578,
+        "name": "20240313121125.png",
+        "url": "https://sl-prod-v2-cdn.shelterluv.com/sites/default/files/animal_pics/4337/2024/03/13/12/20240313121125.png",
+        "isCover": false
+      },
+      "99": {
+        "id": 14737581,
+        "name": "20240313121142.png",
+        "url": "https://sl-prod-v2-cdn.shelterluv.com/sites/default/files/animal_pics/4337/2024/03/13/12/20240313121142.png",
+        "isCover": false
+      },
+      "100": {
+        "id": 14940014,
+        "name": "20240329152720.png",
+        "url": "https://sl-prod-v2-cdn.shelterluv.com/sites/default/files/animal_pics/4337/2024/03/29/15/20240329152720.png",
+        "isCover": false
+      },
+      "101": {
+        "id": 14497779,
+        "name": "20240222154315.png",
+        "url": "https://sl-prod-v2-cdn.shelterluv.com/sites/default/files/animal_pics/4337/2024/02/22/15/20240222154315.png",
+        "isCover": true
+      }
+    },
+    "intake_date": 1706750935,
+    "public_url": "https://www.shelterluv.com/embed/animal/CAFA-A-49072"
+  },
+  {
+    "nid": 83712847,
+    "name": "Weedle",
+    "uniqueId": "CAFA-A-49142",
+    "sex": "Male",
+    "weight": "70",
+    "weight_units": "lbs",
+    "weight_group": "Large (60-99 lbs)",
+    "birthday": "1580842021",
+    "age_group": "Adult ",
+    "species": "Dog",
+    "breed": "Shepherd, Australian",
+    "secondary_breed": "Pyrenees, Great",
+    "primary_color": "Blue",
+    "secondary_color": "Tan",
+    "attributes": [],
+    "photos": {
+      "102": {
+        "id": 14742949,
+        "name": "20240313172226.png",
+        "url": "https://sl-prod-v2-cdn.shelterluv.com/sites/default/files/animal_pics/4337/2024/03/13/17/20240313172226.png",
+        "isCover": false
+      },
+      "103": {
+        "id": 14770286,
+        "name": "20240315162342.png",
+        "url": "https://sl-prod-v2-cdn.shelterluv.com/sites/default/files/animal_pics/4337/2024/03/15/16/20240315162342.png",
+        "isCover": false
+      },
+      "104": {
+        "id": 14770288,
+        "name": "20240315162350.png",
+        "url": "https://sl-prod-v2-cdn.shelterluv.com/sites/default/files/animal_pics/4337/2024/03/15/16/20240315162350.png",
+        "isCover": false
+      },
+      "105": {
+        "id": 14770302,
+        "name": "20240315162541.png",
+        "url": "https://sl-prod-v2-cdn.shelterluv.com/sites/default/files/animal_pics/4337/2024/03/15/16/20240315162541.png",
+        "isCover": false
+      },
+      "106": {
+        "id": 14770303,
+        "name": "20240315162548.png",
+        "url": "https://sl-prod-v2-cdn.shelterluv.com/sites/default/files/animal_pics/4337/2024/03/15/16/20240315162548.png",
+        "isCover": false
+      },
+      "107": {
+        "id": 14770307,
+        "name": "20240315162600.png",
+        "url": "https://sl-prod-v2-cdn.shelterluv.com/sites/default/files/animal_pics/4337/2024/03/15/16/20240315162600.png",
+        "isCover": false
+      },
+      "108": {
+        "id": 14785140,
+        "name": "20240317110023.png",
+        "url": "https://sl-prod-v2-cdn.shelterluv.com/sites/default/files/animal_pics/4337/2024/03/17/11/20240317110023.png",
+        "isCover": false
+      },
+      "109": {
+        "id": 14785144,
+        "name": "20240317110030.png",
+        "url": "https://sl-prod-v2-cdn.shelterluv.com/sites/default/files/animal_pics/4337/2024/03/17/11/20240317110030.png",
+        "isCover": false
+      },
+      "110": {
+        "id": 14785147,
+        "name": "20240317110042.png",
+        "url": "https://sl-prod-v2-cdn.shelterluv.com/sites/default/files/animal_pics/4337/2024/03/17/11/20240317110042.png",
+        "isCover": false
+      },
+      "111": {
+        "id": 14785148,
+        "name": "20240317110050.png",
+        "url": "https://sl-prod-v2-cdn.shelterluv.com/sites/default/files/animal_pics/4337/2024/03/17/11/20240317110050.png",
+        "isCover": false
+      },
+      "112": {
+        "id": 14792300,
+        "name": "20240318081456.png",
+        "url": "https://sl-prod-v2-cdn.shelterluv.com/sites/default/files/animal_pics/4337/2024/03/18/08/20240318081456.png",
+        "isCover": false
+      },
+      "113": {
+        "id": 14818972,
+        "name": "20240320084404.png",
+        "url": "https://sl-prod-v2-cdn.shelterluv.com/sites/default/files/animal_pics/4337/2024/03/20/08/20240320084404.png",
+        "isCover": false
+      },
+      "114": {
+        "id": 14351607,
+        "name": "20240210162046.png",
+        "url": "https://sl-prod-v2-cdn.shelterluv.com/sites/default/files/animal_pics/4337/2024/02/10/16/20240210162046.png",
+        "isCover": true
+      }
+    },
+    "intake_date": 1707358015,
+    "public_url": "https://www.shelterluv.com/embed/animal/CAFA-A-49142"
+  },
+  {
+    "nid": 84060395,
+    "name": "Chispita",
+    "uniqueId": "CAFA-A-49197",
+    "sex": "Female",
+    "weight": "43.3",
+    "weight_units": "lbs",
+    "weight_group": "Medium (20-59 lbs)",
+    "birthday": "1622565479",
+    "age_group": "Young Adult ",
+    "species": "Dog",
+    "breed": "Mixed Breed (Medium)",
+    "secondary_breed": "Mix",
+    "primary_color": "White",
+    "secondary_color": "Tan",
+    "attributes": [
+      "Good with Dogs"
+    ],
+    "photos": {
+      "115": {
+        "id": 14441991,
+        "name": "20240218103623.png",
+        "url": "https://sl-prod-v2-cdn.shelterluv.com/sites/default/files/animal_pics/4337/2024/02/18/10/20240218103623.png",
+        "isCover": false
+      },
+      "116": {
+        "id": 14441996,
+        "name": "20240218103637.png",
+        "url": "https://sl-prod-v2-cdn.shelterluv.com/sites/default/files/animal_pics/4337/2024/02/18/10/20240218103637.png",
+        "isCover": false
+      },
+      "117": {
+        "id": 14442008,
+        "name": "20240218103702.png",
+        "url": "https://sl-prod-v2-cdn.shelterluv.com/sites/default/files/animal_pics/4337/2024/02/18/10/20240218103702.png",
+        "isCover": false
+      },
+      "118": {
+        "id": 14538367,
+        "name": "20240226125554.png",
+        "url": "https://sl-prod-v2-cdn.shelterluv.com/sites/default/files/animal_pics/4337/2024/02/26/12/20240226125554.png",
+        "isCover": false
+      },
+      "119": {
+        "id": 14538498,
+        "name": "20240226130225.png",
+        "url": "https://sl-prod-v2-cdn.shelterluv.com/sites/default/files/animal_pics/4337/2024/02/26/13/20240226130225.png",
+        "isCover": false
+      },
+      "120": {
+        "id": 14538979,
+        "name": "20240226132434.png",
+        "url": "https://sl-prod-v2-cdn.shelterluv.com/sites/default/files/animal_pics/4337/2024/02/26/13/20240226132434.png",
+        "isCover": false
+      },
+      "121": {
+        "id": 14539004,
+        "name": "20240226132538.png",
+        "url": "https://sl-prod-v2-cdn.shelterluv.com/sites/default/files/animal_pics/4337/2024/02/26/13/20240226132538.png",
+        "isCover": false
+      },
+      "122": {
+        "id": 14574678,
+        "name": "20240229082503.png",
+        "url": "https://sl-prod-v2-cdn.shelterluv.com/sites/default/files/animal_pics/4337/2024/02/29/08/20240229082503.png",
+        "isCover": false
+      },
+      "123": {
+        "id": 14657076,
+        "name": "20240306170504.png",
+        "url": "https://sl-prod-v2-cdn.shelterluv.com/sites/default/files/animal_pics/4337/2024/03/06/17/20240306170504.png",
+        "isCover": false
+      },
+      "124": {
+        "id": 14657077,
+        "name": "20240306170510.png",
+        "url": "https://sl-prod-v2-cdn.shelterluv.com/sites/default/files/animal_pics/4337/2024/03/06/17/20240306170510.png",
+        "isCover": false
+      },
+      "125": {
+        "id": 14657081,
+        "name": "20240306170523.png",
+        "url": "https://sl-prod-v2-cdn.shelterluv.com/sites/default/files/animal_pics/4337/2024/03/06/17/20240306170523.png",
+        "isCover": false
+      },
+      "126": {
+        "id": 14657083,
+        "name": "20240306170532.png",
+        "url": "https://sl-prod-v2-cdn.shelterluv.com/sites/default/files/animal_pics/4337/2024/03/06/17/20240306170532.png",
+        "isCover": false
+      },
+      "127": {
+        "id": 14711919,
+        "name": "20240311130311.png",
+        "url": "https://sl-prod-v2-cdn.shelterluv.com/sites/default/files/animal_pics/4337/2024/03/11/13/20240311130311.png",
+        "isCover": false
+      },
+      "128": {
+        "id": 14746621,
+        "name": "20240314080642.png",
+        "url": "https://sl-prod-v2-cdn.shelterluv.com/sites/default/files/animal_pics/4337/2024/03/14/08/20240314080642.png",
+        "isCover": false
+      },
+      "129": {
+        "id": 14746622,
+        "name": "20240314080650.png",
+        "url": "https://sl-prod-v2-cdn.shelterluv.com/sites/default/files/animal_pics/4337/2024/03/14/08/20240314080650.png",
+        "isCover": false
+      },
+      "130": {
+        "id": 14746623,
+        "name": "20240314080654.png",
+        "url": "https://sl-prod-v2-cdn.shelterluv.com/sites/default/files/animal_pics/4337/2024/03/14/08/20240314080654.png",
+        "isCover": false
+      },
+      "131": {
+        "id": 14746627,
+        "name": "20240314080701.png",
+        "url": "https://sl-prod-v2-cdn.shelterluv.com/sites/default/files/animal_pics/4337/2024/03/14/08/20240314080701.png",
+        "isCover": false
+      },
+      "132": {
+        "id": 14746632,
+        "name": "20240314080709.png",
+        "url": "https://sl-prod-v2-cdn.shelterluv.com/sites/default/files/animal_pics/4337/2024/03/14/08/20240314080709.png",
+        "isCover": false
+      },
+      "133": {
+        "id": 14755924,
+        "name": "20240314152435.png",
+        "url": "https://sl-prod-v2-cdn.shelterluv.com/sites/default/files/animal_pics/4337/2024/03/14/15/20240314152435.png",
+        "isCover": false
+      },
+      "134": {
+        "id": 14755930,
+        "name": "20240314152456.png",
+        "url": "https://sl-prod-v2-cdn.shelterluv.com/sites/default/files/animal_pics/4337/2024/03/14/15/20240314152456.png",
+        "isCover": false
+      },
+      "135": {
+        "id": 14770247,
+        "name": "20240315161935.png",
+        "url": "https://sl-prod-v2-cdn.shelterluv.com/sites/default/files/animal_pics/4337/2024/03/15/16/20240315161935.png",
+        "isCover": false
+      },
+      "136": {
+        "id": 14770250,
+        "name": "20240315161942.png",
+        "url": "https://sl-prod-v2-cdn.shelterluv.com/sites/default/files/animal_pics/4337/2024/03/15/16/20240315161942.png",
+        "isCover": false
+      },
+      "137": {
+        "id": 14770270,
+        "name": "20240315162142.png",
+        "url": "https://sl-prod-v2-cdn.shelterluv.com/sites/default/files/animal_pics/4337/2024/03/15/16/20240315162142.png",
+        "isCover": false
+      },
+      "138": {
+        "id": 14797993,
+        "name": "20240318134610.png",
+        "url": "https://sl-prod-v2-cdn.shelterluv.com/sites/default/files/animal_pics/4337/2024/03/18/13/20240318134610.png",
+        "isCover": false
+      },
+      "139": {
+        "id": 14797994,
+        "name": "20240318134614.png",
+        "url": "https://sl-prod-v2-cdn.shelterluv.com/sites/default/files/animal_pics/4337/2024/03/18/13/20240318134614.png",
+        "isCover": false
+      },
+      "140": {
+        "id": 14797995,
+        "name": "20240318134617.png",
+        "url": "https://sl-prod-v2-cdn.shelterluv.com/sites/default/files/animal_pics/4337/2024/03/18/13/20240318134617.png",
+        "isCover": false
+      },
+      "141": {
+        "id": 14797998,
+        "name": "20240318134621.png",
+        "url": "https://sl-prod-v2-cdn.shelterluv.com/sites/default/files/animal_pics/4337/2024/03/18/13/20240318134621.png",
+        "isCover": false
+      },
+      "142": {
+        "id": 14798000,
+        "name": "20240318134629.png",
+        "url": "https://sl-prod-v2-cdn.shelterluv.com/sites/default/files/animal_pics/4337/2024/03/18/13/20240318134629.png",
+        "isCover": false
+      },
+      "143": {
+        "id": 14798003,
+        "name": "20240318134633.png",
+        "url": "https://sl-prod-v2-cdn.shelterluv.com/sites/default/files/animal_pics/4337/2024/03/18/13/20240318134633.png",
+        "isCover": false
+      },
+      "144": {
+        "id": 14798004,
+        "name": "20240318134637.png",
+        "url": "https://sl-prod-v2-cdn.shelterluv.com/sites/default/files/animal_pics/4337/2024/03/18/13/20240318134637.png",
+        "isCover": false
+      },
+      "145": {
+        "id": 14798005,
+        "name": "20240318134640.png",
+        "url": "https://sl-prod-v2-cdn.shelterluv.com/sites/default/files/animal_pics/4337/2024/03/18/13/20240318134640.png",
+        "isCover": false
+      },
+      "146": {
+        "id": 14798006,
+        "name": "20240318134643.png",
+        "url": "https://sl-prod-v2-cdn.shelterluv.com/sites/default/files/animal_pics/4337/2024/03/18/13/20240318134643.png",
+        "isCover": false
+      },
+      "147": {
+        "id": 14833014,
+        "name": "20240321084827.png",
+        "url": "https://sl-prod-v2-cdn.shelterluv.com/sites/default/files/animal_pics/4337/2024/03/21/08/20240321084827.png",
+        "isCover": false
+      },
+      "148": {
+        "id": 14871771,
+        "name": "20240324132230.png",
+        "url": "https://sl-prod-v2-cdn.shelterluv.com/sites/default/files/animal_pics/4337/2024/03/24/13/20240324132230.png",
+        "isCover": false
+      },
+      "149": {
+        "id": 14871773,
+        "name": "20240324132237.png",
+        "url": "https://sl-prod-v2-cdn.shelterluv.com/sites/default/files/animal_pics/4337/2024/03/24/13/20240324132237.png",
+        "isCover": false
+      },
+      "150": {
+        "id": 14871778,
+        "name": "20240324132244.png",
+        "url": "https://sl-prod-v2-cdn.shelterluv.com/sites/default/files/animal_pics/4337/2024/03/24/13/20240324132244.png",
+        "isCover": false
+      },
+      "151": {
+        "id": 14871779,
+        "name": "20240324132253.png",
+        "url": "https://sl-prod-v2-cdn.shelterluv.com/sites/default/files/animal_pics/4337/2024/03/24/13/20240324132253.png",
+        "isCover": false
+      },
+      "152": {
+        "id": 14871781,
+        "name": "20240324132300.png",
+        "url": "https://sl-prod-v2-cdn.shelterluv.com/sites/default/files/animal_pics/4337/2024/03/24/13/20240324132300.png",
+        "isCover": false
+      },
+      "153": {
+        "id": 14890677,
+        "name": "20240326084835.png",
+        "url": "https://sl-prod-v2-cdn.shelterluv.com/sites/default/files/animal_pics/4337/2024/03/26/08/20240326084835.png",
+        "isCover": false
+      },
+      "154": {
+        "id": 14890709,
+        "name": "20240326085000.png",
+        "url": "https://sl-prod-v2-cdn.shelterluv.com/sites/default/files/animal_pics/4337/2024/03/26/08/20240326085000.png",
+        "isCover": false
+      },
+      "155": {
+        "id": 14890723,
+        "name": "20240326085101.png",
+        "url": "https://sl-prod-v2-cdn.shelterluv.com/sites/default/files/animal_pics/4337/2024/03/26/08/20240326085101.png",
+        "isCover": false
+      },
+      "156": {
+        "id": 14890740,
+        "name": "20240326085214.png",
+        "url": "https://sl-prod-v2-cdn.shelterluv.com/sites/default/files/animal_pics/4337/2024/03/26/08/20240326085214.png",
+        "isCover": false
+      },
+      "157": {
+        "id": 14890790,
+        "name": "20240326085507.png",
+        "url": "https://sl-prod-v2-cdn.shelterluv.com/sites/default/files/animal_pics/4337/2024/03/26/08/20240326085507.png",
+        "isCover": false
+      },
+      "158": {
+        "id": 14905403,
+        "name": "20240327093220.png",
+        "url": "https://sl-prod-v2-cdn.shelterluv.com/sites/default/files/animal_pics/4337/2024/03/27/09/20240327093220.png",
+        "isCover": false
+      },
+      "159": {
+        "id": 14927216,
+        "name": "20240328152934.png",
+        "url": "https://sl-prod-v2-cdn.shelterluv.com/sites/default/files/animal_pics/4337/2024/03/28/15/20240328152934.png",
+        "isCover": false
+      },
+      "160": {
+        "id": 15026046,
+        "name": "20240406081610.png",
+        "url": "https://sl-prod-v2-cdn.shelterluv.com/sites/default/files/animal_pics/4337/2024/04/06/08/20240406081610.png",
+        "isCover": false
+      },
+      "161": {
+        "id": 15026050,
+        "name": "20240406081620.png",
+        "url": "https://sl-prod-v2-cdn.shelterluv.com/sites/default/files/animal_pics/4337/2024/04/06/08/20240406081620.png",
+        "isCover": false
+      },
+      "162": {
+        "id": 15026054,
+        "name": "20240406081626.png",
+        "url": "https://sl-prod-v2-cdn.shelterluv.com/sites/default/files/animal_pics/4337/2024/04/06/08/20240406081626.png",
+        "isCover": false
+      },
+      "163": {
+        "id": 15026056,
+        "name": "20240406081634.png",
+        "url": "https://sl-prod-v2-cdn.shelterluv.com/sites/default/files/animal_pics/4337/2024/04/06/08/20240406081634.png",
+        "isCover": false
+      },
+      "164": {
+        "id": 15026060,
+        "name": "20240406081642.png",
+        "url": "https://sl-prod-v2-cdn.shelterluv.com/sites/default/files/animal_pics/4337/2024/04/06/08/20240406081642.png",
+        "isCover": false
+      },
+      "165": {
+        "id": 14905398,
+        "name": "20240327093208.png",
+        "url": "https://sl-prod-v2-cdn.shelterluv.com/sites/default/files/animal_pics/4337/2024/03/27/09/20240327093208.png",
+        "isCover": true
+      }
+    },
+    "intake_date": 1707845879,
+    "public_url": "https://www.shelterluv.com/embed/animal/CAFA-A-49197"
+  },
+  {
+    "nid": 84338882,
+    "name": "Dorchester",
+    "uniqueId": "CAFA-A-49252",
+    "sex": "Male",
+    "weight": "38.6",
+    "weight_units": "lbs",
+    "weight_group": "Medium (20-59 lbs)",
+    "birthday": "1687282384",
+    "age_group": "Juvenile ",
+    "species": "Dog",
+    "breed": "Shepherd",
+    "secondary_breed": "Mix",
+    "primary_color": "Black",
+    "secondary_color": "Tan",
+    "attributes": [
+      "Good with Dogs"
+    ],
+    "photos": {
+      "166": {
+        "id": 14463831,
+        "name": "20240220103557.png",
+        "url": "https://sl-prod-v2-cdn.shelterluv.com/sites/default/files/animal_pics/4337/2024/02/20/10/20240220103557.png",
+        "isCover": false
+      },
+      "167": {
+        "id": 14488248,
+        "name": "20240222080524.png",
+        "url": "https://sl-prod-v2-cdn.shelterluv.com/sites/default/files/animal_pics/4337/2024/02/22/08/20240222080524.png",
+        "isCover": false
+      },
+      "168": {
+        "id": 14488252,
+        "name": "20240222080537.png",
+        "url": "https://sl-prod-v2-cdn.shelterluv.com/sites/default/files/animal_pics/4337/2024/02/22/08/20240222080537.png",
+        "isCover": false
+      },
+      "169": {
+        "id": 14530986,
+        "name": "20240225201943.png",
+        "url": "https://sl-prod-v2-cdn.shelterluv.com/sites/default/files/animal_pics/4337/2024/02/25/20/20240225201943.png",
+        "isCover": false
+      },
+      "170": {
+        "id": 14530991,
+        "name": "20240225202028.png",
+        "url": "https://sl-prod-v2-cdn.shelterluv.com/sites/default/files/animal_pics/4337/2024/02/25/20/20240225202028.png",
+        "isCover": false
+      },
+      "171": {
+        "id": 14530998,
+        "name": "20240225202115.png",
+        "url": "https://sl-prod-v2-cdn.shelterluv.com/sites/default/files/animal_pics/4337/2024/02/25/20/20240225202115.png",
+        "isCover": false
+      },
+      "172": {
+        "id": 14531008,
+        "name": "20240225202220.png",
+        "url": "https://sl-prod-v2-cdn.shelterluv.com/sites/default/files/animal_pics/4337/2024/02/25/20/20240225202220.png",
+        "isCover": false
+      },
+      "173": {
+        "id": 14531012,
+        "name": "20240225202319.png",
+        "url": "https://sl-prod-v2-cdn.shelterluv.com/sites/default/files/animal_pics/4337/2024/02/25/20/20240225202319.png",
+        "isCover": false
+      },
+      "174": {
+        "id": 14926126,
+        "name": "20240328142023.png",
+        "url": "https://sl-prod-v2-cdn.shelterluv.com/sites/default/files/animal_pics/4337/2024/03/28/14/20240328142023.png",
+        "isCover": false
+      },
+      "175": {
+        "id": 14926134,
+        "name": "20240328142030.png",
+        "url": "https://sl-prod-v2-cdn.shelterluv.com/sites/default/files/animal_pics/4337/2024/03/28/14/20240328142030.png",
+        "isCover": false
+      },
+      "176": {
+        "id": 14926142,
+        "name": "20240328142041.png",
+        "url": "https://sl-prod-v2-cdn.shelterluv.com/sites/default/files/animal_pics/4337/2024/03/28/14/20240328142041.png",
+        "isCover": false
+      },
+      "177": {
+        "id": 14933103,
+        "name": "20240329090813.png",
+        "url": "https://sl-prod-v2-cdn.shelterluv.com/sites/default/files/animal_pics/4337/2024/03/29/09/20240329090813.png",
+        "isCover": false
+      },
+      "178": {
+        "id": 14933114,
+        "name": "20240329090839.png",
+        "url": "https://sl-prod-v2-cdn.shelterluv.com/sites/default/files/animal_pics/4337/2024/03/29/09/20240329090839.png",
+        "isCover": false
+      },
+      "179": {
+        "id": 14933120,
+        "name": "20240329090904.png",
+        "url": "https://sl-prod-v2-cdn.shelterluv.com/sites/default/files/animal_pics/4337/2024/03/29/09/20240329090904.png",
+        "isCover": false
+      },
+      "180": {
+        "id": 14933117,
+        "name": "20240329090851.png",
+        "url": "https://sl-prod-v2-cdn.shelterluv.com/sites/default/files/animal_pics/4337/2024/03/29/09/20240329090851.png",
+        "isCover": true
+      }
+    },
+    "intake_date": 1708447329,
+    "public_url": "https://www.shelterluv.com/embed/animal/CAFA-A-49252"
+  },
+  {
+    "nid": 84880418,
+    "name": "Dora",
+    "uniqueId": "CAFA-A-49311",
+    "sex": "Female",
+    "weight": "42",
+    "weight_units": "lbs",
+    "weight_group": "Medium (20-59 lbs)",
+    "birthday": "1671557141",
+    "age_group": "Young Adult ",
+    "species": "Dog",
+    "breed": "Shepherd",
+    "secondary_breed": "Mix",
+    "primary_color": "Tan",
+    "secondary_color": "Black",
+    "attributes": [
+      "Good with Dogs"
+    ],
+    "photos": {
+      "181": {
+        "id": 14603870,
+        "name": "20240302120949.png",
+        "url": "https://sl-prod-v2-cdn.shelterluv.com/sites/default/files/animal_pics/4337/2024/03/02/12/20240302120949.png",
+        "isCover": false
+      },
+      "182": {
+        "id": 14603884,
+        "name": "20240302121035.png",
+        "url": "https://sl-prod-v2-cdn.shelterluv.com/sites/default/files/animal_pics/4337/2024/03/02/12/20240302121035.png",
+        "isCover": false
+      },
+      "183": {
+        "id": 14603897,
+        "name": "20240302121125.png",
+        "url": "https://sl-prod-v2-cdn.shelterluv.com/sites/default/files/animal_pics/4337/2024/03/02/12/20240302121125.png",
+        "isCover": false
+      },
+      "184": {
+        "id": 14619800,
+        "name": "20240304083011.png",
+        "url": "https://sl-prod-v2-cdn.shelterluv.com/sites/default/files/animal_pics/4337/2024/03/04/08/20240304083011.png",
+        "isCover": false
+      },
+      "185": {
+        "id": 14619809,
+        "name": "20240304083042.png",
+        "url": "https://sl-prod-v2-cdn.shelterluv.com/sites/default/files/animal_pics/4337/2024/03/04/08/20240304083042.png",
+        "isCover": false
+      },
+      "186": {
+        "id": 14619975,
+        "name": "20240304084212.png",
+        "url": "https://sl-prod-v2-cdn.shelterluv.com/sites/default/files/animal_pics/4337/2024/03/04/08/20240304084212.png",
+        "isCover": false
+      },
+      "187": {
+        "id": 14732725,
+        "name": "20240313081719.png",
+        "url": "https://sl-prod-v2-cdn.shelterluv.com/sites/default/files/animal_pics/4337/2024/03/13/08/20240313081719.png",
+        "isCover": false
+      },
+      "188": {
+        "id": 14753949,
+        "name": "20240314134027.png",
+        "url": "https://sl-prod-v2-cdn.shelterluv.com/sites/default/files/animal_pics/4337/2024/03/14/13/20240314134027.png",
+        "isCover": false
+      },
+      "189": {
+        "id": 14753953,
+        "name": "20240314134039.png",
+        "url": "https://sl-prod-v2-cdn.shelterluv.com/sites/default/files/animal_pics/4337/2024/03/14/13/20240314134039.png",
+        "isCover": false
+      },
+      "190": {
+        "id": 14818756,
+        "name": "20240320083412.png",
+        "url": "https://sl-prod-v2-cdn.shelterluv.com/sites/default/files/animal_pics/4337/2024/03/20/08/20240320083412.png",
+        "isCover": false
+      },
+      "191": {
+        "id": 14818759,
+        "name": "20240320083422.png",
+        "url": "https://sl-prod-v2-cdn.shelterluv.com/sites/default/files/animal_pics/4337/2024/03/20/08/20240320083422.png",
+        "isCover": false
+      },
+      "192": {
+        "id": 14818765,
+        "name": "20240320083439.png",
+        "url": "https://sl-prod-v2-cdn.shelterluv.com/sites/default/files/animal_pics/4337/2024/03/20/08/20240320083439.png",
+        "isCover": false
+      },
+      "193": {
+        "id": 14840429,
+        "name": "20240321142000.png",
+        "url": "https://sl-prod-v2-cdn.shelterluv.com/sites/default/files/animal_pics/4337/2024/03/21/14/20240321142000.png",
+        "isCover": false
+      },
+      "194": {
+        "id": 14840432,
+        "name": "20240321142015.png",
+        "url": "https://sl-prod-v2-cdn.shelterluv.com/sites/default/files/animal_pics/4337/2024/03/21/14/20240321142015.png",
+        "isCover": false
+      },
+      "195": {
+        "id": 14840437,
+        "name": "20240321142034.png",
+        "url": "https://sl-prod-v2-cdn.shelterluv.com/sites/default/files/animal_pics/4337/2024/03/21/14/20240321142034.png",
+        "isCover": false
+      },
+      "196": {
+        "id": 15017883,
+        "name": "20240405120429.png",
+        "url": "https://sl-prod-v2-cdn.shelterluv.com/sites/default/files/animal_pics/4337/2024/04/05/12/20240405120429.png",
+        "isCover": false
+      },
+      "197": {
+        "id": 15017894,
+        "name": "20240405120446.png",
+        "url": "https://sl-prod-v2-cdn.shelterluv.com/sites/default/files/animal_pics/4337/2024/04/05/12/20240405120446.png",
+        "isCover": false
+      },
+      "198": {
+        "id": 15017897,
+        "name": "20240405120457.png",
+        "url": "https://sl-prod-v2-cdn.shelterluv.com/sites/default/files/animal_pics/4337/2024/04/05/12/20240405120457.png",
+        "isCover": false
+      },
+      "199": {
+        "id": 15017903,
+        "name": "20240405120507.png",
+        "url": "https://sl-prod-v2-cdn.shelterluv.com/sites/default/files/animal_pics/4337/2024/04/05/12/20240405120507.png",
+        "isCover": false
+      },
+      "200": {
+        "id": 15017908,
+        "name": "20240405120514.png",
+        "url": "https://sl-prod-v2-cdn.shelterluv.com/sites/default/files/animal_pics/4337/2024/04/05/12/20240405120514.png",
+        "isCover": false
+      },
+      "201": {
+        "id": 15021733,
+        "name": "20240405152013.png",
+        "url": "https://sl-prod-v2-cdn.shelterluv.com/sites/default/files/animal_pics/4337/2024/04/05/15/20240405152013.png",
+        "isCover": false
+      },
+      "202": {
+        "id": 14604010,
+        "name": "20240302121645.png",
+        "url": "https://sl-prod-v2-cdn.shelterluv.com/sites/default/files/animal_pics/4337/2024/03/02/12/20240302121645.png",
+        "isCover": true
+      }
+    },
+    "intake_date": 1711902341,
+    "public_url": "https://www.shelterluv.com/embed/animal/CAFA-A-49311"
+  },
+  {
+    "nid": 85489823,
+    "name": "Chinese Hot Mustard",
+    "uniqueId": "CAFA-A-49414",
+    "sex": "Female",
+    "weight": "12.5",
+    "weight_units": "lbs",
+    "weight_group": "Small (1-19 lbs)",
+    "birthday": "1647105593",
+    "age_group": "Young Adult ",
+    "species": "Dog",
+    "breed": "Chihuahua",
+    "secondary_breed": "Dachshund",
+    "primary_color": "Tan",
+    "secondary_color": "None",
+    "attributes": [
+      "Good with Dogs"
+    ],
+    "photos": {
+      "203": {
+        "id": 14753109,
+        "name": "20240314130434.png",
+        "url": "https://sl-prod-v2-cdn.shelterluv.com/sites/default/files/animal_pics/4337/2024/03/14/13/20240314130434.png",
+        "isCover": false
+      },
+      "204": {
+        "id": 14793461,
+        "name": "20240318092732.png",
+        "url": "https://sl-prod-v2-cdn.shelterluv.com/sites/default/files/animal_pics/4337/2024/03/18/09/20240318092732.png",
+        "isCover": false
+      },
+      "205": {
+        "id": 14793462,
+        "name": "20240318092745.png",
+        "url": "https://sl-prod-v2-cdn.shelterluv.com/sites/default/files/animal_pics/4337/2024/03/18/09/20240318092745.png",
+        "isCover": false
+      },
+      "206": {
+        "id": 14883703,
+        "name": "20240325141652.png",
+        "url": "https://sl-prod-v2-cdn.shelterluv.com/sites/default/files/animal_pics/4337/2024/03/25/14/20240325141652.png",
+        "isCover": false
+      },
+      "207": {
+        "id": 14883706,
+        "name": "20240325141704.png",
+        "url": "https://sl-prod-v2-cdn.shelterluv.com/sites/default/files/animal_pics/4337/2024/03/25/14/20240325141704.png",
+        "isCover": false
+      },
+      "208": {
+        "id": 14883701,
+        "name": "20240325141643.png",
+        "url": "https://sl-prod-v2-cdn.shelterluv.com/sites/default/files/animal_pics/4337/2024/03/25/14/20240325141643.png",
+        "isCover": true
+      }
+    },
+    "intake_date": 1710260393,
+    "public_url": "https://www.shelterluv.com/embed/animal/CAFA-A-49414"
+  },
+  {
+    "nid": 85629862,
+    "name": "Cesar",
+    "uniqueId": "CAFA-A-49429",
+    "sex": "Male",
+    "weight": "35.8",
+    "weight_units": "lbs",
+    "weight_group": "Medium (20-59 lbs)",
+    "birthday": "1697214298",
+    "age_group": "Juvenile ",
+    "species": "Dog",
+    "breed": "Shepherd",
+    "secondary_breed": "Mix",
+    "primary_color": "Tan",
+    "secondary_color": "Black",
+    "attributes": [],
+    "photos": {
+      "209": {
+        "id": 14793396,
+        "name": "20240318092431.png",
+        "url": "https://sl-prod-v2-cdn.shelterluv.com/sites/default/files/animal_pics/4337/2024/03/18/09/20240318092431.png",
+        "isCover": false
+      },
+      "210": {
+        "id": 14793399,
+        "name": "20240318092445.png",
+        "url": "https://sl-prod-v2-cdn.shelterluv.com/sites/default/files/animal_pics/4337/2024/03/18/09/20240318092445.png",
+        "isCover": false
+      },
+      "211": {
+        "id": 14793406,
+        "name": "20240318092502.png",
+        "url": "https://sl-prod-v2-cdn.shelterluv.com/sites/default/files/animal_pics/4337/2024/03/18/09/20240318092502.png",
+        "isCover": false
+      },
+      "212": {
+        "id": 14793412,
+        "name": "20240318092519.png",
+        "url": "https://sl-prod-v2-cdn.shelterluv.com/sites/default/files/animal_pics/4337/2024/03/18/09/20240318092519.png",
+        "isCover": false
+      },
+      "213": {
+        "id": 14967818,
+        "name": "20240401151519.png",
+        "url": "https://sl-prod-v2-cdn.shelterluv.com/sites/default/files/animal_pics/4337/2024/04/01/15/20240401151519.png",
+        "isCover": false
+      },
+      "214": {
+        "id": 14793394,
+        "name": "20240318092421.png",
+        "url": "https://sl-prod-v2-cdn.shelterluv.com/sites/default/files/animal_pics/4337/2024/03/18/09/20240318092421.png",
+        "isCover": true
+      }
+    },
+    "intake_date": 1710519898,
+    "public_url": "https://www.shelterluv.com/embed/animal/CAFA-A-49429"
+  },
+  {
+    "nid": 85863507,
+    "name": "Macey",
+    "uniqueId": "CAFA-A-49522",
+    "sex": "Female",
+    "weight": "51.1",
+    "weight_units": "lbs",
+    "weight_group": "Medium (20-59 lbs)",
+    "birthday": "1616344944",
+    "age_group": "Adult ",
+    "species": "Dog",
+    "breed": "Retriever, Labrador",
+    "secondary_breed": "Mix",
+    "primary_color": "Brown",
+    "secondary_color": "White",
+    "attributes": [
+      "Good with Dogs",
+      "House Trained"
+    ],
+    "photos": {
+      "215": {
+        "id": 14854590,
+        "name": "20240322152216.png",
+        "url": "https://sl-prod-v2-cdn.shelterluv.com/sites/default/files/animal_pics/4337/2024/03/22/15/20240322152216.png",
+        "isCover": false
+      },
+      "216": {
+        "id": 14866451,
+        "name": "20240323193637.png",
+        "url": "https://sl-prod-v2-cdn.shelterluv.com/sites/default/files/animal_pics/4337/2024/03/23/19/20240323193637.png",
+        "isCover": false
+      },
+      "217": {
+        "id": 14866453,
+        "name": "20240323193652.png",
+        "url": "https://sl-prod-v2-cdn.shelterluv.com/sites/default/files/animal_pics/4337/2024/03/23/19/20240323193652.png",
+        "isCover": false
+      },
+      "218": {
+        "id": 14866455,
+        "name": "20240323193706.png",
+        "url": "https://sl-prod-v2-cdn.shelterluv.com/sites/default/files/animal_pics/4337/2024/03/23/19/20240323193706.png",
+        "isCover": false
+      },
+      "219": {
+        "id": 14927255,
+        "name": "20240328153122.png",
+        "url": "https://sl-prod-v2-cdn.shelterluv.com/sites/default/files/animal_pics/4337/2024/03/28/15/20240328153122.png",
+        "isCover": false
+      },
+      "220": {
+        "id": 14927249,
+        "name": "20240328153103.png",
+        "url": "https://sl-prod-v2-cdn.shelterluv.com/sites/default/files/animal_pics/4337/2024/03/28/15/20240328153103.png",
+        "isCover": true
+      }
+    },
+    "intake_date": 1711039344,
+    "public_url": "https://www.shelterluv.com/embed/animal/CAFA-A-49522"
+  },
+  {
+    "nid": 85908925,
+    "name": "Whirlpool",
+    "uniqueId": "CAFA-A-49528",
+    "sex": "Female",
+    "weight": "48",
+    "weight_units": "lbs",
+    "weight_group": "Medium (20-59 lbs)",
+    "birthday": "1647967577",
+    "age_group": "Young Adult ",
+    "species": "Dog",
+    "breed": "Retriever, Labrador",
+    "secondary_breed": "Mixed Breed (Medium)",
+    "primary_color": "Tan",
+    "secondary_color": "White",
+    "attributes": [],
+    "photos": {
+      "221": {
+        "id": 14854546,
+        "name": "20240322151803.png",
+        "url": "https://sl-prod-v2-cdn.shelterluv.com/sites/default/files/animal_pics/4337/2024/03/22/15/20240322151803.png",
+        "isCover": false
+      },
+      "222": {
+        "id": 14866467,
+        "name": "20240323193846.png",
+        "url": "https://sl-prod-v2-cdn.shelterluv.com/sites/default/files/animal_pics/4337/2024/03/23/19/20240323193846.png",
+        "isCover": false
+      },
+      "223": {
+        "id": 14866471,
+        "name": "20240323193903.png",
+        "url": "https://sl-prod-v2-cdn.shelterluv.com/sites/default/files/animal_pics/4337/2024/03/23/19/20240323193903.png",
+        "isCover": false
+      },
+      "224": {
+        "id": 15026067,
+        "name": "20240406081716.png",
+        "url": "https://sl-prod-v2-cdn.shelterluv.com/sites/default/files/animal_pics/4337/2024/04/06/08/20240406081716.png",
+        "isCover": false
+      },
+      "225": {
+        "id": 15026069,
+        "name": "20240406081724.png",
+        "url": "https://sl-prod-v2-cdn.shelterluv.com/sites/default/files/animal_pics/4337/2024/04/06/08/20240406081724.png",
+        "isCover": false
+      },
+      "226": {
+        "id": 15026076,
+        "name": "20240406081734.png",
+        "url": "https://sl-prod-v2-cdn.shelterluv.com/sites/default/files/animal_pics/4337/2024/04/06/08/20240406081734.png",
+        "isCover": false
+      },
+      "227": {
+        "id": 14854550,
+        "name": "20240322151827.png",
+        "url": "https://sl-prod-v2-cdn.shelterluv.com/sites/default/files/animal_pics/4337/2024/03/22/15/20240322151827.png",
+        "isCover": true
+      }
+    },
+    "intake_date": 1711125977,
+    "public_url": "https://www.shelterluv.com/embed/animal/CAFA-A-49528"
+  },
+  {
+    "nid": 86167871,
+    "name": "Orion's Belt",
+    "uniqueId": "CAFA-A-49566",
+    "sex": "Male",
+    "weight": "35",
+    "weight_units": "lbs",
+    "weight_group": "Medium (20-59 lbs)",
+    "birthday": "1693242848",
+    "age_group": "Juvenile ",
+    "species": "Dog",
+    "breed": "Shepherd",
+    "secondary_breed": "Mix",
+    "primary_color": "Tan",
+    "secondary_color": "Black",
+    "attributes": [],
+    "photos": {
+      "228": {
+        "id": 14949343,
+        "name": "20240330141854.png",
+        "url": "https://sl-prod-v2-cdn.shelterluv.com/sites/default/files/animal_pics/4337/2024/03/30/14/20240330141854.png",
+        "isCover": false
+      },
+      "229": {
+        "id": 14949357,
+        "name": "20240330141928.png",
+        "url": "https://sl-prod-v2-cdn.shelterluv.com/sites/default/files/animal_pics/4337/2024/03/30/14/20240330141928.png",
+        "isCover": false
+      },
+      "230": {
+        "id": 14949369,
+        "name": "20240330141950.png",
+        "url": "https://sl-prod-v2-cdn.shelterluv.com/sites/default/files/animal_pics/4337/2024/03/30/14/20240330141950.png",
+        "isCover": false
+      },
+      "231": {
+        "id": 14973371,
+        "name": "20240402085926.png",
+        "url": "https://sl-prod-v2-cdn.shelterluv.com/sites/default/files/animal_pics/4337/2024/04/02/08/20240402085926.png",
+        "isCover": false
+      },
+      "232": {
+        "id": 14973387,
+        "name": "20240402090036.png",
+        "url": "https://sl-prod-v2-cdn.shelterluv.com/sites/default/files/animal_pics/4337/2024/04/02/09/20240402090036.png",
+        "isCover": false
+      },
+      "233": {
+        "id": 14993619,
+        "name": "20240403134836.png",
+        "url": "https://sl-prod-v2-cdn.shelterluv.com/sites/default/files/animal_pics/4337/2024/04/03/13/20240403134836.png",
+        "isCover": true
+      }
+    },
+    "intake_date": 1711646048,
+    "public_url": "https://www.shelterluv.com/embed/animal/CAFA-A-49566"
+  },
+  {
+    "nid": 86167951,
+    "name": "Pickett",
+    "uniqueId": "CAFA-A-49567",
+    "sex": "Male",
+    "weight": "38.3",
+    "weight_units": "lbs",
+    "weight_group": "Medium (20-59 lbs)",
+    "birthday": "1680023726",
+    "age_group": "Young Adult ",
+    "species": "Dog",
+    "breed": "Retriever, Labrador",
+    "secondary_breed": "Mix",
+    "primary_color": "Tan",
+    "secondary_color": "",
+    "attributes": [
+      "Good with Dogs"
+    ],
+    "photos": {
+      "234": {
+        "id": 14950018,
+        "name": "20240330145940.png",
+        "url": "https://sl-prod-v2-cdn.shelterluv.com/sites/default/files/animal_pics/4337/2024/03/30/14/20240330145940.png",
+        "isCover": false
+      },
+      "235": {
+        "id": 14950043,
+        "name": "20240330150113.png",
+        "url": "https://sl-prod-v2-cdn.shelterluv.com/sites/default/files/animal_pics/4337/2024/03/30/15/20240330150113.png",
+        "isCover": true
+      }
+    },
+    "intake_date": 1711646126,
+    "public_url": "https://www.shelterluv.com/embed/animal/CAFA-A-49567"
+  }
+]

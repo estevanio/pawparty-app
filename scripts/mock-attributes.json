@@ -1,0 +1,62 @@
+[
+  {
+    "animal_id": "CAFA-A-48449",
+    "attribute": "Crate trained"
+  },
+  {
+    "animal_id": "CAFA-A-48449",
+    "attribute": "House Trained"
+  },
+  {
+    "animal_id": "CAFA-A-48802",
+    "attribute": "House Trained"
+  },
+  {
+    "animal_id": "CAFA-A-48802",
+    "attribute": "Not good with cats"
+  },
+  {
+    "animal_id": "CAFA-A-48913",
+    "attribute": "Good with Cats"
+  },
+  {
+    "animal_id": "CAFA-A-48913",
+    "attribute": "House Trained"
+  },
+  {
+    "animal_id": "CAFA-A-49071",
+    "attribute": "Good with Dogs"
+  },
+  {
+    "animal_id": "CAFA-A-49072",
+    "attribute": "Good with Dogs"
+  },
+  {
+    "animal_id": "CAFA-A-49197",
+    "attribute": "Good with Dogs"
+  },
+  {
+    "animal_id": "CAFA-A-49252",
+    "attribute": "Good with Dogs"
+  },
+  {
+    "animal_id": "CAFA-A-49311",
+    "attribute": "Good with Dogs"
+  },
+  {
+    "animal_id": "CAFA-A-49414",
+    "attribute": "Good with Dogs"
+  },
+  {
+    "animal_id": "CAFA-A-49522",
+    "attribute": "Good with Dogs"
+  },
+  {
+    "animal_id": "CAFA-A-49522",
+    "attribute": "House Trained"
+  },
+  {
+    "animal_id": "CAFA-A-49567",
+    "attribute": "Good with Dogs"
+  }
+]
