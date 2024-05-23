@@ -14,22 +14,20 @@ export default function SwipeStack () {
     const [swipeInProgress, setSwipeInProgress] = useState(false)
     const [questionsOpen, setQuestionsOpen] = useState(false)
 
-    const browserStorage = localStorage
-
     useEffect(() => {
-      browserStorage.getItem('questionsAnswered') ? null : setQuestionsOpen(true)
+      localStorage.getItem('questionsAnswered') ? null : setQuestionsOpen(true)
     }, [])
   
     const swiped: any = (direction: string, name: string, breed: string[]) => {
 
       //logs may be useful while building match feature.
 
-      // console.log('----------------------')
-      // console.log('swiped name: ' + name)
-      // console.log('swiped species: ' + breed[0])
-      // console.log(browserStorage.getItem('questionAnswer'))
-      // console.log('match: ' + (breed[0] == browserStorage.getItem('questionAnswer')))
-      // console.log('----------------------')
+      console.log('----------------------')
+      console.log('swiped name: ' + name)
+      console.log('swiped species: ' + breed[0])
+      console.log(localStorage.getItem('questionAnswer'))
+      console.log('match: ' + (breed[0] == localStorage.getItem('questionAnswer')))
+      console.log('----------------------')
 
       setLastDirection(direction)
       setSwipeInProgress(true)
