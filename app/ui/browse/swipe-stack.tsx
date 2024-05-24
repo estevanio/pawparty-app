@@ -3,7 +3,7 @@
 import React, { useEffect, useState } from "react";
 import TinderCard from 'react-tinder-card'
 import PetCard from "./pet-card";
-import { Card, CardContent, CardMedia, Typography, Container } from "@mui/material";
+import { Container } from "@mui/material";
 import { pets } from '@/app/lib/mockdb'
 import { uptime } from "process";
 import BrowseQuestionsDialogue from "./browse-questions-dialogue";
