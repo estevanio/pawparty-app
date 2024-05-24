@@ -4,7 +4,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
   return (
     <>
       <div id="root"></div>
-      <div className="container">{children}</div>
+      <div className='container'>{children}</div>
       <BottomNav />
     </>
   );
