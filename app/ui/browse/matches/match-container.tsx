@@ -7,7 +7,7 @@ import { Pet } from "@/app/lib/definitions"
 
 export default function MatchContainer () {
 
-  // This client component neccessary to use localStorage. May be able to handle server-side eventually.
+  // This client component neccessary to use useEffect for localStorage. May be able to handle server-side eventually.
 
   const [matches, setMatches] = useState([])
 
