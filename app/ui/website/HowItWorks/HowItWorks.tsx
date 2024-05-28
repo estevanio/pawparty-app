@@ -3,7 +3,7 @@ import React from 'react';
 const HowItWorks: React.FC = () => {
     return (
     <section id="how-it-works">
-        {/*fill with content*/}
+        <p>This is the "How-it-works section</p>
     </section>
     );
 };
