@@ -3,7 +3,7 @@ import Box from '@mui/material/Box';
 import Container from '@/app/ui/website/Container';
 
 
-import { Features, Folio, Gallery, Hero, Services, HowItWorks } from '@/app/ui/website';
+import { Features, Folio, Gallery, Hero, Services, HowItWorks, Sponsors } from '@/app/ui/website';
 
 const Page = () => (
   <>
@@ -27,6 +27,7 @@ const Page = () => (
     <Container>
       <HowItWorks/>
     </Container>
+    <Sponsors/>
   </>
 );
 
