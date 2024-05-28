@@ -17,6 +17,7 @@ export default function SwipeStack () {
 
     useEffect(() => {
       localStorage.getItem('questionsAnswered') ? null : setQuestionsOpen(true)
+      localStorage.getItem('matches') ? null : localStorage.setItem('matches', JSON.stringify([]))
     }, [])
   
     const swiped: any = (direction: string, name: string, breed: string[]) => {
@@ -38,6 +39,11 @@ export default function SwipeStack () {
 
       if (pet.breed[0] == localStorage.getItem('questionAnswer') && direction == 'right') {
         console.log(pet.name + ' was swiped right and matched!')
+
+        //needed to parse localStorage, likely will not be needed when dealing with live data
+        let matchArray: any = localStorage.getItem('matches')
+        console.log(JSON.parse(matchArray))
+
       } else {
         console.log('no match or swiped left')
       }
