@@ -1,6 +1,5 @@
 import { Container } from "@mui/material"
 import MatchContainer from "@/app/ui/browse/matches/match-container"
-import { Pet } from "@/app/lib/definitions"
 
 export default function Page() {
 
@@ -12,7 +11,6 @@ export default function Page() {
         </a>
         <h1>MY MATCHES</h1>
       </Container>
-
       <MatchContainer/>
     </>
     )

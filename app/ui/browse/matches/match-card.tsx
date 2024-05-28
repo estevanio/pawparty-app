@@ -38,9 +38,9 @@ const styles = {
     background: '#ededed',
     borderRadius: '28px',
     width: {
-      sm: '382px',
-      md: '90%',
-      lg: '90%'
+      sm: '400px',
+      md: '100%',
+      lg: '100%'
     },
     height: '81px',
     marginTop: '10px'},
