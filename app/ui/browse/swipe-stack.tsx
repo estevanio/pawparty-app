@@ -3,7 +3,7 @@
 import React, { useEffect, useState } from "react";
 import TinderCard from 'react-tinder-card'
 import PetCard from "./pet-card";
-import { Container } from "@mui/material";
+import { Container, Snackbar } from "@mui/material";
 import { pets } from '@/app/lib/mockdb'
 import { uptime } from "process";
 import BrowseQuestionsDialogue from "./browse-questions-dialogue";
@@ -14,6 +14,8 @@ export default function SwipeStack () {
     const [lastDirection, setLastDirection] = useState('')
     const [swipeInProgress, setSwipeInProgress] = useState(false)
     const [questionsOpen, setQuestionsOpen] = useState(false)
+    const [snackOpen, setSnackOpen] = useState(false)
+    const [lastSwipedName, setLastSwipedName] = useState('')
 
     useEffect(() => {
       localStorage.getItem('questionsAnswered') ? null : setQuestionsOpen(true)
@@ -22,20 +24,20 @@ export default function SwipeStack () {
   
     const swiped: any = (direction: string, name: string, breed: string[]) => {
 
-      console.log('----------------------')
-      console.log('swiped name: ' + name)
-      console.log('swiped species: ' + breed[0])
-      console.log(localStorage.getItem('questionAnswer'))
-      console.log('match: ' + (breed[0] == localStorage.getItem('questionAnswer')))
-      console.log('----------------------')
-
+      // console.log('----------------------')
+      // console.log('swiped name: ' + name)
+      // console.log('swiped species: ' + breed[0])
+      // console.log(localStorage.getItem('questionAnswer'))
+      // console.log('match: ' + (breed[0] == localStorage.getItem('questionAnswer')))
+      // console.log('----------------------')
+      
+      setSnackOpen(false)
+      
       setLastDirection(direction)
       setSwipeInProgress(true)
     }
   
     const outOfFrame = (pet: Pet, direction: String) => {
-      //if pet is not already saved to matches and matches species and last swipe was right, add to matches.
-      //in all other cases, do not add to matches. Either way set swipe in progress to false.
 
       //needed to parse localStorage, likely will not be needed when dealing with live data      
       let matchString: any = localStorage.getItem('matches')
@@ -48,14 +50,12 @@ export default function SwipeStack () {
 
       if (pet.breed[0] == localStorage.getItem('questionAnswer') && direction == 'right') {
         arrayIds.includes(pet.id) ? null: matchArray.push(pet)
-        console.log('matched and added if unique')
-        console.log(matchArray)      
-      } else {
-        console.log('no match or swiped left')
+        setSnackOpen(true)    
       }
-      
+
       localStorage.setItem('matches', JSON.stringify(matchArray))
       arrayIds = []
+      setLastSwipedName(pet.name)
       setSwipeInProgress(false)
     }
 
@@ -83,7 +83,12 @@ export default function SwipeStack () {
         <BrowseQuestionsDialogue 
         questionsOpen={questionsOpen} 
         setQuestionsOpen={setQuestionsOpen}/>
-        {/* {lastDirection ? <h2 className='infoText'>You swiped {lastDirection}</h2> : <h2 className='infoText' />} */}
+        <Snackbar
+          open={snackOpen}
+          autoHideDuration={3000}
+          onClose={() => setSnackOpen(false)}
+          message={`Matched! Head over to matches to chat with ${lastSwipedName}`}
+      />
       </>
     )
   }

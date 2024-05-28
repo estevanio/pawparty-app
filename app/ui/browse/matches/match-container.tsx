@@ -22,7 +22,7 @@ export default function MatchContainer () {
 
     return (
         <>
-            {displayMatches.length > 0 ? displayMatches : <Typography sx={styles.largeText}>NO MATCHES YET</Typography>}
+            {displayMatches?.length > 0 ? displayMatches : <Typography sx={styles.largeText}>NO MATCHES YET</Typography>}
         </>
     )
 }

@@ -13,14 +13,14 @@ interface InterfaceProps {
 export default function MatchCard({pet}: InterfaceProps) {
 
     const handleClick = () => {
-      console.log('match clicked')
+      console.log(`Match with ${pet.name} clicked`)
     }
 
     return(
       <Card
         sx={styles.card}
         onClick={handleClick}>
-          <Avatar sx={styles.avatar}/>
+          <Avatar src={pet.img_url} sx={styles.avatar}/>
           <Container>
             <Typography sx={styles.largeText}>{pet.name}</Typography>
             <Typography sx={styles.smallText}>{pet.breed[1]}</Typography>
