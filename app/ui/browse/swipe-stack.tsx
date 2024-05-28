@@ -37,17 +37,25 @@ export default function SwipeStack () {
       //if pet is not already saved to matches and matches species and last swipe was right, add to matches.
       //in all other cases, do not add to matches. Either way set swipe in progress to false.
 
+      //needed to parse localStorage, likely will not be needed when dealing with live data      
+      let matchString: any = localStorage.getItem('matches')
+      let matchArray: any = JSON.parse(matchString)
+      let arrayIds: String[] = []
+
+      matchArray.forEach((pet: Pet) => {
+        arrayIds.push(pet.id)
+      })
+
       if (pet.breed[0] == localStorage.getItem('questionAnswer') && direction == 'right') {
-        console.log(pet.name + ' was swiped right and matched!')
-
-        //needed to parse localStorage, likely will not be needed when dealing with live data
-        let matchArray: any = localStorage.getItem('matches')
-        console.log(JSON.parse(matchArray))
-
+        arrayIds.includes(pet.id) ? null: matchArray.push(pet)
+        console.log('matched and added if unique')
+        console.log(matchArray)      
       } else {
         console.log('no match or swiped left')
       }
-
+      
+      localStorage.setItem('matches', JSON.stringify(matchArray))
+      arrayIds = []
       setSwipeInProgress(false)
     }
 

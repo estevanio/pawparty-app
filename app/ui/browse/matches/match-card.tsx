@@ -1,11 +1,16 @@
 'use client'
+
 import React from "react";
 import { 
     Card, Container, Avatar, Typography
 } from "@mui/material";
 import { Pet } from "@/app/lib/definitions";
 
-export default function MatchCard() {
+interface InterfaceProps {
+  pet: Pet
+}
+
+export default function MatchCard({pet}: InterfaceProps) {
 
     const handleClick = () => {
       console.log('match clicked')
@@ -17,9 +22,9 @@ export default function MatchCard() {
         onClick={handleClick}>
           <Avatar sx={styles.avatar}/>
           <Container>
-            <Typography sx={styles.largeText}>Dino</Typography>
-            <Typography sx={styles.smallText}>German Shepherd Mix</Typography>
-            <Typography sx={styles.smallText}>Placentia, CA</Typography>
+            <Typography sx={styles.largeText}>{pet.name}</Typography>
+            <Typography sx={styles.smallText}>{pet.breed[1]}</Typography>
+            <Typography sx={styles.smallText}>{pet.location[0] + ', ' + pet.location[1]}</Typography>
           </Container>
       </Card>
     )
@@ -37,7 +42,8 @@ const styles = {
       md: '90%',
       lg: '90%'
     },
-    height: '81px'},
+    height: '81px',
+    marginTop: '10px'},
   avatar: { 
       marginLeft: '10px', 
       height: '60px', 

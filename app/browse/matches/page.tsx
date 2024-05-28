@@ -1,7 +1,9 @@
 import { Container } from "@mui/material"
-import MatchCard from "@/app/ui/browse/matches/match-card.tsx"
+import MatchContainer from "@/app/ui/browse/matches/match-container"
+import { Pet } from "@/app/lib/definitions"
 
 export default function Page() {
+
     return (
      <>
       <Container className="header">
@@ -10,27 +12,8 @@ export default function Page() {
         </a>
         <h1>MY MATCHES</h1>
       </Container>
-      <MatchCard />
 
-      <Container className="message-card-containter">
-
-        <Container className="message-card">
-          <img className="matches-icon" src="charlie-icon.svg" />
-          <Container className="matches-card-text">
-            <h2>Charlie</h2>
-            <h3 className="matches-type">Beagle Mix</h3>
-            <p className="matches-location">Anaheim, CA</p>
-          </Container>
-        </Container>
-        <Container className="message-card">
-          <img className="matches-icon" src="taco-icon.svg" />
-          <Container className="matches-card-text">
-            <h2>Taco</h2>
-            <h3 className="matches-type">Corgie</h3>
-            <p className="matches-location">Cypress, CA</p>
-          </Container>
-        </Container>
-      </Container>
+      <MatchContainer/>
     </>
     )
 }
