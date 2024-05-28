@@ -7,6 +7,7 @@ import { Container } from "@mui/material";
 import { pets } from '@/app/lib/mockdb'
 import { uptime } from "process";
 import BrowseQuestionsDialogue from "./browse-questions-dialogue";
+import { Pet } from "@/app/lib/definitions";
 
 export default function SwipeStack () {
     
@@ -20,8 +21,6 @@ export default function SwipeStack () {
   
     const swiped: any = (direction: string, name: string, breed: string[]) => {
 
-      //logs may be useful while building match feature.
-
       console.log('----------------------')
       console.log('swiped name: ' + name)
       console.log('swiped species: ' + breed[0])
@@ -33,8 +32,16 @@ export default function SwipeStack () {
       setSwipeInProgress(true)
     }
   
-    const outOfFrame = (name: string) => {
-      console.log(name + ' left the screen!')
+    const outOfFrame = (pet: Pet, direction: String) => {
+      //if pet is not already saved to matches and matches species and last swipe was right, add to matches.
+      //in all other cases, do not add to matches. Either way set swipe in progress to false.
+
+      if (pet.breed[0] == localStorage.getItem('questionAnswer') && direction == 'right') {
+        console.log(pet.name + ' was swiped right and matched!')
+      } else {
+        console.log('no match or swiped left')
+      }
+
       setSwipeInProgress(false)
     }
 
@@ -44,9 +51,11 @@ export default function SwipeStack () {
             <TinderCard
                 className="swipe"
                 key={pet.id} 
-                onSwipe={(dir) => swiped(dir, pet.name, pet.breed)} 
-                onCardLeftScreen={() => outOfFrame(pet.name)}
-                preventSwipe={['up', 'down']}>
+                onSwipe={(dir) => {
+                  swiped(dir, pet.name, pet.breed)}} 
+                onCardLeftScreen={(dir) => outOfFrame(pet, dir)}
+                preventSwipe={['up', 'down']}
+                onSwipeRequirementUnfulfilled={() => setSwipeInProgress(false)}>
                 <PetCard pet={pet} swipeInProgress={swipeInProgress}/>
             </TinderCard>
         )

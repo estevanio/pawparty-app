@@ -1,5 +1,5 @@
 import { Container } from "@mui/material"
-import MatchCard from "../../ui/browse/matches/match-card.tsx"
+import MatchCard from "@/app/ui/browse/matches/match-card.tsx"
 
 export default function Page() {
     return (
