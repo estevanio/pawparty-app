@@ -81,8 +81,8 @@ export default function SwipeStack () {
           {displayPets}
         </Container>
         <BrowseQuestionsDialogue 
-        questionsOpen={questionsOpen} 
-        setQuestionsOpen={setQuestionsOpen}/>
+          questionsOpen={questionsOpen} 
+          setQuestionsOpen={setQuestionsOpen}/>
         <Snackbar
           open={snackOpen}
           autoHideDuration={3000}
