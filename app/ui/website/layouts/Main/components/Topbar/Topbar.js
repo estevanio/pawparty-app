@@ -19,10 +19,9 @@ const Topbar = ({ onSidebarOpen, colorInvert = false }) => {
   const {
     home: homePages,
     FAQ: faqPage,
-    company: companyPages,
-    account: accountPages,
+    about: aboutPages,
+    stories: storyPages,
     contact: contactPage,
-    blog: blogPages,
   } = pages;
 
   return (
@@ -61,17 +60,17 @@ const Topbar = ({ onSidebarOpen, colorInvert = false }) => {
         </Box>
         <Box marginLeft={4}>
           <NavItem
-            title={'Company'}
-            id={'company-pages'}
-            items={companyPages}
+            title={'About Us'}
+            id={'about-pages'}
+            items={aboutPages}
             colorInvert={colorInvert}
           />
         </Box>
         <Box marginLeft={4}>
           <NavItem
-            title={'Account'}
-            id={'account-pages'}
-            items={accountPages}
+            title={'Success Stories'}
+            id={'stories-pages'}
+            items={storyPages}
             colorInvert={colorInvert}
           />
         </Box>

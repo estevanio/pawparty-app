@@ -9,7 +9,9 @@ import { Features, Folio, Gallery, Hero, Services, HowItWorks, Sponsors, Topbar 
 const Page = () => (
   <>
     <Topbar />
-    <Hero />
+    <Container id='herosection'>
+      <Hero />
+    </Container>
     <Container>
       <Folio />
     </Container>
@@ -26,10 +28,12 @@ const Page = () => (
     <Container>
       <Gallery />
     </Container>
-    <Container>
+    <Container id='workssection'>
       <HowItWorks/>
     </Container>
-    <Sponsors/>
+    <Container id='sponsorsection'>
+      <Sponsors/>
+    </Container>
   </>
 );
 
