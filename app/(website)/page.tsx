@@ -4,7 +4,7 @@ import Container from '@/app/ui/website/Container';
 
 
 
-import { Features, Folio, Gallery, Hero, Services, Sponsors, Topbar } from '@/app/ui/website';
+import { Features, Folio, Gallery, Hero, Services, HowItWorks, Sponsors, Topbar } from '@/app/ui/website';
 
 const Page = () => (
   <>
@@ -25,6 +25,9 @@ const Page = () => (
     </Box>
     <Container>
       <Gallery />
+    </Container>
+    <Container>
+      <HowItWorks/>
     </Container>
     <Sponsors/>
   </>
