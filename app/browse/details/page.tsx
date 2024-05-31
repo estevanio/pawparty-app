@@ -1,6 +1,10 @@
+import React from "react";
+import { Topbar } from "../../ui/website";
+
 export default function Page() {
   return(
   <>
+    <Topbar />
     <div className="header">
       <a href="index.html">
         <img className="logo" src="/pawparty-logo.svg" alt="Pawty Time Logo" />

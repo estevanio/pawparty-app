@@ -2,9 +2,12 @@ import React from "react";
 import SwipeStack from "../ui/browse/swipe-stack";
 import { Container, Typography } from "@mui/material";
 
+import { Topbar } from "../ui/website";
+
 export default function Page() {
   return (
     <>
+      <Topbar/>
       <Container className="header" sx={{display: 'flex', flexDirection: 'column', justifyContent:'center', paddingBottom: 5}}>
         <img className="logo" src="/pawparty-logo.svg" alt="Pawty Time Logo" />
         <Typography>FIND YOUR PERFECT MATCH</Typography>
