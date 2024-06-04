@@ -38,3 +38,5 @@ next-env.d.ts
 # one-off scripts
 .scripts/local/
 
+package-lock.json
+yarn.lock
