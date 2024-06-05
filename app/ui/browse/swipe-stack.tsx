@@ -16,20 +16,24 @@ export default function SwipeStack () {
     const [questionsOpen, setQuestionsOpen] = useState(false)
     const [snackOpen, setSnackOpen] = useState(false)
     const [lastSwipedName, setLastSwipedName] = useState('')
+    const [matchIds, setMatchIds ] = useState<String[]>([]) 
 
     useEffect(() => {
       localStorage.getItem('questionsAnswered') ? null : setQuestionsOpen(true)
       localStorage.getItem('matches') ? null : localStorage.setItem('matches', JSON.stringify([]))
+
+      let matchString: any = localStorage.getItem('matches')
+      let matchArray: any = JSON.parse(matchString)
+      let arrayIds: String[] = []
+
+      matchArray.forEach((pet: Pet) => {
+        arrayIds.push(pet.id)
+      })
+
+      setMatchIds(arrayIds)
     }, [])
   
     const swiped: any = (direction: string, name: string, breed: string[]) => {
-
-      // console.log('----------------------')
-      // console.log('swiped name: ' + name)
-      // console.log('swiped species: ' + breed[0])
-      // console.log(localStorage.getItem('questionAnswer'))
-      // console.log('match: ' + (breed[0] == localStorage.getItem('questionAnswer')))
-      // console.log('----------------------')
       
       setSnackOpen(false)
       
@@ -39,14 +43,10 @@ export default function SwipeStack () {
   
     const outOfFrame = (pet: Pet, direction: String) => {
 
-      //needed to parse localStorage, likely will not be needed when dealing with live data      
+      //needed to parse localStorage, likely will not be needed when dealing with live data  
       let matchString: any = localStorage.getItem('matches')
       let matchArray: any = JSON.parse(matchString)
-      let arrayIds: String[] = []
-
-      matchArray.forEach((pet: Pet) => {
-        arrayIds.push(pet.id)
-      })
+      let arrayIds: String[] = []     
 
       if (pet.breed[0] == localStorage.getItem('questionAnswer') && direction == 'right') {
         arrayIds.includes(pet.id) ? null: matchArray.push(pet)
@@ -59,7 +59,8 @@ export default function SwipeStack () {
       setSwipeInProgress(false)
     }
 
-    const displayPets = pets.map((pet) => {        
+    const displayPets = pets.filter((pet: Pet) => !matchIds.includes(pet.id))
+      .map((pet: Pet) => {        
         
         return(
             <TinderCard
@@ -74,6 +75,8 @@ export default function SwipeStack () {
             </TinderCard>
         )
     })
+
+    console.log(matchIds)
   
     return (
       <>
