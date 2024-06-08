@@ -8,7 +8,7 @@ export default function Page() {
   return (
     <>
       <Topbar/>
-      <Container className="header" sx={{display: 'flex', flexDirection: 'column', justifyContent:'center', paddingBottom: 5}}>
+      <Container className="header" sx={{display: 'flex', flexDirection: 'column', justifyContent:'center', alignItems: 'center', paddingBottom: 5}}>
         <img className="logo" src="/pawparty-logo.svg" alt="Pawty Time Logo" />
         <Typography>FIND YOUR PERFECT MATCH</Typography>
       </Container>
