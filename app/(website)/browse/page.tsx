@@ -1,8 +1,8 @@
 import React from "react";
-import SwipeStack from "../ui/browse/swipe-stack";
+import SwipeStack from "../../ui/browse/swipe-stack";
 import { Container, Typography } from "@mui/material";
 
-import { Topbar } from "../ui/website";
+import { Topbar } from "../../ui/website";
 
 export default function Page() {
   return (
