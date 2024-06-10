@@ -9,6 +9,7 @@ import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
+import Link from 'next/link';
 
 const NavItem = ({ title, items }) => {
   const theme = useTheme();
@@ -43,10 +44,9 @@ const NavItem = ({ title, items }) => {
           <Grid container spacing={1}>
             {items.map((p, i) => (
               <Grid item key={i} xs={12}>
+              <Link href={p.href} scroll passHref>
                 <Button
                   size={'large'}
-                  component={'a'}
-                  href={p.href}
                   fullWidth
                   sx={{
                     justifyContent: 'flex-start',
@@ -79,6 +79,7 @@ const NavItem = ({ title, items }) => {
                     </Box>
                   )}
                 </Button>
+                </Link>
               </Grid>
             ))}
           </Grid>

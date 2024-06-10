@@ -8,6 +8,7 @@ import Popover from '@mui/material/Popover';
 import Typography from '@mui/material/Typography';
 import Grid from '@mui/material/Grid';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import Link from 'next/link';
 
 const NavItem = ({ title, id, items, colorInvert = false }) => {
   const theme = useTheme();
@@ -40,7 +41,7 @@ const NavItem = ({ title, id, items, colorInvert = false }) => {
         alignItems={'center'}
         aria-describedby={id}
         sx={{ cursor: 'pointer' }}
-        onClick={(e) => handleClick(e, id)}
+        onMouseEnter={(e) => handleClick(e, id)}
       >
         <Typography
           fontWeight={openedPopoverId === id || hasActiveLink() ? 700 : 400}
@@ -88,9 +89,8 @@ const NavItem = ({ title, id, items, colorInvert = false }) => {
         <Grid container spacing={0.5}>
           {items.map((p, i) => (
             <Grid item key={i} xs={items.length > 12 ? 6 : 12}>
+              <Link href={p.href} scroll passHref>
               <Button
-                component={'a'}
-                href={p.href}
                 fullWidth
                 sx={{
                   justifyContent: 'flex-start',
@@ -123,6 +123,7 @@ const NavItem = ({ title, id, items, colorInvert = false }) => {
                   </Box>
                 )}
               </Button>
+              </Link>
             </Grid>
           ))}
         </Grid>

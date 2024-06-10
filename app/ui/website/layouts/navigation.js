@@ -28,6 +28,14 @@ const pages = {
         title: 'About',
         href: '/about',
       },
+      {
+        title: 'Bios',
+        href: '/about/#Bios',
+      },
+      {
+        title: 'Mission',
+        href: '/about/#ourMission',
+      },
       
     ],
     FAQ: [
