@@ -86,7 +86,7 @@ const NavItem = ({ title, id, items, colorInvert = false }) => {
           },
         }}
       >
-        <Grid container spacing={0.5}>
+        <Grid container spacing={0.5} onMouseLeave={handleClose}>
           {items.map((p, i) => (
             <Grid item key={i} xs={items.length > 12 ? 6 : 12}>
               <Link href={p.href} scroll passHref>
