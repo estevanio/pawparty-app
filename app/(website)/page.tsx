@@ -4,11 +4,10 @@ import Container from '@/app/ui/website/Container';
 
 
 
-import { Features, Folio, Gallery, Hero, Services, HowItWorks, Sponsors, Topbar } from '@/app/ui/website';
+import { Features, Folio, Gallery, Hero, Services, HowItWorks, Sponsors } from '@/app/ui/website';
 
 const Page = () => (
   <>
-    <Topbar />
     <Container id='herosection'>
       <Hero />
     </Container>
