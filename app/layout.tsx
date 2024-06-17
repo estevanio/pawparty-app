@@ -1,4 +1,7 @@
 // import '@/app/ui/global.css';
+import { AppRouterCacheProvider } from "@mui/material-nextjs/v14-appRouter";
+import { CssBaseline } from "@mui/material";
+
 
 export default function RootLayout({
   children,
@@ -23,7 +26,12 @@ export default function RootLayout({
         {/* <link href='https://fonts.googleapis.com/css?family=Alatsi&display=swap' rel='stylesheet' /> */}
         <title>Welcome to Paw Party 🐾</title>
       </head>
-      <body>{children}</body>
+      <body>
+        <AppRouterCacheProvider>
+          <CssBaseline />
+          {children}
+        </AppRouterCacheProvider>
+      </body>
     </html>
   );
 }
