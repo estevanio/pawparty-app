@@ -1,8 +1,14 @@
 import React from "react";
 import SwipeStack from "../ui/browse/swipe-stack";
 import { Container, Typography } from "@mui/material";
+import { fetchAnimals } from "../lib/data";
 
-export default function Page() {
+export default async function Page() {
+
+  const notAnimals = [{name: 'jayson', age: '36'}]
+
+  const animals: any = await fetchAnimals()
+
   return (
     <>
       <Container className="header" sx={{display: 'flex', flexDirection: 'column', justifyContent:'center', alignItems: 'center', paddingBottom: 5}}>
@@ -10,7 +16,7 @@ export default function Page() {
         <Typography>FIND YOUR PERFECT MATCH</Typography>
       </Container>
       <Container sx={{paddingLeft: 0, paddingRight: 0}}>
-        <SwipeStack/>        
+        <SwipeStack animalArray={animals} />        
       </Container>
       <div className="arrows">
         <img className="left-arrow" src="/left-arrow.svg" alt="left arrow" />

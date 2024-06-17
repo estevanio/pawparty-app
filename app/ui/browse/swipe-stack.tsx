@@ -5,11 +5,12 @@ import TinderCard from 'react-tinder-card'
 import PetCard from "./pet-card";
 import { Container, Snackbar } from "@mui/material";
 import { pets } from '@/app/lib/mockdb'
-import { uptime } from "process";
-import BrowseQuestionsDialogue from "./browse-questions-dialogue";
 import { Pet } from "@/app/lib/definitions";
+import BrowseQuestionsDialogue from "./browse-questions-dialogue";
 
-export default function SwipeStack () {
+export default function SwipeStack (props: any) {
+
+    console.log(props.animalArray)
     
     const [lastDirection, setLastDirection] = useState('')
     const [swipeInProgress, setSwipeInProgress] = useState(false)
@@ -75,8 +76,6 @@ export default function SwipeStack () {
             </TinderCard>
         )
     })
-
-    console.log(matchIds)
   
     return (
       <>
