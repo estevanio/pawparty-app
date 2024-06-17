@@ -10,7 +10,7 @@ import BrowseQuestionsDialogue from "./browse-questions-dialogue";
 
 export default function SwipeStack (props: any) {
 
-    console.log(props.animalArray)
+    console.log(props.animalArray) //data is present in frontend
     
     const [lastDirection, setLastDirection] = useState('')
     const [swipeInProgress, setSwipeInProgress] = useState(false)

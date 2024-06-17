@@ -5,8 +5,6 @@ import { fetchAnimals } from "../lib/data";
 
 export default async function Page() {
 
-  const notAnimals = [{name: 'jayson', age: '36'}]
-
   const animals: any = await fetchAnimals()
 
   return (
