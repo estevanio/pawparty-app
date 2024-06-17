@@ -5,31 +5,36 @@ import TinderCard from 'react-tinder-card'
 import PetCard from "./pet-card";
 import { Container, Snackbar } from "@mui/material";
 import { pets } from '@/app/lib/mockdb'
-import { uptime } from "process";
-import BrowseQuestionsDialogue from "./browse-questions-dialogue";
 import { Pet } from "@/app/lib/definitions";
+import BrowseQuestionsDialogue from "./browse-questions-dialogue";
 
-export default function SwipeStack () {
+export default function SwipeStack (props: any) {
+
+    console.log(props.animalArray)
     
     const [lastDirection, setLastDirection] = useState('')
     const [swipeInProgress, setSwipeInProgress] = useState(false)
     const [questionsOpen, setQuestionsOpen] = useState(false)
     const [snackOpen, setSnackOpen] = useState(false)
     const [lastSwipedName, setLastSwipedName] = useState('')
+    const [matchIds, setMatchIds ] = useState<String[]>([]) 
 
     useEffect(() => {
       localStorage.getItem('questionsAnswered') ? null : setQuestionsOpen(true)
       localStorage.getItem('matches') ? null : localStorage.setItem('matches', JSON.stringify([]))
+
+      let matchString: any = localStorage.getItem('matches')
+      let matchArray: any = JSON.parse(matchString)
+      let arrayIds: String[] = []
+
+      matchArray.forEach((pet: Pet) => {
+        arrayIds.push(pet.id)
+      })
+
+      setMatchIds(arrayIds)
     }, [])
   
     const swiped: any = (direction: string, name: string, breed: string[]) => {
-
-      // console.log('----------------------')
-      // console.log('swiped name: ' + name)
-      // console.log('swiped species: ' + breed[0])
-      // console.log(localStorage.getItem('questionAnswer'))
-      // console.log('match: ' + (breed[0] == localStorage.getItem('questionAnswer')))
-      // console.log('----------------------')
       
       setSnackOpen(false)
       
@@ -39,14 +44,10 @@ export default function SwipeStack () {
   
     const outOfFrame = (pet: Pet, direction: String) => {
 
-      //needed to parse localStorage, likely will not be needed when dealing with live data      
+      //needed to parse localStorage, likely will not be needed when dealing with live data  
       let matchString: any = localStorage.getItem('matches')
       let matchArray: any = JSON.parse(matchString)
-      let arrayIds: String[] = []
-
-      matchArray.forEach((pet: Pet) => {
-        arrayIds.push(pet.id)
-      })
+      let arrayIds: String[] = []     
 
       if (pet.breed[0] == localStorage.getItem('questionAnswer') && direction == 'right') {
         arrayIds.includes(pet.id) ? null: matchArray.push(pet)
@@ -59,7 +60,8 @@ export default function SwipeStack () {
       setSwipeInProgress(false)
     }
 
-    const displayPets = pets.map((pet) => {        
+    const displayPets = pets.filter((pet: Pet) => !matchIds.includes(pet.id))
+      .map((pet: Pet) => {        
         
         return(
             <TinderCard
