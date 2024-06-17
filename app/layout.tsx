@@ -1,4 +1,4 @@
-import '@/app/ui/global.css';
+// import '@/app/ui/global.css';
 
 export default function RootLayout({
   children,
@@ -8,7 +8,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" rel="stylesheet"/>
+        {/* <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" rel="stylesheet"/> */}
         <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="theme-color" content="#000000" />
@@ -19,8 +19,8 @@ export default function RootLayout({
         <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
         <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
 
-        <link href='https://fonts.googleapis.com/css?family=Damion&display=swap' rel='stylesheet' />
-        <link href='https://fonts.googleapis.com/css?family=Alatsi&display=swap' rel='stylesheet' />
+        {/* <link href='https://fonts.googleapis.com/css?family=Damion&display=swap' rel='stylesheet' /> */}
+        {/* <link href='https://fonts.googleapis.com/css?family=Alatsi&display=swap' rel='stylesheet' /> */}
         <title>Welcome to Paw Party 🐾</title>
       </head>
       <body>{children}</body>
