@@ -16,7 +16,12 @@ const prisma = new PrismaClient();
 
 export async function fetchAnimals() {
   try {
-    const animals = await prisma.animal.findMany();
+    const animals = await prisma.animal.findMany({
+      include: {
+        photos: true,
+        attributes: true,
+      },
+    });
     return animals;
   } catch (error) {
     console.error('Database Error:', error);
