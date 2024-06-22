@@ -5,13 +5,15 @@ import TinderCard from 'react-tinder-card'
 import PetCard from "./pet-card";
 import { Container, Snackbar } from "@mui/material";
 import { pets } from '@/app/lib/mockdb'
-import { Pet } from "@/app/lib/definitions";
+import { AnimalData, Pet } from "@/app/lib/definitions";
 import BrowseQuestionsDialogue from "./browse-questions-dialogue";
+import { Animal } from "@prisma/client";
 
 export default function SwipeStack (props: any) {
 
-    console.log(props.animalArray) //data is present in frontend
+    // console.log(props.animalArray) //data is present in frontend
     
+    const [animals, setAnimals] = useState([])
     const [lastDirection, setLastDirection] = useState('')
     const [swipeInProgress, setSwipeInProgress] = useState(false)
     const [questionsOpen, setQuestionsOpen] = useState(false)
@@ -27,11 +29,12 @@ export default function SwipeStack (props: any) {
       let matchArray: any = JSON.parse(matchString)
       let arrayIds: String[] = []
 
-      matchArray.forEach((pet: Pet) => {
-        arrayIds.push(pet.id)
+      matchArray.forEach((animal: Animal) => {
+        arrayIds.push(animal.animal_id)
       })
 
       setMatchIds(arrayIds)
+      setAnimals(props.animalArray)
     }, [])
   
     const swiped: any = (direction: string, name: string, breed: string[]) => {
@@ -42,37 +45,37 @@ export default function SwipeStack (props: any) {
       setSwipeInProgress(true)
     }
   
-    const outOfFrame = (pet: Pet, direction: String) => {
+    const outOfFrame = (animal: AnimalData, direction: String) => {
 
       //needed to parse localStorage, likely will not be needed when dealing with live data  
       let matchString: any = localStorage.getItem('matches')
       let matchArray: any = JSON.parse(matchString)
       let arrayIds: String[] = []     
 
-      if (pet.breed[0] == localStorage.getItem('questionAnswer') && direction == 'right') {
-        arrayIds.includes(pet.id) ? null: matchArray.push(pet)
+      if (animal.species == localStorage.getItem('questionAnswer') && direction == 'right') {
+        arrayIds.includes(animal.animal_id) ? null: matchArray.push(animal)
         setSnackOpen(true)    
       }
 
       localStorage.setItem('matches', JSON.stringify(matchArray))
       arrayIds = []
-      setLastSwipedName(pet.name)
+      setLastSwipedName(animal.name)
       setSwipeInProgress(false)
     }
 
-    const displayPets = pets.filter((pet: Pet) => !matchIds.includes(pet.id))
-      .map((pet: Pet) => {        
+    const displayAnimals = animals?.filter((animal: any) => !matchIds.includes(animal.animal_id))
+      .map((animal: AnimalData) => {        
         
         return(
             <TinderCard
                 className="swipe"
-                key={pet.id} 
+                key={animal.animal_id} 
                 onSwipe={(dir) => {
-                  swiped(dir, pet.name, pet.breed)}} 
-                onCardLeftScreen={(dir) => outOfFrame(pet, dir)}
+                  swiped(dir, animal.name, animal.breed)}} 
+                onCardLeftScreen={(dir) => outOfFrame(animal, dir)}
                 preventSwipe={['up', 'down']}
                 onSwipeRequirementUnfulfilled={() => setSwipeInProgress(false)}>
-                <PetCard pet={pet} swipeInProgress={swipeInProgress}/>
+                <PetCard animal={animal} swipeInProgress={swipeInProgress}/>
             </TinderCard>
         )
     })
@@ -80,7 +83,7 @@ export default function SwipeStack (props: any) {
     return (
       <>
         <Container sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', height:475, width: '100vw'}}>
-          {displayPets}
+          {displayAnimals}
         </Container>
         <BrowseQuestionsDialogue 
           questionsOpen={questionsOpen} 

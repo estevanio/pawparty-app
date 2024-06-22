@@ -9,17 +9,18 @@ import { sql } from '@vercel/postgres';
 //   User,
 //   Revenue,
 // } from './definitions';
-import { PrismaClient } from '@prisma/client';
+import { PrismaClient, Animal } from '@prisma/client';
 
 
 const prisma = new PrismaClient();
 
 export async function fetchAnimals() {
   try {
-    const animals = await prisma.animal.findMany({
+    const animals: Animal[] = await prisma.animal.findMany({
       include: {
         photos: true,
         attributes: true,
+        shelter: true
       },
     });
     return animals;
