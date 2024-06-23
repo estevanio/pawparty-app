@@ -5,13 +5,11 @@ import TinderCard from 'react-tinder-card'
 import PetCard from "./pet-card";
 import { Container, Snackbar } from "@mui/material";
 import { pets } from '@/app/lib/mockdb'
-import { AnimalData, Pet } from "@/app/lib/definitions";
+import { AnimalData } from "@/app/lib/definitions";
 import BrowseQuestionsDialogue from "./browse-questions-dialogue";
 import { Animal } from "@prisma/client";
 
 export default function SwipeStack (props: any) {
-
-    // console.log(props.animalArray) //data is present in frontend
     
     const [animals, setAnimals] = useState([])
     const [lastDirection, setLastDirection] = useState('')
@@ -37,7 +35,7 @@ export default function SwipeStack (props: any) {
       setAnimals(props.animalArray)
     }, [])
   
-    const swiped: any = (direction: string, name: string, breed: string[]) => {
+    const swiped: any = (direction: string, name: string) => {
       
       setSnackOpen(false)
       
@@ -47,10 +45,14 @@ export default function SwipeStack (props: any) {
   
     const outOfFrame = (animal: AnimalData, direction: String) => {
 
-      //needed to parse localStorage, likely will not be needed when dealing with live data  
+      //need to parse localStorage, likely will not be needed when dealing with live data  
       let matchString: any = localStorage.getItem('matches')
       let matchArray: any = JSON.parse(matchString)
-      let arrayIds: String[] = []     
+      let arrayIds: String[] = []
+      
+      matchArray.forEach((animal: Animal) => {
+        arrayIds.push(animal.animal_id)
+      })
 
       if (animal.species == localStorage.getItem('questionAnswer') && direction == 'right') {
         arrayIds.includes(animal.animal_id) ? null: matchArray.push(animal)
@@ -63,7 +65,7 @@ export default function SwipeStack (props: any) {
       setSwipeInProgress(false)
     }
 
-    const displayAnimals = animals?.filter((animal: any) => !matchIds.includes(animal.animal_id))
+    const displayAnimals = animals?.filter((animal: Animal) => !matchIds.includes(animal.animal_id))
       .map((animal: AnimalData) => {        
         
         return(

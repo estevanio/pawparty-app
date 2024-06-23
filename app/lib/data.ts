@@ -30,3 +30,22 @@ export async function fetchAnimals() {
   }
 }
 
+export async function fetchAnimalsByMatches(compare: string[]) {
+  try {
+    const animals: Animal[] = await prisma.animal.findMany({
+      where: {
+        animal_id: {in: compare}
+      },
+      include: {
+        photos: true,
+        attributes: true,
+        shelter: true
+      }
+    })
+    return animals
+  } catch (error) {
+    console.error('Database Error:', error);
+    throw new Error('Failed to fetch animal data.');
+  }
+  
+}

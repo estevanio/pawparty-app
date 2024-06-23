@@ -2,10 +2,11 @@ import React from "react";
 import SwipeStack from "../ui/browse/swipe-stack";
 import { Container, Typography } from "@mui/material";
 import { fetchAnimals } from "../lib/data";
+import { AnimalData } from "../lib/definitions";
 
 export default async function Page() {
 
-  const animals: any = await fetchAnimals()
+  const animals: AnimalData[] = await fetchAnimals()
 
   return (
     <div className="appBody">
