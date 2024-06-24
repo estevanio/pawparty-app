@@ -1,12 +1,7 @@
 import { Container } from "@mui/material"
 import MatchContainer from "@/app/ui/browse/matches/match-container"
-import { fetchAnimalsByMatches } from "@/app/lib/data"
 
 export default async function Page() {
-
-  const profileAnimals: string[] = []
-  
-  const animals: any = await fetchAnimalsByMatches(profileAnimals)
 
     return (
      <>

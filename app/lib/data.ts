@@ -42,7 +42,7 @@ export async function fetchAnimalsByMatches(compare: string[]) {
         shelter: true
       }
     })
-    return animals
+    return animals;
   } catch (error) {
     console.error('Database Error:', error);
     throw new Error('Failed to fetch animal data.');
