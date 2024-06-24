@@ -1,5 +1,5 @@
 import React from "react";
-import SwipeStack from "../ui/browse/swipe-stack";
+import SwipeStack from "../../ui/browse/swipe-stack";
 import { Container, Typography } from "@mui/material";
 import { fetchAnimals } from "../lib/data";
 

@@ -3,11 +3,14 @@ import Box from '@mui/material/Box';
 import Container from '@/app/ui/website/Container';
 
 
+
 import { Features, Folio, Gallery, Hero, Services, HowItWorks, Sponsors } from '@/app/ui/website';
 
 const Page = () => (
   <>
-    <Hero />
+    <Container id='herosection'>
+      <Hero />
+    </Container>
     <Container>
       <Folio />
     </Container>
@@ -24,10 +27,12 @@ const Page = () => (
     <Container>
       <Gallery />
     </Container>
-    <Container>
+    <Container id='workssection'>
       <HowItWorks/>
     </Container>
-    <Sponsors/>
+    <Container id='sponsorsection'>
+      <Sponsors/>
+    </Container>
   </>
 );
 
