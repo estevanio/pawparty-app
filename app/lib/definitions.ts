@@ -16,12 +16,12 @@ export type Pet = {
   tags: string[]
 }
 
-// 1: Define a type that includes the relation to `Post`
+// 1: Define a type that includes the relation to `Animal`
 const animalData = Prisma.validator<Prisma.AnimalDefaultArgs>()({
   include: { photos: true, shelter: true, attributes: true },
 })
 
-// 2: Define a type that only contains a subset of the scalar fields
+// 2: define a type with specific selects
 const animalBasic = Prisma.validator<Prisma.AnimalDefaultArgs>()({
   select: {
     name: true,
@@ -29,6 +29,6 @@ const animalBasic = Prisma.validator<Prisma.AnimalDefaultArgs>()({
   }
 })
 
-// 3: This type will include a user and all their posts
+// 3: export new types
 export type AnimalData = Prisma.AnimalGetPayload<typeof animalData>
 export type AnimalBasic = Prisma.AnimalGetPayload<typeof animalBasic>
