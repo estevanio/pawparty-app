@@ -8,7 +8,7 @@ export default async function Page() {
   const animals: any = await fetchAnimals()
 
   return (
-    <div className="appBody">
+    <div className="webApp"> 
       <Container className="header" sx={{display: 'flex', flexDirection: 'column', justifyContent:'center', alignItems: 'center', paddingBottom: 5}}>
         <img className="logo" src="/pawparty-logo.svg" alt="Pawty Time Logo" />
         <Typography>FIND YOUR PERFECT MATCH</Typography>
