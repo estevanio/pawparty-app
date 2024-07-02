@@ -6,18 +6,19 @@ import {
     Container, 
     CardActionArea 
 } from "@mui/material";
-import { Pet } from "@/app/lib/definitions";
+import { AnimalData } from "@/app/lib/definitions";
+
 
 interface InterfaceProps {
-  pet: Pet,
+  animal: AnimalData,
   swipeInProgress: boolean
 }
 
-export default function PetCard ({ pet, swipeInProgress }: InterfaceProps)  {
+export default function PetCard ({ animal, swipeInProgress }: InterfaceProps)  {
 
     const handleClick = () => {
         if (swipeInProgress == false){ 
-            console.log(`${pet.name} was clicked.`)
+            console.log(`${animal.name} was clicked.`)
         }        
     }
 
@@ -31,34 +32,39 @@ export default function PetCard ({ pet, swipeInProgress }: InterfaceProps)  {
                 onTouchEnd={() => handleClick()}>
                 <CardMedia
                     sx={styles.cardMedia}
-                    image={pet.img_url}/>
+                    image={animal.photos[0].url}/>
                 <Container sx={styles.cardContentContainer}>
                     <CardContent 
                         sx={styles.cardContent}>
                         <Typography
+                            noWrap={true}
                             sx={styles.fontName}>
-                            {pet.name}
+                            {animal.name}
                         </Typography>
                         <Typography
                             sx={styles.fontText}>
-                            {pet.breed[1]}
+                            {animal.breed}
                         </Typography>
                         <Typography
                             sx={styles.fontText}>
-                            {pet.location[0] + ', ' + pet.location[1]}
+                            {animal.shelter.location}
                         </Typography>
                     </CardContent>
                     <CardContent sx={{pointerEvents: 'none'}}>
-                        <Typography 
+                        <Typography
+                            noWrap={true}
                             sx={styles.fontText}>
-                            {pet.tags[0]}
+                            {animal.attributes[0] ? animal.attributes[0].attribute : null}
                         </Typography>
-                        <Typography sx={styles.fontText}>
-                            {pet.tags[1]}
+                        <Typography
+                            noWrap={true}
+                            sx={styles.fontText}>
+                            {animal.attributes[1] ? animal.attributes[1].attribute : null}
                         </Typography>
                         <Typography 
+                            noWrap={true}
                             sx={styles.fontText}>
-                                {pet.tags[2] ? pet.tags[2] : null}
+                            {animal.attributes[2] ? animal.attributes[2].attribute : null}
                         </Typography>
                     </CardContent>
                 </Container>
@@ -72,6 +78,7 @@ export default function PetCard ({ pet, swipeInProgress }: InterfaceProps)  {
 const styles = {
     card: {
         height: '484px',
+        width:'350px',
         borderRadius: '25px', 
         userSelect:'none'},
     cardMedia: {
