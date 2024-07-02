@@ -5,4 +5,6 @@ export { default as Hero } from './Hero';
 export { default as Services } from './Services';
 export { default as HowItWorks} from './HowItWorks';
 export { default as Sponsors } from './Sponsors';
-export {default as SuccessDefault} from '../success'
+export { default as Topbar } from './layouts/Navigation/Topbar/Topbar';
+export { default as Faq } from './layouts/Faq';
+export {default as SuccessDefault} from '../success';
