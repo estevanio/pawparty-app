@@ -13,7 +13,11 @@ const Sponsors = () => {
 
   const infocontent = { 
     title: "We craft beautiful websites and digital products", 
-    subtitle: "Tell us your project requirements, budget, and timeline, and we will connect you with up to four companies that match your needs – all for free.",
+    subtitle: [
+      "Tell us your project requirements, budget, and timeline, ", 
+      "and we will connect you with up to four companies that ", 
+      "match your needs – all for free.",
+    ],
     logos: [
             'https://assets.maccarianagency.com/svg/logos/airbnb-original.svg',
             'https://assets.maccarianagency.com/svg/logos/amazon-original.svg',
@@ -60,7 +64,9 @@ const Sponsors = () => {
                     fontWeight: 400,
                   }}
                 >
-                  {infocontent.subtitle}
+                  {infocontent.subtitle[0]}
+                  {infocontent.subtitle[1]}
+                  {infocontent.subtitle[2]}
                 </Typography>
               </Box>
             </Box>
