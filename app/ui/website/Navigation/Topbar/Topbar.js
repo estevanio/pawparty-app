@@ -12,7 +12,7 @@ import AppBar from '@mui/material/AppBar';
 import useScrollTrigger from '@mui/material/useScrollTrigger';
 
 import { NavItem } from './components';
-import pages from '@/app/ui/website/layouts/navigation';
+import pages from '@/app/ui/website/layouts/Navigation/navigation';
 import { Sidebar } from '../index';
 
 

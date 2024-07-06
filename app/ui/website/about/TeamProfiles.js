@@ -13,7 +13,7 @@ import TwitterIcon from '@mui/icons-material/Twitter';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import FacebookIcon from '@mui/icons-material/Facebook';
 
-import Container from '../website/Container';
+import Container from '../Container';
 
 const mock = [
   {
@@ -46,7 +46,7 @@ const mock = [
   },
 ];
 
-const WithSimpleCards = () => {
+const TeamProfiles = () => {
   const theme = useTheme();
   return (
     <Container>
@@ -106,4 +106,4 @@ const WithSimpleCards = () => {
   );
 };
 
-export default WithSimpleCards;
+export default TeamProfiles;
