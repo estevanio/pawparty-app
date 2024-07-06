@@ -7,4 +7,5 @@ export { default as HowItWorks} from './HowItWorks';
 export { default as Sponsors } from './Sponsors';
 export { default as Topbar } from './Navigation/Topbar/Topbar';
 export { default as Faq } from './layouts/Faq';
-export {default as TeamProfiles} from './about';
+export { default as TeamProfiles } from './About';
+export { default as Stories } from './Success';
