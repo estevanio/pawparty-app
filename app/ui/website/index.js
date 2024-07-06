@@ -8,3 +8,4 @@ export { default as Sponsors } from './Sponsors';
 export { default as Topbar } from './layouts/Navigation/Topbar/Topbar';
 export { default as Faq } from './layouts/Faq';
 export {default as SuccessDefault} from '../success';
+export {default as AboutDefault} from '../about';
