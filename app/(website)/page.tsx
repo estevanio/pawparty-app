@@ -2,9 +2,13 @@ import React from 'react';
 import Box from '@mui/material/Box';
 import Container from '@/app/ui/website/Container';
 
-
-
-import { Features, Folio, Gallery, Hero, Services, HowItWorks, Sponsors } from '@/app/ui/website';
+import { default as Features } from '@/app/ui/website/Features/Features';
+import { default as Folio } from '@/app/ui/website/Folio/Folio';
+import { default as Gallery } from '@/app/ui/website/Gallery/Gallery';
+import { default as Hero } from '@/app/ui/website/Hero/Hero';
+import { default as Services } from '@/app/ui/website/Services/Services';
+import { default as HowItWorks} from '@/app/ui/website/HowItWorks/HowItWorks';
+import { default as Sponsors } from '@/app/ui/website/Sponsors/Sponsors';
 
 const Page = () => (
   <>

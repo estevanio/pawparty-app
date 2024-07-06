@@ -6,7 +6,7 @@ import { useTheme } from '@mui/material/styles';
 import Link from 'next/link';
 
 import NavItem from './components/NavItem';
-import pages from '@/app/ui/website/layouts/Navigation/navigation';
+import pages from '@/app/ui/website/Navigation/navigation';
 
 
 const SidebarNav = () => {

@@ -1,7 +1,7 @@
 'use client';
 
 import React from "react";
-import {Faq} from '@/app/ui/website';
+import { default as Faq } from '@/app/ui/website/Faq/Faq';
 
 
 export default function FaqPage(){

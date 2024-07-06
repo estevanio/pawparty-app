@@ -1,6 +1,6 @@
 import React from "react";
 
-import { TeamProfiles } from "@/app/ui/website";
+import { default as TeamProfiles } from "@/app/ui/website/About/TeamProfiles";
 
 export default function Page(){
     return (

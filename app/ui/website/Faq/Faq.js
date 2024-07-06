@@ -2,8 +2,7 @@ import React from 'react';
 import { useTheme } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 
-// import Main from '../Main';
-import Container from '../../Container';
+import Container from '@/app/ui/website/Container';
 import { Content, Footer, Headline } from './components';
 
 const Faq = () => {

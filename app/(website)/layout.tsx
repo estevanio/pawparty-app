@@ -1,4 +1,4 @@
-import { Topbar } from "@/app/ui/website";
+import { default as Topbar } from "@/app/ui/website/Navigation/Topbar/Topbar";
 
 export default function Layout({ children }: { children: React.ReactNode }) {
     return (

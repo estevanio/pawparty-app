@@ -1,11 +1,11 @@
+'use client';
+
 import React from 'react';
 
-const HowItWorks: React.FC = () => {
+export default function HowItWorks(){
     return (
-    <section id='how-it-works'>
-        <p>This is the How-it-works section</p>
-    </section>
+        <section id='how-it-works'>
+            <p>This is the How-it-works section</p>
+        </section>
     );
 };
-
-export default HowItWorks;
