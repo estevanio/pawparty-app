@@ -5,7 +5,7 @@ import Button from '@mui/material/Button';
 import { useTheme } from '@mui/material/styles';
 import Link from 'next/link';
 
-import NavItem from './components/NavItem';
+import NavItem from './NavItem';
 import pages from '@/app/ui/website/Navigation/navigation';
 
 

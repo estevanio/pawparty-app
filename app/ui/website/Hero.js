@@ -10,7 +10,7 @@ import { usePathname } from 'next/navigation';
 
 // import LaptopSkeletonIllustration from 'app/ui/website/svg/illustrations/LaptopSkeleton.js';
 
-import Container from '../Container';
+import Container from './Container';
 import { Button } from '@mui/material';
 
 const Hero = () => {

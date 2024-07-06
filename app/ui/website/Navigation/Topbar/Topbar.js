@@ -11,9 +11,9 @@ import { usePathname } from 'next/navigation';
 import AppBar from '@mui/material/AppBar';
 import useScrollTrigger from '@mui/material/useScrollTrigger';
 
-import { NavItem } from './components';
+import { default as NavItem } from './NavItem';
 import pages from '@/app/ui/website/Navigation/navigation';
-import { Sidebar } from '../index';
+import { default as Sidebar } from '@/app/ui/website/Navigation/Sidebar/Sidebar';
 
 
 const Topbar = ({ onSidebarOpen, colorInvert = false }) => {
