@@ -4,27 +4,29 @@ import React from "react";
 import { 
     Card, Container, Avatar, Typography
 } from "@mui/material";
-import { Pet } from "@/app/lib/definitions";
+import { AnimalData, Pet } from "@/app/lib/definitions";
 
 interface InterfaceProps {
-  pet: Pet
+  animal: AnimalData
 }
 
-export default function MatchCard({pet}: InterfaceProps) {
+export default function MatchCard({animal}: InterfaceProps) {
 
     const handleClick = () => {
-      console.log(`Match with ${pet.name} clicked`)
+      console.log(`Match with ${animal.name} clicked`)
     }
+
+    console.log(animal)
 
     return(
       <Card
         sx={styles.card}
         onClick={handleClick}>
-          <Avatar src={pet.img_url} sx={styles.avatar}/>
+          <Avatar src={animal.photos[0].url} sx={styles.avatar}/>
           <Container>
-            <Typography sx={styles.largeText}>{pet.name}</Typography>
-            <Typography sx={styles.smallText}>{pet.breed[1]}</Typography>
-            <Typography sx={styles.smallText}>{pet.location[0] + ', ' + pet.location[1]}</Typography>
+            <Typography sx={styles.largeText}>{animal.name}</Typography>
+            <Typography sx={styles.smallText}>{animal.breed}</Typography>
+            <Typography sx={styles.smallText}>{animal.shelter.location}</Typography>
           </Container>
       </Card>
     )

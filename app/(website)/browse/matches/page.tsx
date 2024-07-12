@@ -1,7 +1,9 @@
+
+
 import { Container } from "@mui/material"
 import MatchContainer from "@/app/ui/browse/matches/match-container"
 
-export default function Page() {
+export default async function Page() {
 
     return (
      <>
