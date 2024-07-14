@@ -16,8 +16,6 @@ export default function MatchCard({animal}: InterfaceProps) {
       console.log(`Match with ${animal.name} clicked`)
     }
 
-    console.log(animal)
-
     return(
       <Card
         sx={styles.card}
