@@ -26,13 +26,13 @@ export default function BottomNav() {
         <BottomNavigationAction
           label="Browse"
           component={Link}
-          href={'/browse'}
+          href={'/matchmaker'}
           icon={<SearchIcon />}
         />
         <BottomNavigationAction
           label="Matches"
           component={Link}
-          href={'/browse/matches'}
+          href={'/matchmaker/matches'}
           icon={<FavoriteIcon />}
         />
       </BottomNavigation>

@@ -34,7 +34,7 @@
     "zod": "^3.22.2"
   },
   "devDependencies": {
-    "@prisma/client": "^5.16.2",
+    "@prisma/client": "^5.17.0",
     "@types/bcrypt": "^5.0.1",
     "@types/react": "18.2.21",
     "@types/react-dom": "18.2.14",
@@ -45,7 +45,7 @@
     "eslint-config-prettier": "9.0.0",
     "prettier": "^3.0.3",
     "prettier-plugin-tailwindcss": "0.5.4",
-    "prisma": "^5.16.2"
+    "prisma": "^5.17.0"
   },
   "engines": {
     "node": ">=20.10.0"
