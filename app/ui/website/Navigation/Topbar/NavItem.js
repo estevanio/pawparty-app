@@ -41,7 +41,7 @@ const NavItem = ({ title, id, items, colorInvert = false }) => {
         alignItems={'center'}
         aria-describedby={id}
         sx={{ cursor: 'pointer' }}
-        onMouseEnter={(e) => handleClick(e, id)}
+        onClick={(e) => handleClick(e, id)}
       >
         <Typography
           fontWeight={openedPopoverId === id || hasActiveLink() ? 700 : 400}
@@ -86,7 +86,7 @@ const NavItem = ({ title, id, items, colorInvert = false }) => {
           },
         }}
       >
-        <Grid container spacing={0.5} onMouseLeave={handleClose}>
+        <Grid container spacing={0.5}>
           {items.map((p, i) => (
             <Grid item key={i} xs={items.length > 12 ? 6 : 12}>
               <Link href={p.href} scroll passHref>
