@@ -1,16 +1,6 @@
 import { sql } from '@vercel/postgres';
-
-// import {
-//   CustomerField,
-//   CustomersTableType,
-//   InvoiceForm,
-//   InvoicesTable,
-//   LatestInvoiceRaw,
-//   User,
-//   Revenue,
-// } from './definitions';
 import { PrismaClient, Animal } from '@prisma/client';
-
+import { AnimalData } from './definitions';
 
 const prisma = new PrismaClient();
 
@@ -27,6 +17,25 @@ export async function fetchAnimals() {
   } catch (error) {
     console.error('Database Error:', error);
     throw new Error('Failed to fetch animal data.');
+  }
+}
+
+export async function fetchAnimalById(compare: string) {
+  try {
+    const animal: AnimalData | null = await prisma.animal.findUnique({
+      where: {
+        animal_id: compare
+      },
+      include: {
+        photos: true,
+        attributes: true,
+        shelter: true
+      }
+    })
+    return animal;
+  } catch (error) {
+    console.error('Database Error:', error);
+    throw new Error ('Failed to fetch animal data. Animal ID: ' + compare)
   }
 }
 
