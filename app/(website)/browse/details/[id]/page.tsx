@@ -1,23 +1,38 @@
 import React from "react";
 import { fetchAnimalById } from "@/app/lib/data";
+import { ImageList, ImageListItem, Typography, Container, Card, useMediaQuery } from "@mui/material";
+import AnimalPhotoList from "@/app/ui/browse/details/AnimalPhotoList";
+
 
 export default async function Page({params}: {params: {id: string}}) {
 
   const animal: any = await fetchAnimalById(params.id)
   
   return(
-  <>
-    <div className="header">
-      <img className="logo" src="/pawparty-logo.svg" alt="Pawty Time Logo" />
-      <h1>FIND YOUR PERFECT MATCH</h1>
-    </div>
-    <p>{animal.id}</p>
-    <p>{animal.name}</p>
-    <p>{animal.shelter.location}</p>
-    <img src={animal.photos[0].url} />
-    <img src={animal.photos[2].url} />
-    <img src={animal.photos[3].url} />
-    <img src={animal.photos[4].url} />
+  <>    
+    <Card sx={{display: 'flex', flexDirection: 'column', justifyContent:'center', backgroundColor: '#efefef', borderRadius: '25px', width: '90vw'}}>
+      <Container sx={{width: 'auto'}}>
+        <Typography sx={{
+          paddingTop: 1,
+          fontFamily: "Montserrat",
+          fontSize: 24, 
+          fontWeight: 700,
+          lineHeight: '29.26px'}}>{animal.name}</Typography>
+        <Typography sx={{
+          fontFamily:'Montserrat', 
+          pointerEvents: 'none', 
+          fontSize: 14}}>{animal.shelter.name}</Typography>
+        <Typography sx={{
+          fontFamily:'Montserrat', 
+          pointerEvents: 'none', 
+          fontSize: 14}}>{animal.shelter.location}</Typography>
+        <Typography sx={{
+          fontFamily:'Montserrat', 
+          pointerEvents: 'none', 
+          fontSize: 14}}>{animal.shelter.phone_number}</Typography>
+        <AnimalPhotoList animalPhotoArray={animal.photos} animalName={animal.name}/>
+      </Container>      
+    </Card>
   </>
   );
 }
