@@ -29,9 +29,9 @@ export default async function Page({params}: {params: {id: string}}) {
         <Typography sx={{
           fontFamily:'Montserrat', 
           pointerEvents: 'none', 
-          fontSize: 14}}>{animal.shelter.phone_number}</Typography>
-        <AnimalPhotoList animalPhotoArray={animal.photos} animalName={animal.name}/>
-      </Container>      
+          fontSize: 14}}>{animal.shelter.phone_number}</Typography>        
+      </Container>
+      <AnimalPhotoList animalPhotoArray={animal.photos} animalName={animal.name}/>
     </Card>
   </>
   );
