@@ -174,7 +174,7 @@ a {
   margin: 10px;
   color: #000000;
 }
-
+/* 
 @media screen and (max-width: 900px) {
   html {
     max-height: 100%;
@@ -189,6 +189,6 @@ a {
   .logo {
     width: 350px;
   }
-}
+} */
 
 

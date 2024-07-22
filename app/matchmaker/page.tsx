@@ -8,7 +8,7 @@ export default async function Page() {
   const animals: any = await fetchAnimals()
 
   return (
-    <div className="webApp">       
+    <div>       
       <Container sx={{paddingLeft: 0, paddingRight: 0}}>
         <SwipeStack animalArray={animals} />        
       </Container>

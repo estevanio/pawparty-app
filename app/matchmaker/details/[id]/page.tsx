@@ -1,7 +1,7 @@
 import React from "react";
 import { fetchAnimalById } from "@/app/lib/data";
-import { ImageList, ImageListItem, Typography, Container, Card, useMediaQuery } from "@mui/material";
-import AnimalPhotoList from "@/app/ui/browse/details/AnimalPhotoList";
+import { Typography, Container, Card} from "@mui/material";
+import AnimalPhotoList from "@/app/ui/browse/details/animal-photo-list";
 
 
 export default async function Page({params}: {params: {id: string}}) {
@@ -10,7 +10,7 @@ export default async function Page({params}: {params: {id: string}}) {
   
   return(
   <>    
-    <Card sx={{display: 'flex', flexDirection: 'column', justifyContent:'center', backgroundColor: '#efefef', borderRadius: '25px', width: '90vw'}}>
+    <Card sx={{display: 'flex', flexDirection: 'column', justifyContent:'center', alignItems: 'center', backgroundColor: '#efefef', borderRadius: '25px', width: '90vw'}}>
       <Container sx={{width: 'auto'}}>
         <Typography sx={{
           paddingTop: 1,

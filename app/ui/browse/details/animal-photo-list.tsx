@@ -1,6 +1,5 @@
 'use client'
 
-import { AnimalData } from "@/app/lib/definitions"
 import { ImageList, ImageListItem, useMediaQuery } from "@mui/material"
 
 export default function AnimalPhotoList( {animalPhotoArray, animalName}: {animalPhotoArray: any, animalName: string}) {    
@@ -16,7 +15,7 @@ export default function AnimalPhotoList( {animalPhotoArray, animalName}: {animal
 
     return (
       <>
-        <ImageList sx={{width: matches ? '90vw': null, height: 'auto', userSelect: 'none'}} cols={matches ? 4 : 1} rowHeight={400}>
+        <ImageList sx={{width: matches ? '90%': null, height: 'auto', userSelect: 'none'}} cols={matches ? 4 : 1} rowHeight={400}>
             {animalImages}
         </ImageList>
       </>        
