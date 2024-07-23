@@ -73,7 +73,7 @@ const Hero = () => {
                 justifyContent={'flex-start'}
                 marginTop={2}
               >
-                <Link href={'/matchmaker'} passHref>
+                <Link href={'/matchmaker/browse'} passHref>
                   <Button type = "button" id= "linkToBrowse" variant='contained' size= 'large' color='success'>
                       <span className="hidden md:block">Click here to find your new friend</span>
                   </Button>

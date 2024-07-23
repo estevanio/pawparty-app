@@ -125,7 +125,7 @@ const Topbar = ({ onSidebarOpen, colorInvert = false }) => {
               />
             </Box>
             <Box marginLeft={4}>
-              <Link href={'/matchmaker'} passHref>
+              <Link href={'/matchmaker/browse'} passHref>
                 <Button type = "button" id= "linkToBrowse" variant='contained' size= 'large' color='secondary'>
                   <span className="hidden md:block">Click here to find your new friend</span>
                 </Button>
