@@ -84,7 +84,7 @@ export default function SwipeStack (props: any) {
   
     return (
       <>
-        <Container sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', height:475, width: '100vw'}}>
+        <Container sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
           {displayAnimals}
         </Container>
         <BrowseQuestionsDialogue 
@@ -92,10 +92,9 @@ export default function SwipeStack (props: any) {
           setQuestionsOpen={setQuestionsOpen}/>
         <Snackbar
           open={snackOpen}
-          autoHideDuration={3000}
+          autoHideDuration={1500}
           onClose={() => setSnackOpen(false)}
-          message={`Matched! Head over to matches to chat with ${lastSwipedName}`}
-      />
+          message={`Matched! Head over to matches to chat with ${lastSwipedName}`}/>
       </>
     )
   }

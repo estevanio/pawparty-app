@@ -8,14 +8,12 @@ export default async function Page() {
   const animals: any = await fetchAnimals()
 
   return (
-    <div>       
-      <Container sx={{paddingLeft: 0, paddingRight: 0}}>
-        <SwipeStack animalArray={animals} />        
-      </Container>
+    <>       
+      <SwipeStack animalArray={animals} />
       <div className="arrows">
         <img className="left-arrow" src="/left-arrow.svg" alt="left arrow" />
         <img className="right-arrow" src="/right-arrow.svg" alt="right arrow" />
       </div>
-    </div>
+    </>
   );
 }

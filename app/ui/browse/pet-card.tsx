@@ -29,7 +29,6 @@ export default function PetCard ({ animal, swipeInProgress }: InterfaceProps)  {
 
     return (
         <Card
-            id={'card itself'} 
             raised={false}
             sx={styles.card}>
             <CardActionArea 

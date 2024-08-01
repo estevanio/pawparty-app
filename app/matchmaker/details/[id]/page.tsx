@@ -9,8 +9,8 @@ export default async function Page({params}: {params: {id: string}}) {
   const animal: any = await fetchAnimalById(params.id)
   
   return(
-  <>    
-    <Card sx={{display: 'flex', flexDirection: 'column', justifyContent:'center', alignItems: 'center', backgroundColor: '#efefef', borderRadius: '25px', width: '90vw'}}>
+  <Container sx={{display: 'flex', flexDirection: 'column', alignItems: 'center', width: '100vw'}}>    
+    <Card sx={{display: 'flex', flexDirection: 'column', alignItems: 'center', backgroundColor: '#efefef', borderRadius: '25px', width: '90vw'}}>
       <Container sx={{width: 'auto'}}>
         <Typography sx={{
           paddingTop: 1,
@@ -33,6 +33,6 @@ export default async function Page({params}: {params: {id: string}}) {
       </Container>
       <AnimalPhotoList animalPhotoArray={animal.photos} animalName={animal.name}/>
     </Card>
-  </>
+  </Container>
   );
 }
