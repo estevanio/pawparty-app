@@ -84,7 +84,7 @@ export default function SwipeStack (props: any) {
   
     return (
       <>
-        <Container sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', height: 500}}>
+        <Container sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', height: 565}}>
           {displayAnimals}
         </Container>
         <BrowseQuestionsDialogue 
