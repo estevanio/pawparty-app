@@ -1,9 +1,12 @@
-import React from "react";
+'use client';
 
-export default function Page(){
+import React from "react";
+import { default as Stories } from '@/app/ui/website/Stories/Stories';
+
+export default function SuccessStories(){
     return (
-    <>
-        Success Stories
-    </>
-);
-}
+        <section id='success-stories'>
+            <Stories />
+        </section>
+    );
+};
