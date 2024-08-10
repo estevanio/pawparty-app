@@ -44,7 +44,7 @@ export default function BottomNav() {
         <BottomNavigationAction
           label="Browse"
           component={Link}
-          href={'/matchmaker'}
+          href={'/matchmaker/browse'}
           icon={<SearchIcon />}
         />
         <BottomNavigationAction
