@@ -3,8 +3,7 @@
 import React, { useState, useEffect } from 'react'
 import { Container, Typography } from "@mui/material"
 import MatchCard from "./match-card"
-import { AnimalData, Pet } from "@/app/lib/definitions"
-import { fetchAnimalsByMatches } from '@/app/lib/data'
+import { AnimalData } from "@/app/lib/definitions"
 
 export default function MatchContainer () {  
 
@@ -18,7 +17,7 @@ export default function MatchContainer () {
     setMatches(matchArray)    
   }, [])
 
-  const displayMatches: any = matches?.map((animal: AnimalData)=> <MatchCard key={animal.animal_id} animal={animal}/>)
+  const displayMatches: any = matches?.map((animal: AnimalData) => <MatchCard key={animal.animal_id} animal={animal}/>)
 
     return (
         <Container sx={{height: 615}}>

@@ -1,19 +1,16 @@
 'use client';
 
-import React, { useEffect, useState } from 'react';
-
+import React, { useEffect } from 'react';
 import Box from '@mui/material/Box';
 import BottomNavigation from '@mui/material/BottomNavigation';
 import BottomNavigationAction from '@mui/material/BottomNavigationAction';
-import RestoreIcon from '@mui/icons-material/Restore';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import SearchIcon from '@mui/icons-material/Search';
 import Link from 'next/link';
-import { useRouter, usePathname } from 'next/navigation';
+import { usePathname } from 'next/navigation';
 
 
 export default function BottomNav() {
-  const router = useRouter();
   const path: string = usePathname();
 
   const getValueFromPath = (path: string) => {

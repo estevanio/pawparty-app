@@ -3,16 +3,14 @@
 import React, { useEffect, useState } from "react";
 import TinderCard from 'react-tinder-card'
 import PetCard from "./pet-card";
-import { Container, Snackbar } from "@mui/material";
-import { pets } from '@/app/lib/mockdb'
-import { AnimalData } from "@/app/lib/definitions";
 import BrowseQuestionsDialogue from "./browse-questions-dialogue";
+import { Container, Snackbar } from "@mui/material";
+import { AnimalData } from "@/app/lib/definitions";
 import { Animal } from "@prisma/client";
 
 export default function SwipeStack (props: any) {
     
     const [animals, setAnimals] = useState([])
-    const [lastDirection, setLastDirection] = useState('')
     const [swipeInProgress, setSwipeInProgress] = useState(false)
     const [questionsOpen, setQuestionsOpen] = useState(false)
     const [snackOpen, setSnackOpen] = useState(false)
@@ -35,17 +33,9 @@ export default function SwipeStack (props: any) {
       setAnimals(props.animalArray)
     }, [])
   
-    const swiped: any = (direction: string, name: string) => {
-      
-      setSnackOpen(false)
-      
-      setLastDirection(direction)
-      setSwipeInProgress(true)
-    }
-  
     const outOfFrame = (animal: AnimalData, direction: String) => {
 
-      //need to parse localStorage, likely will not be needed when dealing with live data  
+      //need to parse localStorage for now.  
       let matchString: any = localStorage.getItem('matches')
       let matchArray: any = JSON.parse(matchString)
       let arrayIds: String[] = []
@@ -72,8 +62,9 @@ export default function SwipeStack (props: any) {
             <TinderCard
                 className="swipe"
                 key={animal.animal_id} 
-                onSwipe={(dir) => {
-                  swiped(dir, animal.name, animal.breed)}} 
+                onSwipe={() => {
+                  setSnackOpen(false)
+                  setSwipeInProgress(true)}} 
                 onCardLeftScreen={(dir) => outOfFrame(animal, dir)}
                 preventSwipe={['up', 'down']}
                 onSwipeRequirementUnfulfilled={() => setSwipeInProgress(false)}>
