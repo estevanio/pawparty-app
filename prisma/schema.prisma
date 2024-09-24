@@ -53,6 +53,7 @@ model Shelter {
 // Define the Animal model
 model Animal {
   animal_id          String       @id @map("animal_id") @default(uuid())
+  third_party_id     String?
   name               String
   external_id         String?
   sex                String?
@@ -75,6 +76,10 @@ model Animal {
   attributes         Attribute[]
   // Define the one-to-many relationship between Animal and Photos
   photos             Photo[]
+  last_updated       DateTime?
+  availability       Boolean
+  //this can be retrieved through the shelter but some anamials may not have shelter info available
+  //location        String 
 }
 
 // Define the Attribute model

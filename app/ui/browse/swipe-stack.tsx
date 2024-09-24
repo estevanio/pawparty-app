@@ -67,7 +67,7 @@ export default function SwipeStack (props: any) {
                   setSwipeInProgress(true)}} 
                 onCardLeftScreen={(dir) => outOfFrame(animal, dir)}
                 preventSwipe={['up', 'down']}
-                onSwipeRequirementUnfulfilled={() => setSwipeInProgress(false)}>
+                onSwipeRequirementUnfulfilled={() => setTimeout(()=> setSwipeInProgress(false), 500)}>
                 <PetCard animal={animal} swipeInProgress={swipeInProgress}/>
             </TinderCard>
         )
