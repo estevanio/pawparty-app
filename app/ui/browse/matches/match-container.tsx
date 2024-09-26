@@ -21,9 +21,9 @@ export default function MatchContainer () {
   const displayMatches: any = matches?.map((animal: AnimalData)=> <MatchCard key={animal.animal_id} animal={animal}/>)
 
     return (
-        <>
+        <Container sx={{height: 615}}>
             {displayMatches?.length > 0 ? displayMatches : <Typography sx={styles.largeText}>NO MATCHES YET</Typography>}
-        </>
+        </Container>
     )
 }
 
