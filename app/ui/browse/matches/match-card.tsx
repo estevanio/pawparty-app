@@ -5,6 +5,7 @@ import {
     Card, Container, Avatar, Typography
 } from "@mui/material";
 import { AnimalData, Pet } from "@/app/lib/definitions";
+import { useRouter } from "next/navigation";
 
 interface InterfaceProps {
   animal: AnimalData
@@ -12,11 +13,11 @@ interface InterfaceProps {
 
 export default function MatchCard({animal}: InterfaceProps) {
 
-    const handleClick = () => {
-      console.log(`Match with ${animal.name} clicked`)
-    }
+  const router = useRouter()
 
-    console.log(animal)
+  const handleClick = () => {
+      router.push(`/matchmaker/details/${animal.animal_id}`)
+  }    
 
     return(
       <Card

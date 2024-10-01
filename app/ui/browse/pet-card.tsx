@@ -7,6 +7,7 @@ import {
     CardActionArea 
 } from "@mui/material";
 import { AnimalData } from "@/app/lib/definitions";
+import { useRouter } from "next/navigation";
 
 
 interface InterfaceProps {
@@ -16,15 +17,18 @@ interface InterfaceProps {
 
 export default function PetCard ({ animal, swipeInProgress }: InterfaceProps)  {
 
+    const router = useRouter()
+
     const handleClick = () => {
         if (swipeInProgress == false){ 
             console.log(`${animal.name} was clicked.`)
+            router.push(`/matchmaker/details/${animal.animal_id}`)
+
         }        
     }
 
     return (
         <Card
-            id={'card itself'} 
             raised={false}
             sx={styles.card}>
             <CardActionArea 
