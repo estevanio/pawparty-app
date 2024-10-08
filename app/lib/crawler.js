@@ -1,17 +1,16 @@
-import { request } from 'axios';
+import axios from 'axios';
 import { load } from 'cheerio';
 import { writeFile } from 'fs';
 
 const getAnimalInformation = async () => {
 	try {
-		const { data } = await request({
+		const { data } = await axios.request({
             method: "GET",
 			url:'https://ws.petango.com/webservices/adoptablesearch/wsAdoptableAnimals.aspx?species=Dog&sex=A&agegroup=All&site=1223&onhold=A&orderby=ID&colnum=3&AuthKey=l1ec1s2ngeqgg3wuwnyscj771tr00hqk226mquetau7hd63yug&css=https://ws.petango.com/WebServices/adoptablesearch/css/styles.css',
             headers: {
             "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36"
             }
         });
-		
 		// Parse HTML with Cheerio
 		const $ = load(data);
 
