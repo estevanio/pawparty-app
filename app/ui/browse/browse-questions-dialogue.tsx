@@ -1,5 +1,5 @@
 'use client'
-import React, { useState } from "react"
+import React from "react"
 import { Dialog, Container, Button, Typography } from "@mui/material"
 
 interface DialogProps {
