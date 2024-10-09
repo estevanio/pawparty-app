@@ -1,76 +1,67 @@
-import { 
-    Card, 
-    CardContent, 
-    CardMedia, 
-    Typography, 
-    Container, 
-    CardActionArea 
-} from "@mui/material";
+import {Card, CardContent, CardMedia, Typography, Container, CardActionArea} from "@mui/material";
 import { AnimalData } from "@/app/lib/definitions";
+import { useRouter } from "next/navigation";
 
+export default function PetCard ({ animal, swipeInProgress }: {animal: AnimalData, swipeInProgress: boolean}){ 
 
-interface InterfaceProps {
-  animal: AnimalData,
-  swipeInProgress: boolean
-}
-
-export default function PetCard ({ animal, swipeInProgress }: InterfaceProps)  {
+    const router = useRouter()
 
     const handleClick = () => {
         if (swipeInProgress == false){ 
             console.log(`${animal.name} was clicked.`)
+            router.push(`/matchmaker/details/${animal.animal_id}`)
         }        
     }
 
     return (
-        <Card
-            id={'card itself'} 
-            raised={false}
-            sx={styles.card}>
-            <CardActionArea 
-                onClick={() => handleClick()}
-                onTouchEnd={() => handleClick()}>
-                <CardMedia
-                    sx={styles.cardMedia}
-                    image={animal.photos[0].url}/>
-                <Container sx={styles.cardContentContainer}>
-                    <CardContent 
-                        sx={styles.cardContent}>
-                        <Typography
-                            noWrap={true}
-                            sx={styles.fontName}>
-                            {animal.name}
-                        </Typography>
-                        <Typography
-                            sx={styles.fontText}>
-                            {animal.breed}
-                        </Typography>
-                        <Typography
-                            sx={styles.fontText}>
-                            {animal.shelter.location}
-                        </Typography>
-                    </CardContent>
-                    <CardContent sx={{pointerEvents: 'none'}}>
-                        <Typography
-                            noWrap={true}
-                            sx={styles.fontText}>
-                            {animal.attributes[0] ? animal.attributes[0].attribute : null}
-                        </Typography>
-                        <Typography
-                            noWrap={true}
-                            sx={styles.fontText}>
-                            {animal.attributes[1] ? animal.attributes[1].attribute : null}
-                        </Typography>
-                        <Typography 
-                            noWrap={true}
-                            sx={styles.fontText}>
-                            {animal.attributes[2] ? animal.attributes[2].attribute : null}
-                        </Typography>
-                    </CardContent>
-                </Container>
-            </CardActionArea>
-        </Card>
-
+        <>
+            <Card
+                raised={false}
+                sx={styles.card}>
+                <CardActionArea 
+                    onClick={() => handleClick()}
+                    onTouchEnd={() => handleClick()}>
+                    <CardMedia
+                        sx={styles.cardMedia}
+                        image={animal.photos[0].url}/>
+                    <Container sx={styles.cardContentContainer}>
+                        <CardContent 
+                            sx={styles.cardContent}>
+                            <Typography
+                                noWrap={true}
+                                sx={styles.fontName}>
+                                {animal.name}
+                            </Typography>
+                            <Typography
+                                sx={styles.fontText}>
+                                {animal.breed}
+                            </Typography>
+                            <Typography
+                                sx={styles.fontText}>
+                                {animal.shelter.location}
+                            </Typography>
+                        </CardContent>
+                        <CardContent sx={{pointerEvents: 'none'}}>
+                            <Typography
+                                noWrap={true}
+                                sx={styles.fontText}>
+                                {animal.attributes[0] ? animal.attributes[0].attribute : null}
+                            </Typography>
+                            <Typography
+                                noWrap={true}
+                                sx={styles.fontText}>
+                                {animal.attributes[1] ? animal.attributes[1].attribute : null}
+                            </Typography>
+                            <Typography 
+                                noWrap={true}
+                                sx={styles.fontText}>
+                                {animal.attributes[2] ? animal.attributes[2].attribute : null}
+                            </Typography>
+                        </CardContent>
+                    </Container>
+                </CardActionArea>
+            </Card>
+        </>
     )
 
 }
