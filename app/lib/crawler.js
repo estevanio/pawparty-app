@@ -22,12 +22,18 @@ const getAnimalInformation = async () => {
 		const animalGenders = [];
 		const animalBreeds = [];
 		const animalAges = [];
+		const animalPhotos = [];
 
 		// Iterate over all anchor links for the given selector and ....
 		$('div.list-animal-name > a').each((_idx, el) => {
 			// .... extract for each the tag text and add it to the data array
 			const animalName = $(el).text()
 			animalNames.push(animalName)
+		});
+
+		$('div.list-animal-photo-block > a > img.list-animal-photo').each((_idx, el) => {
+			const animalPhoto = $(el).attr('src')
+			animalPhotos.push(animalPhoto)
 		});
 
 		$('div.list-animal-id').each((_idx, el) => {
@@ -63,6 +69,7 @@ const getAnimalInformation = async () => {
 			animal.Gender = animalGenders[i];
 			animal.Breed = animalBreeds[i];
 			animal.Age = animalAges[i];
+			animal.Photos = animalPhotos[i];
 			animalInfo.push(animal);
 		}
 		
