@@ -14,6 +14,7 @@ datasource db {
 // Define the Shelter model
 model Shelter {
   shelter_id         String       @id @map("shelter_id") @default(uuid()) 
+  third_party_id     String?
   name               String
   location           String
   phone_number       String?
@@ -53,8 +54,9 @@ model Shelter {
 // Define the Animal model
 model Animal {
   animal_id          String       @id @map("animal_id") @default(uuid())
+  third_party_id     String?
   name               String
-  external_id         String?
+  organization_source String?
   sex                String?
   weight             Float?
   weight_units       String?
@@ -68,6 +70,9 @@ model Animal {
   secondary_color    String?
   intake_date        DateTime
   public_url         String?
+  available          Boolean?
+  last_updated       DateTime?
+  location           String? 
   // Define the many-to-one relationship between Animal and Shelter
   shelter            Shelter   @relation("shelter_animals", fields: [shelter_id], references: [shelter_id])
   shelter_id         String
@@ -75,6 +80,7 @@ model Animal {
   attributes         Attribute[]
   // Define the one-to-many relationship between Animal and Photos
   photos             Photo[]
+  special_needs      SpecialNeeds[]
 }
 
 // Define the Attribute model
@@ -93,5 +99,13 @@ model Photo {
   url                String
   is_cover           Boolean
   // Define the many-to-one relationship between Photo and Animal
+  animal             Animal    @relation(fields: [animal_id], references: [animal_id])
+}
+
+model SpecialNeeds {
+  special_needs_id   String       @id @default(uuid())
+  animal_id          String
+  special_need       String
+  // Define the many-to-one relationship between SpecialNeeds and Animal
   animal             Animal    @relation(fields: [animal_id], references: [animal_id])
 }
