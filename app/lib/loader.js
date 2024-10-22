@@ -12,9 +12,11 @@ async function loadAnimals(){
             data: {
               animal_id: animal.Id,
               name: animal.Name,
+              sex: animal.Sex,
               species: animal.Species,
               breed: animal.Breed,
-              intake_date: new Date(animal.intake_date),
+              primary_color: animal.Color,
+              intake_date: new Date(animal.IntakeDate),
               shelter_id: "43ff709b-2c6d-4087-8179-b61b87bfe36e", //bad practice, this shouldn't be hardcoded
               photos: animal.Photos
             },
