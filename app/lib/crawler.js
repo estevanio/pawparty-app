@@ -118,7 +118,7 @@ const getAnimalInformation = async () => {
 			}
 		}
 		
-		writeFile("AnimalData.json",JSON.stringify(animalData),function(err){
+		writeFile("app/lib/animalData.json",JSON.stringify(animalData),function(err){
 			if(err){
 				console.log(err)
 			}
