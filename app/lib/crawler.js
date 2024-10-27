@@ -66,44 +66,21 @@ const parseData = async (Ids) =>{
 
 };
 
-const getAnimalInformation = async () => {
+const getAnimals = async (link) => {
 	try {
-		const animalData = [];
+		const animals = [];
 
-		var { data } = await axios.request({
+		const { data } = await axios.request({
             method: "GET",
-			url:'https://ws.petango.com/webservices/adoptablesearch/wsAdoptableAnimals.aspx?species=Dog&sex=A&agegroup=All&site=1223&onhold=A&orderby=ID&colnum=3&AuthKey=l1ec1s2ngeqgg3wuwnyscj771tr00hqk226mquetau7hd63yug&css=https://ws.petango.com/WebServices/adoptablesearch/css/styles.css',
+			url:link,
             headers: {
             "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36"
             }
         });
 
-		var $ = load(data);
+		const $ = load(data);
 		var tempIds = [];
-
-		$('div.list-animal-id').each((_idx, el) => {
-			const animalId = $(el).text()
-			tempIds.push(animalId)
-		});
-
-		if(tempIds.length){
-			var tempData = await parseData(tempIds);
-
-			for (let i = 0; i < tempData.length; i++){
-				animalData.push(tempData[i]);
-			}
-		}
-
-		data = await axios.request({
-            method: "GET",
-			url:'https://ws.petango.com/webservices/adoptablesearch/wsAdoptableAnimals.aspx?species=Cat&sex=A&agegroup=All&site=1223&onhold=A&orderby=ID&colnum=3&AuthKey=l1ec1s2ngeqgg3wuwnyscj771tr00hqk226mquetau7hd63yug&css=https://ws.petango.com/WebServices/adoptablesearch/css/styles.css',
-            headers: {
-            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36"
-            }
-        });
-
-		$ = load(data);
-		tempIds = [];
+		var tempData;
 
 		$('div.list-animal-id').each((_idx, el) => {
 			const animalId = $(el).text()
@@ -114,8 +91,28 @@ const getAnimalInformation = async () => {
 			tempData = await parseData(tempIds);
 
 			for (let i = 0; i < tempData.length; i++){
-				animalData.push(tempData[i]);
+				animals.push(tempData[i]);
 			}
+		}
+
+		return animals;
+
+	} catch (error) {
+		throw error;
+	}
+}
+
+const getAnimalInformation = async () => {
+	try{
+		const animalData = [];
+		var tempDogData = await getAnimals('https://ws.petango.com/webservices/adoptablesearch/wsAdoptableAnimals.aspx?species=Dog&sex=A&agegroup=All&site=1223&onhold=A&orderby=ID&colnum=3&AuthKey=l1ec1s2ngeqgg3wuwnyscj771tr00hqk226mquetau7hd63yug&css=https://ws.petango.com/WebServices/adoptablesearch/css/styles.css');
+		var tempCatData = await getAnimals('https://ws.petango.com/webservices/adoptablesearch/wsAdoptableAnimals.aspx?species=Cat&sex=A&agegroup=All&site=1223&onhold=A&orderby=ID&colnum=3&AuthKey=l1ec1s2ngeqgg3wuwnyscj771tr00hqk226mquetau7hd63yug&css=https://ws.petango.com/WebServices/adoptablesearch/css/styles.css');
+
+		for (let i = 0; i < tempDogData.length; i++){
+			animalData.push(tempDogData[i]);
+		}
+		for (let i = 0; i < tempCatData.length; i++){
+			animalData.push(tempCatData[i]);
 		}
 		
 		writeFile("app/lib/animalData.json",JSON.stringify(animalData),function(err){
