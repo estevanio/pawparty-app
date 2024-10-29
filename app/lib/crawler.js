@@ -115,7 +115,7 @@ const getAnimalInformation = async () => {
 			animalData.push(tempCatData[i]);
 		}
 		
-		writeFile("app/lib/animalData.json",JSON.stringify(animalData),function(err){
+		writeFile("scripts/local/animalData.json",JSON.stringify(animalData),function(err){
 			if(err){
 				console.log(err)
 			}
