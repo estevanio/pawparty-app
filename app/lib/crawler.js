@@ -2,78 +2,120 @@ import axios from 'axios';
 import { load } from 'cheerio';
 import { writeFile } from 'fs';
 
-const getAnimalInformation = async () => {
+const parseData = async (Ids) =>{
+	try{
+		// Initialise empty data arrays
+		const animalInfo = [];
+		var animalPhotos = [];
+		var temp;
+		var animalName;
+		var tdata;
+
+		for (let i = 0; i < Ids.length; i++){
+			var urls = 'https://ws.petango.com/webservices/adoptablesearch/wsAdoptableAnimalDetails.aspx?id='+Ids[i]+'&css=https://ws.petango.com/WebServices/adoptablesearch/css/styles.css&authkey=l1ec1s2ngeqgg3wuwnyscj771tr00hqk226mquetau7hd63yug'
+			var { data } = await axios.request({
+				method: "GET",
+				url:urls,
+				headers: {
+				"User-Agent": "Mozilla/5.0 (X11; Linux x86_64; rv:131.0) Gecko/20100101 Firefox/131.0"
+				}
+			});
+
+			// Parse HTML with Cheerio
+			var $ = load(data);
+			temp = [];
+			tdata = [];
+			animalPhotos = [];
+
+			// Iterate over all anchor links for the given selector and ....
+			$('table.detail-table > tbody > tr > td.detail-value > span').each((_idx, el) => {
+				// .... extract for each the tag text and add it to the data array
+				temp = $(el).text();
+				tdata.push(temp);
+			});
+
+			$('td.detail-animal-name > span').each((_idx, el) => {
+				animalName = $(el).text();
+			});
+
+			$('table > tbody > tr > td > div.detail-photo-links > div > a').each((_idx, el) => {
+				const animalPhoto = $(el).attr('href');
+				animalPhotos.push(animalPhoto);
+			});
+
+			const animal={};
+			animal.Id = tdata[0];
+			animal.Name = animalName;
+			animal.Species = tdata[1];
+			animal.Breed = tdata[2];
+			animal.Age = tdata[3];
+			animal.Sex = tdata[4];
+			animal.Color = tdata[6];
+			animal.Shelter = tdata[8];
+			animal.Location = tdata[9];
+			animal.IntakeDate = tdata[10];
+			animal.Photos = animalPhotos;
+			animalInfo.push(animal);
+		}
+
+		return animalInfo;
+
+	} catch (error) {
+		throw error;
+	}
+
+};
+
+const getAnimals = async (link) => {
 	try {
+		const animals = [];
+
 		const { data } = await axios.request({
             method: "GET",
-			url:'https://ws.petango.com/webservices/adoptablesearch/wsAdoptableAnimals.aspx?species=Dog&sex=A&agegroup=All&site=1223&onhold=A&orderby=ID&colnum=3&AuthKey=l1ec1s2ngeqgg3wuwnyscj771tr00hqk226mquetau7hd63yug&css=https://ws.petango.com/WebServices/adoptablesearch/css/styles.css',
+			url:link,
             headers: {
             "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36"
             }
         });
-		// Parse HTML with Cheerio
+
 		const $ = load(data);
-
-		// Initialise empty data array
-		const animalInfo = [];
-		const animalNames = [];
-		const animalIds = [];
-		const animalTypes = [];
-		const animalGenders = [];
-		const animalBreeds = [];
-		const animalAges = [];
-		const animalPhotos = [];
-
-		// Iterate over all anchor links for the given selector and ....
-		$('div.list-animal-name > a').each((_idx, el) => {
-			// .... extract for each the tag text and add it to the data array
-			const animalName = $(el).text()
-			animalNames.push(animalName)
-		});
-
-		$('div.list-animal-photo-block > a > img.list-animal-photo').each((_idx, el) => {
-			const animalPhoto = $(el).attr('src')
-			animalPhotos.push(animalPhoto)
-		});
+		var tempIds = [];
+		var tempData;
 
 		$('div.list-animal-id').each((_idx, el) => {
 			const animalId = $(el).text()
-			animalIds.push(animalId)
+			tempIds.push(animalId)
 		});
 
-		$('div.list-anima-species').each((_idx, el) => {
-			const animalType = $(el).text()
-			animalTypes.push(animalType)
-		});
+		if(tempIds.length){
+			tempData = await parseData(tempIds);
 
-		$('div.list-animal-sexSN').each((_idx, el) => {
-			const animalGender = $(el).text()
-			animalGenders.push(animalGender)
-		});
+			for (let i = 0; i < tempData.length; i++){
+				animals.push(tempData[i]);
+			}
+		}
 
-		$('div.list-animal-breed').each((_idx, el) => {
-			const animalBreed = $(el).text()
-			animalBreeds.push(animalBreed)
-		});
+		return animals;
 
-		$('div.list-animal-age').each((_idx, el) => {
-			const animalAge = $(el).text()
-			animalAges.push(animalAge)
-		});
+	} catch (error) {
+		throw error;
+	}
+}
 
-		for (let i = 0; i < animalNames.length; i++){
-			const animal={};
-			animal.Name = animalNames[i];
-			animal.Id = animalIds[i];
-			animal.Type = animalTypes[i];
-			animal.Gender = animalGenders[i];
-			animal.Breed = animalBreeds[i];
-			animal.Age = animalAges[i];
-			animal.Photos = animalPhotos[i];
-			animalInfo.push(animal);
+const getAnimalInformation = async () => {
+	try{
+		const animalData = [];
+		var tempDogData = await getAnimals('https://ws.petango.com/webservices/adoptablesearch/wsAdoptableAnimals.aspx?species=Dog&sex=A&agegroup=All&site=1223&onhold=A&orderby=ID&colnum=3&AuthKey=l1ec1s2ngeqgg3wuwnyscj771tr00hqk226mquetau7hd63yug&css=https://ws.petango.com/WebServices/adoptablesearch/css/styles.css');
+		var tempCatData = await getAnimals('https://ws.petango.com/webservices/adoptablesearch/wsAdoptableAnimals.aspx?species=Cat&sex=A&agegroup=All&site=1223&onhold=A&orderby=ID&colnum=3&AuthKey=l1ec1s2ngeqgg3wuwnyscj771tr00hqk226mquetau7hd63yug&css=https://ws.petango.com/WebServices/adoptablesearch/css/styles.css');
+
+		for (let i = 0; i < tempDogData.length; i++){
+			animalData.push(tempDogData[i]);
+		}
+		for (let i = 0; i < tempCatData.length; i++){
+			animalData.push(tempCatData[i]);
 		}
 		
-		writeFile("animalData.json",JSON.stringify(animalInfo),function(err){
+		writeFile("scripts/local/animalData.json",JSON.stringify(animalData),function(err){
 			if(err){
 				console.log(err)
 			}
