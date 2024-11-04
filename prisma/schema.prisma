@@ -81,6 +81,8 @@ model Animal {
   // Define the one-to-many relationship between Animal and Photos
   photos             Photo[]
   special_needs      SpecialNeeds[]
+  organization       Organization?   @relation("organization_animals", fields: [organization_id], references: [organization_id])
+  organization_id    String?
 }
 
 // Define the Attribute model
@@ -109,3 +111,56 @@ model SpecialNeeds {
   // Define the many-to-one relationship between SpecialNeeds and Animal
   animal             Animal    @relation(fields: [animal_id], references: [animal_id])
 }
+
+model Location {
+  location_id        String       @id @map("location_id") @default(uuid()) 
+  third_party_id     String?
+  street_address String?
+  city String
+  county String?
+  zip Int?
+  state String
+  organization Organization?
+}
+
+model Organization {
+  organization_id    String       @id @map("organization_id") @default(uuid())
+  website_url        String
+  mission_statement  String?
+  email              String?
+  staff_names        String?
+  name               String
+  phone_number       String
+  opening_hours      String?
+  closing_hours      String?
+  days_of_operation  String?
+  facility_size      String?
+  num_enclosures     Int?
+  cat_facilities     String?
+  dog_facilities     String?
+  location_history    String?
+  volunteer_opportunities String?
+  volunteer_coordinator_contact String?
+  adoption_process_details String?
+  intake_process_details String?
+  adoption_fees      String?
+  veterinary_services String?
+  feeding_schedules  String?
+  exercise_programs  String?
+  adoption_events_schedule String?
+  educational_programs String?
+  community_outreach String?
+  donation_methods   String?
+  donation_collection_points String?
+  donation_needs     String?
+  licensing_details  String?
+  regulatory_compliance String?
+  insurance_coverage String?
+  location           Location @relation(fields: [location_id], references: [location_id])
+  location_id        String   @unique
+  parent             Organization? @relation("ParentRelation", fields: [parent_id], references: [organization_id])
+  parent_organization Organization[] @relation("ParentRelation")
+  parent_id          String? // Made this nullable since not all organizations have a parent
+  animals            Animal[] @relation("organization_animals")
+}
+
