@@ -6,10 +6,12 @@ const parseData = async (Ids) =>{
 	try{
 		// Initialise empty data arrays
 		const animalInfo = [];
+		var PHOTOS = {};
 		var animalPhotos = [];
 		var temp;
 		var animalName;
 		var tdata;
+		var tempho;
 
 		for (let i = 0; i < Ids.length; i++){
 			var urls = 'https://ws.petango.com/webservices/adoptablesearch/wsAdoptableAnimalDetails.aspx?id='+Ids[i]+'&css=https://ws.petango.com/WebServices/adoptablesearch/css/styles.css&authkey=l1ec1s2ngeqgg3wuwnyscj771tr00hqk226mquetau7hd63yug'
@@ -23,9 +25,11 @@ const parseData = async (Ids) =>{
 
 			// Parse HTML with Cheerio
 			var $ = load(data);
+			PHOTOS = {};
 			temp = [];
 			tdata = [];
 			animalPhotos = [];
+			tempho = [];
 
 			// Iterate over all anchor links for the given selector and ....
 			$('table.detail-table > tbody > tr > td.detail-value > span').each((_idx, el) => {
@@ -54,7 +58,12 @@ const parseData = async (Ids) =>{
 			animal.Shelter = tdata[8];
 			animal.Location = tdata[9];
 			animal.IntakeDate = tdata[10];
-			animal.Photos = animalPhotos;
+			for(let x = 0; x < animalPhotos.length; x++){
+				PHOTOS.url = animalPhotos[x];
+				PHOTOS.animal_id = animal.Id;
+				tempho.push(PHOTOS);
+			}
+			animal.Photos = tempho;
 			animalInfo.push(animal);
 		}
 
@@ -121,7 +130,7 @@ const getAnimalInformation = async () => {
 			}
 		})
 		
-		return;
+		return animalData;
 
 	} catch (error) {
 		throw error;
