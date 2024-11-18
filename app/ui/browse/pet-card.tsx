@@ -23,7 +23,7 @@ export default function PetCard ({ animal, swipeInProgress }: {animal: AnimalDat
                     onTouchEnd={() => handleClick()}>
                     <CardMedia
                         sx={styles.cardMedia}
-                        image={animal.photos[0].url}/>
+                        image={animal.photos[0]?.url}/>
                     <Container sx={styles.cardContentContainer}>
                         <CardContent 
                             sx={styles.cardContent}>
