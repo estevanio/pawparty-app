@@ -21,7 +21,7 @@ export default function BrowseQuestionsDialogue ({questionsOpen, setQuestionsOpe
                 flexDirection: 'column', 
                 alignItems:'center', 
                 height: 400, 
-                width: '90vw', 
+                width: '90%', 
                 borderRadius: '25px'}}>
                 <Typography sx={{fontFamily: 'Montserrat', fontSize: 16}}>What species of friend are you looking for?</Typography>
                 <Button 
