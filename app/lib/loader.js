@@ -1,11 +1,11 @@
 import { PrismaClient } from '@prisma/client';
 import { default as crawler } from '@/app/lib/crawler';
+import shelters from './sources.json' assert {type:'json'};
 
-
-const animal = await crawler();
+var animal
 const prisma = new PrismaClient();
 
-async function loadAnimals(){
+async function loadAnimals(animal,shelter){
     try {
         // Insert data into the "animals" table
         const insertedAnimals = await Promise.all(
@@ -18,7 +18,7 @@ async function loadAnimals(){
               breed: animal.Breed,
               primary_color: animal.Color,
               intake_date: new Date(animal.IntakeDate),
-              shelter_id: "2d9c9052-e776-4d9f-b74d-4a6a5e394dd4", //bad practice, this shouldn't be hardcoded
+              shelter_id: shelter.id, //"2d9c9052-e776-4d9f-b74d-4a6a5e394dd4", //bad practice, this shouldn't be hardcoded
             },
           })),
         );
@@ -52,11 +52,14 @@ async function loadPhotos() {
 }
 
 async function main() {
-    await loadAnimals();
-    await loadPhotos();
-  
-    await prisma.$disconnect();
+  for(let z = 0; z < shelters.length; z++){
+    animal = await crawler(shelters[z]);
+    await loadAnimals(animal,shelters[z]);
+    await loadPhotos(animal);
   }
+
+  await prisma.$disconnect();
+}
   
 main().catch((err) => {
   console.error(
