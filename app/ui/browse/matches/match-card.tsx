@@ -23,7 +23,7 @@ export default function MatchCard({animal}: InterfaceProps) {
       <Card
         sx={styles.card}
         onClick={handleClick}>
-          <Avatar src={animal.photos[0].url} sx={styles.avatar}/>
+          <Avatar src={animal.photos[0]?.url} sx={styles.avatar}/>
           <Container>
             <Typography sx={styles.largeText}>{animal.name}</Typography>
             <Typography sx={styles.smallText}>{animal.breed}</Typography>

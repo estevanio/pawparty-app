@@ -7,6 +7,7 @@ import BrowseQuestionsDialogue from "./browse-questions-dialogue";
 import { Container, Snackbar } from "@mui/material";
 import { AnimalData } from "@/app/lib/definitions";
 import { Animal } from "@prisma/client";
+import { useLocalStorage } from "@/app/lib/custom-hooks/useLocalStorage";
 
 export default function SwipeStack (props: any) {
     
@@ -45,6 +46,7 @@ export default function SwipeStack (props: any) {
       })
 
       if (animal.species.toLowerCase() == localStorage.getItem('questionAnswer')?.toLowerCase() && direction == 'right') {
+        console.log('foo')
         arrayIds.includes(animal.animal_id) ? null: matchArray.push(animal)
         setSnackOpen(true)    
       }
