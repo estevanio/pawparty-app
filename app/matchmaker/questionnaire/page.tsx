@@ -8,7 +8,6 @@ export default function Page () {
         <>
         <Container className="header">
             <Typography sx={{fontFamily: 'Montserrat'}}>PROFILE BUILDER</Typography>
-            <Typography sx={{fontFamily: 'Montserrat'}}>What are you looking for in a friend?</Typography>
         </Container>
         <QuestionnaireContainer/>
         </>
