@@ -128,11 +128,11 @@ const getAnimalInformation = async (shelter) => {
 			}
 		}
 		
-		writeFile("scripts/local/animalData.json",JSON.stringify(animalData),function(err){
-			if(err){
-				console.log(err)
-			}
-		})
+		// writeFile("scripts/local/animalData.json",JSON.stringify(animalData),function(err){
+		// 	if(err){
+		// 		console.log(err)
+		// 	}
+		// })
 		
 		return animalData;
 

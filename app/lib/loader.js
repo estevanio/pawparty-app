@@ -32,7 +32,7 @@ async function loadAnimals(animal,shelter){
       }
 }
 
-async function loadPhotos() {
+async function loadPhotos(animal) {
   try {
     // Insert data into the "photos" table
     const insertedPhotos = await prisma.photo.createMany({ 
