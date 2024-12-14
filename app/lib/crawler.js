@@ -113,14 +113,14 @@ const getAnimalInformation = async (shelter) => {
 	try{
 		const animalData = [];
 		if (shelter.dog_url != null){
-			var tempDogData = await getAnimals(shelter.dog_url, shelter.authkey);
+			var tempDogData = await getAnimals(shelter.dog_url, shelter.auth);
 			for (let i = 0; i < tempDogData.length; i++){
 				animalData.push(tempDogData[i]);
 			}
 		}
 
 		if (shelter.cat_url != null){
-			var tempCatData = await getAnimals(shelter.cat_url, shelter.authkey);
+			var tempCatData = await getAnimals(shelter.cat_url, shelter.auth);
 			for (let i = 0; i < tempCatData.length; i++){
 				animalData.push(tempCatData[i]);
 			}
