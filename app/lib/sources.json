@@ -3,6 +3,14 @@
         "name": "Ark Valley Humane Society",
         "id": "2d9c9052-e776-4d9f-b74d-4a6a5e394dd4",
         "dog_url": "https://ws.petango.com/webservices/adoptablesearch/wsAdoptableAnimals.aspx?species=Dog&sex=A&agegroup=All&site=1223&onhold=A&orderby=ID&colnum=3&AuthKey=l1ec1s2ngeqgg3wuwnyscj771tr00hqk226mquetau7hd63yug&css=https://ws.petango.com/WebServices/adoptablesearch/css/styles.css",
-        "cat_url": "https://ws.petango.com/webservices/adoptablesearch/wsAdoptableAnimals.aspx?species=Cat&sex=A&agegroup=All&site=1223&onhold=A&orderby=ID&colnum=3&AuthKey=l1ec1s2ngeqgg3wuwnyscj771tr00hqk226mquetau7hd63yug&css=https://ws.petango.com/WebServices/adoptablesearch/css/styles.css"
+        "cat_url": "https://ws.petango.com/webservices/adoptablesearch/wsAdoptableAnimals.aspx?species=Cat&sex=A&agegroup=All&site=1223&onhold=A&orderby=ID&colnum=3&AuthKey=l1ec1s2ngeqgg3wuwnyscj771tr00hqk226mquetau7hd63yug&css=https://ws.petango.com/WebServices/adoptablesearch/css/styles.css",
+        "authkey": "l1ec1s2ngeqgg3wuwnyscj771tr00hqk226mquetau7hd63yug"
+    },
+    {
+        "name": "Teller County Regional Animal Shelter Inc.",
+        "id": "",
+        "dog_url": "https://ws.petango.com/webservices/adoptablesearch/wsAdoptableAnimals.aspx?species=Dog&sex=A&agegroup=All&onhold=A&orderby=ID&colnum=3&AuthKey=rsuihvuji5aoo2l1lchy0feuyv1nbarm684smwgdyluql8c6se&css=http://petango.com/WebServices/adoptablesearch/css/styles.css",
+        "cat_url": "https://ws.petango.com/webservices/adoptablesearch/wsAdoptableAnimals.aspx?species=Cat&sex=A&agegroup=All&onhold=A&orderby=ID&colnum=3&AuthKey=rsuihvuji5aoo2l1lchy0feuyv1nbarm684smwgdyluql8c6se&css=http://petango.com/WebServices/adoptablesearch/css/styles.css",
+        "authkey": "rsuihvuji5aoo2l1lchy0feuyv1nbarm684smwgdyluql8c6se"
     }
 ]

@@ -50,5 +50,31 @@
         "licensing_details": "",
         "shelter_history": "",
         "mission_statement": "Ensuring the welfare of companion animals through compassion and care."
+    },
+    {
+        "name": "Teller County Regional Animal Shelter Inc.",
+        "location": "308 Weaverville Rd. Divide, CO 80814",
+        "phone_number": "719-686-7707",
+        "shelter_id":"",
+        "email": "office@tcras.org",
+        "website_url": "https://www.tcrascolorado.org/",
+        "opening_hours": "Monday-Friday, 10:00am - 5:00pm, Saturday 10:00am - 4:00pm",
+        "days_of_operation": "Monday through Saturday",
+        "cat_facilities": "",
+        "dog_facilities": "",
+        "volunteer_opportunities": "",
+        "volunteer_coordinator_contact": "",
+        "adoption_process_details": "",
+        "adoption_fees": "",
+        "veterinary_services": "",
+        "exercise_programs": "",
+        "educational_programs": "",
+        "community_outreach": "",
+        "donation_methods": "",
+        "donation_collection_points": "",
+        "donation_needs": "",
+        "licensing_details": "",
+        "shelter_history": "",
+        "mission_statement": "FOSTERING HOPE AND NEW BEGINNINGS"
     }
 ]
