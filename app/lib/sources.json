@@ -8,7 +8,7 @@
     },
     {
         "name": "Teller County Regional Animal Shelter Inc.",
-        "id": "",
+        "id": "38735825-124b-47d0-a269-280b066aaad8",
         "dog_url": "https://ws.petango.com/webservices/adoptablesearch/wsAdoptableAnimals.aspx?species=Dog&sex=A&agegroup=All&onhold=A&orderby=ID&colnum=3&AuthKey=rsuihvuji5aoo2l1lchy0feuyv1nbarm684smwgdyluql8c6se&css=http://petango.com/WebServices/adoptablesearch/css/styles.css",
         "cat_url": "https://ws.petango.com/webservices/adoptablesearch/wsAdoptableAnimals.aspx?species=Cat&sex=A&agegroup=All&onhold=A&orderby=ID&colnum=3&AuthKey=rsuihvuji5aoo2l1lchy0feuyv1nbarm684smwgdyluql8c6se&css=http://petango.com/WebServices/adoptablesearch/css/styles.css",
         "authkey": "rsuihvuji5aoo2l1lchy0feuyv1nbarm684smwgdyluql8c6se"
