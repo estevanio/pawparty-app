@@ -7,12 +7,15 @@ import {
     FormLabel, 
     Radio, 
     Card, 
-    Button } from "@mui/material";
+    Button } from "@mui/material";    
+import { useRouter } from "next/navigation";
 import { useLocalStorage } from "@/app/lib/custom-hooks/useLocalStorage";
 import React, { useEffect, useState } from "react";
-import { debug } from "console";
+
 
 export default function QuestionnaireContainer () {
+
+    const router = useRouter()
     const { setItem, getItem } = useLocalStorage()
     
     //working here to try getting component to rerender. Answers now work.
@@ -51,6 +54,8 @@ export default function QuestionnaireContainer () {
         setItem('pets', pets )
         setItem('weight', weight )
         setItem('senior', senior )
+        setItem('questionsAnswered', true)
+        router.push(`/matchmaker/browse`)        
     }
 
     console.log({
