@@ -39,6 +39,11 @@ const parseData = async (Ids, key) =>{
 			$('td.detail-animal-name > span').each((_idx, el) => {
 				animalName = $(el).text();
 			});
+			
+			$('table > tbody > tr > td > img.detail-animal-photo').each((_idx, el) => {
+				const animalCover = $(el).attr('src');
+				animalPhotos.push(animalCover);
+			});
 
 			$('table > tbody > tr > td > div.detail-photo-links > div > a').each((_idx, el) => {
 				const animalPhoto = $(el).attr('href');
