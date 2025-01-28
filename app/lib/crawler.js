@@ -2,17 +2,18 @@ import axios from 'axios';
 import { load } from 'cheerio';
 import { writeFile } from 'fs';
 
-const parseData = async (Ids) =>{
+const parseData = async (Ids, key) =>{
 	try{
 		// Initialise empty data arrays
 		const animalInfo = [];
+		var PHOTOS = {};
 		var animalPhotos = [];
 		var temp;
 		var animalName;
 		var tdata;
 
 		for (let i = 0; i < Ids.length; i++){
-			var urls = 'https://ws.petango.com/webservices/adoptablesearch/wsAdoptableAnimalDetails.aspx?id='+Ids[i]+'&css=https://ws.petango.com/WebServices/adoptablesearch/css/styles.css&authkey=l1ec1s2ngeqgg3wuwnyscj771tr00hqk226mquetau7hd63yug'
+			var urls = 'https://ws.petango.com/webservices/adoptablesearch/wsAdoptableAnimalDetails.aspx?id='+Ids[i]+'&css=https://ws.petango.com/WebServices/adoptablesearch/css/styles.css&authkey='+key;
 			var { data } = await axios.request({
 				method: "GET",
 				url:urls,
@@ -23,6 +24,7 @@ const parseData = async (Ids) =>{
 
 			// Parse HTML with Cheerio
 			var $ = load(data);
+			PHOTOS = {};
 			temp = [];
 			tdata = [];
 			animalPhotos = [];
@@ -36,6 +38,11 @@ const parseData = async (Ids) =>{
 
 			$('td.detail-animal-name > span').each((_idx, el) => {
 				animalName = $(el).text();
+			});
+			
+			$('table > tbody > tr > td > img.detail-animal-photo').each((_idx, el) => {
+				const animalCover = $(el).attr('src');
+				animalPhotos.push(animalCover);
 			});
 
 			$('table > tbody > tr > td > div.detail-photo-links > div > a').each((_idx, el) => {
@@ -51,10 +58,15 @@ const parseData = async (Ids) =>{
 			animal.Age = tdata[3];
 			animal.Sex = tdata[4];
 			animal.Color = tdata[6];
-			animal.Shelter = tdata[8];
+			// animal.Shelter = tdata[8]; 
 			animal.Location = tdata[9];
 			animal.IntakeDate = tdata[10];
-			animal.Photos = animalPhotos;
+			animal.Photos = [];
+			for(let x = 0; x < animalPhotos.length; x++){
+				PHOTOS.url = animalPhotos[x];
+				PHOTOS.animal_id = animal.Id;
+				animal.Photos.push(PHOTOS);
+			}
 			animalInfo.push(animal);
 		}
 
@@ -66,7 +78,7 @@ const parseData = async (Ids) =>{
 
 };
 
-const getAnimals = async (link) => {
+const getAnimals = async (link, key) => {
 	try {
 		const animals = [];
 
@@ -88,7 +100,7 @@ const getAnimals = async (link) => {
 		});
 
 		if(tempIds.length){
-			tempData = await parseData(tempIds);
+			tempData = await parseData(tempIds, key);
 
 			for (let i = 0; i < tempData.length; i++){
 				animals.push(tempData[i]);
@@ -102,26 +114,30 @@ const getAnimals = async (link) => {
 	}
 }
 
-const getAnimalInformation = async () => {
+const getAnimalInformation = async (shelter) => {
 	try{
 		const animalData = [];
-		var tempDogData = await getAnimals('https://ws.petango.com/webservices/adoptablesearch/wsAdoptableAnimals.aspx?species=Dog&sex=A&agegroup=All&site=1223&onhold=A&orderby=ID&colnum=3&AuthKey=l1ec1s2ngeqgg3wuwnyscj771tr00hqk226mquetau7hd63yug&css=https://ws.petango.com/WebServices/adoptablesearch/css/styles.css');
-		var tempCatData = await getAnimals('https://ws.petango.com/webservices/adoptablesearch/wsAdoptableAnimals.aspx?species=Cat&sex=A&agegroup=All&site=1223&onhold=A&orderby=ID&colnum=3&AuthKey=l1ec1s2ngeqgg3wuwnyscj771tr00hqk226mquetau7hd63yug&css=https://ws.petango.com/WebServices/adoptablesearch/css/styles.css');
-
-		for (let i = 0; i < tempDogData.length; i++){
-			animalData.push(tempDogData[i]);
-		}
-		for (let i = 0; i < tempCatData.length; i++){
-			animalData.push(tempCatData[i]);
-		}
-		
-		writeFile("scripts/local/animalData.json",JSON.stringify(animalData),function(err){
-			if(err){
-				console.log(err)
+		if (shelter.dog_url != null){
+			var tempDogData = await getAnimals(shelter.dog_url, shelter.auth);
+			for (let i = 0; i < tempDogData.length; i++){
+				animalData.push(tempDogData[i]);
 			}
-		})
+		}
+
+		if (shelter.cat_url != null){
+			var tempCatData = await getAnimals(shelter.cat_url, shelter.auth);
+			for (let i = 0; i < tempCatData.length; i++){
+				animalData.push(tempCatData[i]);
+			}
+		}
 		
-		return;
+		// writeFile("scripts/local/animalData.json",JSON.stringify(animalData),function(err){
+		// 	if(err){
+		// 		console.log(err)
+		// 	}
+		// })
+		
+		return animalData;
 
 	} catch (error) {
 		throw error;

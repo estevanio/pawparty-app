@@ -1,14 +1,15 @@
-const { PrismaClient } = require('@prisma/client');
+import { PrismaClient } from '@prisma/client';
+import { default as crawler } from '@/app/lib/crawler';
+import shelters from './sources.json' assert {type:'json'};
 
-const animals = require('./animalData.json');
-
+var animal
 const prisma = new PrismaClient();
 
-async function loadAnimals(){
+async function loadAnimals(animal,shelter){
     try {
         // Insert data into the "animals" table
         const insertedAnimals = await Promise.all(
-          animals.map((animal) => prisma.animal.create({
+          animal.map((animal) => prisma.animal.create({
             data: {
               animal_id: animal.Id,
               name: animal.Name,
@@ -17,8 +18,7 @@ async function loadAnimals(){
               breed: animal.Breed,
               primary_color: animal.Color,
               intake_date: new Date(animal.IntakeDate),
-              shelter_id: "43ff709b-2c6d-4087-8179-b61b87bfe36e", //bad practice, this shouldn't be hardcoded
-              photos: animal.Photos
+              shelter_id: shelter.id, //"2d9c9052-e776-4d9f-b74d-4a6a5e394dd4", //bad practice, this shouldn't be hardcoded
             },
           })),
         );
@@ -32,15 +32,40 @@ async function loadAnimals(){
       }
 }
 
-async function main() {
-    await loadAnimals();
-  
-    await prisma.$disconnect();
+async function loadPhotos(animal) {
+  try {
+    // Insert data into the "photos" table
+    const insertedPhotos = await prisma.photo.createMany({ 
+      data: animal.Photos.map((photos) =>({
+        url: photos.url,
+        animal_id: photos.animal_id,
+      }))
+    });
+
+    console.log(`Seeded ${insertedPhotos.count} photos`);
+
+    return insertedPhotos;
+  } catch (error) {
+    console.error('Error seeding photos:', error);
+    throw error;
   }
+}
+
+async function main() {
+  for(let z = 0; z < shelters.length; z++){
+    animal = await crawler(shelters[z]);
+    await loadAnimals(animal,shelters[z]);
+    await loadPhotos(animal);
+  }
+
+  await prisma.$disconnect();
+}
   
-  main().catch((err) => {
-    console.error(
-      'An error occurred while attempting to load the database:',
-      err,
-    );
-  });
+main().catch((err) => {
+  console.error(
+    'An error occurred while attempting to load the database:',
+    err,
+  );
+});
+
+export default main;
