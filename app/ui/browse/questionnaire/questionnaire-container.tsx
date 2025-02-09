@@ -26,13 +26,19 @@ export default function QuestionnaireContainer () {
     const [senior, setSenior] = useState('')
 
     useEffect(()=> {
-        setSpecies(getItem('species'))
-        setKids(getItem('kids'))
-        setPets(getItem('pets'))
+        
+        if (getItem('questionsAnswered')){
+            setSpecies(getItem('species'))
+            setKids(getItem('kids'))
+            setPets(getItem('pets'))
+            setWeight(getItem('weight'))
+            setSenior(getItem('senior'))
+        }
+        
     }, [])
 
     const handleSpeciesChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        console.log(e)
+        console.log(e.target.value)
         setSpecies(e.target.value)
     }
     const handleKidsChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -58,14 +64,6 @@ export default function QuestionnaireContainer () {
         router.push(`/matchmaker/browse`)        
     }
 
-    console.log({
-        species: species,
-        kids: kids,
-        pets: pets,
-        weight: weight,
-        senior: senior,
-    })
-
     return(
         <Container sx={{height: 650, overflow: 'auto'}}>
             <Card sx={{
@@ -88,9 +86,9 @@ export default function QuestionnaireContainer () {
                         onChange={handleSpeciesChange}
                         value={species}
                         >
-                    <FormControlLabel value="dog" control={<Radio />} label="Dogs" />
-                    <FormControlLabel value="cat" control={<Radio />} label="Cats" />
-                    <FormControlLabel value="both" control={<Radio />} label="Both" />
+                    <FormControlLabel  control={<Radio value="dog"/>} label="Dogs" />
+                    <FormControlLabel  control={<Radio value="cat"/>} label="Cats" />
+                    <FormControlLabel control={<Radio value="both" />} label="Both" />
                     </RadioGroup>
                 </FormControl>
             </Card>
@@ -114,8 +112,8 @@ export default function QuestionnaireContainer () {
                         onChange={handleKidsChange}
                         value={kids}
                         >
-                    <FormControlLabel value={'yes'} control={<Radio />} label="Yes" />
-                    <FormControlLabel value={'no'} control={<Radio />} label="No" />
+                    <FormControlLabel  control={<Radio value={'yes'}/>} label="Yes" />
+                    <FormControlLabel  control={<Radio value={'no'}/>} label="No" />
                     </RadioGroup>
                 </FormControl>
             </Card>
@@ -139,8 +137,8 @@ export default function QuestionnaireContainer () {
                         onChange={handlePetsChange}
                         value={pets}
                         >
-                    <FormControlLabel value={'yes'} control={<Radio />} label="Yes" />
-                    <FormControlLabel value={'no'} control={<Radio />} label="No" />
+                    <FormControlLabel  control={<Radio value={'yes'}/>} label="Yes" />
+                    <FormControlLabel  control={<Radio value={'no'}/>} label="No" />
                     </RadioGroup>
                 </FormControl>
             </Card>
@@ -164,10 +162,10 @@ export default function QuestionnaireContainer () {
                         onChange={handleWeightChange}
                         value={weight}
                         >
-                    <FormControlLabel value={'20'} control={<Radio />} label="Below 20 lbs." />
-                    <FormControlLabel value={'40'} control={<Radio />} label="Below 40 lbs." />
-                    <FormControlLabel value={'60'} control={<Radio />} label="Below 60 lbs." />
-                    <FormControlLabel value={'300'} control={<Radio />} label="Any weight." />
+                    <FormControlLabel  control={<Radio value={'20'}/>} label="Below 20 lbs." />
+                    <FormControlLabel  control={<Radio value={'40'}/>} label="Below 40 lbs." />
+                    <FormControlLabel  control={<Radio value={'60'}/>} label="Below 60 lbs." />
+                    <FormControlLabel  control={<Radio value={'300'}/>} label="Any weight." />
                     </RadioGroup>
                 </FormControl>
             </Card>
@@ -191,8 +189,8 @@ export default function QuestionnaireContainer () {
                         onChange={handleSeniorChange}
                         value={senior}
                         >
-                    <FormControlLabel value={'yes'} control={<Radio />} label="Yes" />
-                    <FormControlLabel value={'no'} control={<Radio />} label="No" />
+                    <FormControlLabel  control={<Radio value={'yes'}/>} label="Yes" />
+                    <FormControlLabel  control={<Radio value={'no'}/>} label="No" />
                     </RadioGroup>
                 </FormControl>
             </Card>
