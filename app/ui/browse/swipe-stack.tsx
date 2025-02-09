@@ -47,7 +47,9 @@ export default function SwipeStack (props: any) {
         arrayIds.push(animal.animal_id)
       })
 
-      if (animal.species.toLowerCase() == localStorage.getItem('species')?.toLowerCase() && direction == 'right') {
+      if ((animal.species.toLowerCase() == localStorage.getItem('species')?.toLowerCase()) || 
+            localStorage.getItem('species')?.toLowerCase() == 'both' && 
+            direction == 'right') {
         arrayIds.includes(animal.animal_id) ? null: matchArray.push(animal)
         setSnackOpen(true)    
       }
