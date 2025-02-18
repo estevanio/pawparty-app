@@ -1,5 +1,5 @@
 'use client'
-
+import { useRouter } from "next/navigation";
 import React, { useEffect, useState } from "react";
 import TinderCard from 'react-tinder-card'
 import PetCard from "./pet-card";
@@ -7,8 +7,11 @@ import BrowseQuestionsDialogue from "./browse-questions-dialogue";
 import { Container, Snackbar } from "@mui/material";
 import { AnimalData } from "@/app/lib/definitions";
 import { Animal } from "@prisma/client";
+import { useLocalStorage } from "@/app/lib/custom-hooks/useLocalStorage";
 
 export default function SwipeStack (props: any) {
+
+  const router = useRouter()
     
     const [animals, setAnimals] = useState([])
     const [swipeInProgress, setSwipeInProgress] = useState(false)
@@ -18,7 +21,7 @@ export default function SwipeStack (props: any) {
     const [matchIds, setMatchIds ] = useState<String[]>([]) 
 
     useEffect(() => {
-      localStorage.getItem('questionsAnswered') ? null : setQuestionsOpen(true)
+      localStorage.getItem('questionsAnswered') ? null : router.push(`/matchmaker/questionnaire`)
       localStorage.getItem('matches') ? null : localStorage.setItem('matches', JSON.stringify([]))
 
       let matchString: any = localStorage.getItem('matches')
@@ -48,7 +51,9 @@ export default function SwipeStack (props: any) {
         arrayIds.push(animal.animal_id)
       })
 
-      if (animal.species.toLowerCase() == localStorage.getItem('questionAnswer')?.toLowerCase() && direction == 'right') {
+      if ((animal.species.toLowerCase() == localStorage.getItem('species')?.toLowerCase()) || 
+            localStorage.getItem('species')?.toLowerCase() == 'both' && 
+            direction == 'right') {
         arrayIds.includes(animal.animal_id) ? null: matchArray.push(animal)
         setSnackOpen(true)    
       }
