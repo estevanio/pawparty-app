@@ -9,7 +9,7 @@ export default function PetCard ({ animal, swipeInProgress }: {animal: AnimalDat
     const handleClick = () => {
         if (swipeInProgress == false){ 
             console.log(`${animal.name} was clicked.`)
-            router.push(`/matchmaker/details/${animal.animal_id}`)
+            // router.push(`/matchmaker/details/${animal.animal_id}`)
         }        
     }
 
@@ -17,10 +17,9 @@ export default function PetCard ({ animal, swipeInProgress }: {animal: AnimalDat
         <>
             <Card
                 raised={false}
-                sx={styles.card}>
-                <CardActionArea 
-                    onClick={() => handleClick()}
-                    onTouchEnd={() => handleClick()}>
+                sx={styles.card}
+                onClick={() => handleClick()}
+                onTouchEnd={() => handleClick()}>
                     <CardMedia
                         sx={styles.cardMedia}
                         image={animal.photos[0]?.url}/>
@@ -59,7 +58,6 @@ export default function PetCard ({ animal, swipeInProgress }: {animal: AnimalDat
                             </Typography>
                         </CardContent>
                     </Container>
-                </CardActionArea>
             </Card>
         </>
     )

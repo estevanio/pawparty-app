@@ -18,7 +18,6 @@ export default function QuestionnaireContainer () {
     const router = useRouter()
     const { setItem, getItem } = useLocalStorage()
     
-    //working here to try getting component to rerender. Answers now work.
     const [species, setSpecies] = useState('')
     const [kids, setKids] = useState('')
     const [pets, setPets] = useState('')

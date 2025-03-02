@@ -28,12 +28,8 @@ export default function SwipeStack (props: any) {
       let matchArray: any = JSON.parse(matchString)
       let arrayIds: String[] = []
 
-      console.log(animals)
-
       matchArray.forEach((animal: Animal) => {
         arrayIds.push(animal.animal_id)
-
-
       })
 
       setMatchIds(arrayIds)
@@ -76,7 +72,10 @@ export default function SwipeStack (props: any) {
                   setSwipeInProgress(true)}} 
                 onCardLeftScreen={(dir) => outOfFrame(animal, dir)}
                 preventSwipe={['up', 'down']}
-                onSwipeRequirementUnfulfilled={() => setTimeout(()=> setSwipeInProgress(false), 500)}>
+                onSwipeRequirementUnfulfilled={() => {
+                  console.log('swipe requirement unfulfilled')
+                  setTimeout(()=> setSwipeInProgress(false), 1000)
+                  }}>
                 <PetCard animal={animal} swipeInProgress={swipeInProgress}/>
             </TinderCard>
         )
