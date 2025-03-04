@@ -65,7 +65,7 @@ export default function QuestionnaireContainer () {
     }
 
     return(
-        <Container sx={{height: 650, overflow: 'auto'}}>
+        <Container sx={{height: 650, width:500, overflow: 'auto'}}>
             <Card sx={{
                 display: 'flex',
                 alignItems: 'center',
@@ -98,6 +98,7 @@ export default function QuestionnaireContainer () {
                 justifyContent: 'center',
                 background: '#ededed',
                 borderRadius: '28px',
+                paddingRight: '95px',
                 width: {
                     sm: '400px',
                     md: '100%',
@@ -123,6 +124,7 @@ export default function QuestionnaireContainer () {
                 justifyContent: 'center',
                 background: '#ededed',
                 borderRadius: '28px',
+                paddingRight: '45px',
                 width: {
                     sm: '400px',
                     md: '100%',
@@ -148,6 +150,7 @@ export default function QuestionnaireContainer () {
                 justifyContent: 'center',
                 background: '#ededed',
                 borderRadius: '28px',
+                paddingRight: '78px',
                 width: {
                     sm: '400px',
                     md: '100%',
@@ -175,6 +178,7 @@ export default function QuestionnaireContainer () {
                 justifyContent: 'center',
                 background: '#ededed',
                 borderRadius: '28px',
+                paddingLeft: '40px',
                 width: {
                     sm: '400px',
                     md: '100%',
@@ -195,6 +199,7 @@ export default function QuestionnaireContainer () {
                 </FormControl>
             </Card>
             <Button sx={{
+                marginTop: '10px',
                 width: '100px',
                 backgroundColor: 'blue', 
                 fontFamily: 'Montserrat', 
