@@ -7,7 +7,6 @@ import BrowseQuestionsDialogue from "./browse-questions-dialogue";
 import { Container, Snackbar } from "@mui/material";
 import { AnimalData } from "@/app/lib/definitions";
 import { Animal } from "@prisma/client";
-import { useLocalStorage } from "@/app/lib/custom-hooks/useLocalStorage";
 
 export default function SwipeStack (props: any) {
 
