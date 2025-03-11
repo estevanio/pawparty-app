@@ -27,8 +27,6 @@ export default function SwipeStack (props: any) {
       let matchArray: any = JSON.parse(matchString)
       let arrayIds: String[] = []
 
-      console.log(animals)
-
       matchArray.forEach((animal: Animal) => {
         arrayIds.push(animal.animal_id)
 
