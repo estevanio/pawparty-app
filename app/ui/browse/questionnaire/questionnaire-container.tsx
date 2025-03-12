@@ -105,7 +105,6 @@ export default function QuestionnaireContainer () {
                 justifyContent: 'center',
                 background: '#ededed',
                 borderRadius: '28px',
-                paddingRight: '95px',
                 width: {
                     sm: '400px',
                     md: '100%',
@@ -134,7 +133,6 @@ export default function QuestionnaireContainer () {
                 justifyContent: 'center',
                 background: '#ededed',
                 borderRadius: '28px',
-                paddingRight: '45px',
                 width: {
                     sm: '400px',
                     md: '100%',
@@ -163,7 +161,6 @@ export default function QuestionnaireContainer () {
                 justifyContent: 'center',
                 background: '#ededed',
                 borderRadius: '28px',
-                paddingRight: '78px',
                 width: {
                     sm: '400px',
                     md: '100%',
