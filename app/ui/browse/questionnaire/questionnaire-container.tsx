@@ -38,7 +38,6 @@ export default function QuestionnaireContainer () {
     }, [])
 
     const handleSpeciesChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        console.log(e.target.value)
         setSpecies(e.target.value)
     }
     const handleKidsChange = (e: React.ChangeEvent<HTMLInputElement>) => {
