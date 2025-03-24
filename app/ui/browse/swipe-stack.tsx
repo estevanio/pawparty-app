@@ -1,27 +1,24 @@
 'use client'
-import { useRouter } from "next/navigation";
 import React, { useEffect, useState } from "react";
 import TinderCard from 'react-tinder-card'
 import PetCard from "./pet-card";
-import BrowseQuestionsDialogue from "./browse-questions-dialogue";
 import { Container, Snackbar } from "@mui/material";
 import { AnimalData } from "@/app/lib/definitions";
 import { Animal } from "@prisma/client";
-import { useLocalStorage } from "@/app/lib/custom-hooks/useLocalStorage";
+import useNavigation from "@/app/lib/custom-hooks/useNavigation";
 
 export default function SwipeStack (props: any) {
 
-  const router = useRouter()
+    const { navigatePath } = useNavigation()
     
     const [animals, setAnimals] = useState([])
     const [swipeInProgress, setSwipeInProgress] = useState(false)
-    const [questionsOpen, setQuestionsOpen] = useState(false)
     const [snackOpen, setSnackOpen] = useState(false)
     const [lastSwipedName, setLastSwipedName] = useState('')
     const [matchIds, setMatchIds ] = useState<String[]>([]) 
 
     useEffect(() => {
-      localStorage.getItem('questionsAnswered') ? null : router.push(`/matchmaker/questionnaire`)
+      localStorage.getItem('questionsAnswered') ? null : navigatePath(`/matchmaker/questionnaire`)
       localStorage.getItem('matches') ? null : localStorage.setItem('matches', JSON.stringify([]))
 
       let matchString: any = localStorage.getItem('matches')
@@ -86,9 +83,6 @@ export default function SwipeStack (props: any) {
         <Container sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', height: 565}}>
           {displayAnimals}
         </Container>
-        <BrowseQuestionsDialogue 
-          questionsOpen={questionsOpen} 
-          setQuestionsOpen={setQuestionsOpen}/>
         <Snackbar
           open={snackOpen}
           autoHideDuration={1500}

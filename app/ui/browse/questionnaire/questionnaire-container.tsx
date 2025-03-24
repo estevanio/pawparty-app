@@ -37,7 +37,6 @@ export default function QuestionnaireContainer () {
     }, [])
 
     const handleSpeciesChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        console.log(e.target.value)
         setSpecies(e.target.value)
     }
     const handleKidsChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -64,7 +63,11 @@ export default function QuestionnaireContainer () {
     }
 
     return(
-        <Container sx={{height: 650, overflow: 'auto'}}>
+        <Container sx={{height: {
+            xs: 480,
+            lg: 650
+        }, 
+        overflow: 'auto'}}>
             <Card sx={{
                 display: 'flex',
                 alignItems: 'center',
@@ -74,7 +77,10 @@ export default function QuestionnaireContainer () {
                 width: {
                     sm: '400px',
                     md: '100%',
-                    lg: '100%'
+                    lg: '50%'
+                },
+                marginLeft: {
+                    lg: '300px'
                 },
                 marginTop: '10px'}}>
                 <FormControl>
@@ -93,14 +99,17 @@ export default function QuestionnaireContainer () {
             </Card>
             <Card sx={{
                 display: 'flex',
-                alignItems: 'center',
+                alignItems: 'right',
                 justifyContent: 'center',
                 background: '#ededed',
                 borderRadius: '28px',
                 width: {
                     sm: '400px',
                     md: '100%',
-                    lg: '100%'
+                    lg: '50%'
+                },
+                marginLeft: {
+                    lg: '300px'
                 },
                 marginTop: '10px'}}>
                 <FormControl>
@@ -125,7 +134,10 @@ export default function QuestionnaireContainer () {
                 width: {
                     sm: '400px',
                     md: '100%',
-                    lg: '100%'
+                    lg: '50%'
+                },
+                marginLeft: {
+                    lg: '300px'
                 },
                 marginTop: '10px'}}>
                 <FormControl>
@@ -150,7 +162,10 @@ export default function QuestionnaireContainer () {
                 width: {
                     sm: '400px',
                     md: '100%',
-                    lg: '100%'
+                    lg: '50%'
+                },
+                marginLeft: {
+                    lg: '300px'
                 },
                 marginTop: '10px'}}>
                 <FormControl>
@@ -174,10 +189,17 @@ export default function QuestionnaireContainer () {
                 justifyContent: 'center',
                 background: '#ededed',
                 borderRadius: '28px',
+                paddingLeft: {
+                    xs: '25px',
+                    lg: '40px'
+                },
                 width: {
                     sm: '400px',
                     md: '100%',
-                    lg: '100%'
+                    lg: '50%'
+                },
+                marginLeft: {
+                    lg: '300px'
                 },
                 marginTop: '10px'}}>
                 <FormControl>
@@ -194,6 +216,10 @@ export default function QuestionnaireContainer () {
                 </FormControl>
             </Card>
             <Button sx={{
+                marginTop: '10px',
+                marginLeft: {
+                    lg: '300px'
+                },
                 width: '100px',
                 backgroundColor: 'blue', 
                 fontFamily: 'Montserrat', 

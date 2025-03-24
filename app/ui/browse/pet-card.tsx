@@ -1,10 +1,10 @@
 import {Card, CardContent, CardMedia, Typography, Container, CardActionArea} from "@mui/material";
 import { AnimalData } from "@/app/lib/definitions";
-import { useRouter } from "next/navigation";
+import useNavigation from "@/app/lib/custom-hooks/useNavigation.ts";
 
 export default function PetCard ({ animal, swipeInProgress }: {animal: AnimalData, swipeInProgress: boolean}){ 
 
-    const router = useRouter()
+    const { navigateDetails } = useNavigation();
 
     const handleClick = () => {
         if (swipeInProgress == false){ 
