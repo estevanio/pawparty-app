@@ -1,7 +1,7 @@
 import { PrismaClient } from '@prisma/client';
 import { Client } from "@petfinder/petfinder-js";
 
-const client = new Client ({apiKey: "tBHcqot1An29KV6N0AEj41m6YBJ8gMp2t1bs9R6BoaDZ8Kmk6F", secret: "icOCF7J1IzCRzHI7nX8XsMPxWOMwCuST3n00pgks"});
+
 const prisma = new PrismaClient();
 
 async function loadOrgs(org){
