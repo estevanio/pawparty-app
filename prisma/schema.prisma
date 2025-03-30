@@ -74,8 +74,8 @@ model Animal {
   last_updated       DateTime?
   location           String? 
   // Define the many-to-one relationship between Animal and Shelter
-  shelter            Shelter   @relation("shelter_animals", fields: [shelter_id], references: [shelter_id])
-  shelter_id         String
+  shelter            Shelter?   @relation("shelter_animals", fields: [shelter_id], references: [shelter_id])
+  shelter_id         String?
   // Define the one-to-many relationship between Animal and Attributes
   attributes         Attribute[]
   // Define the one-to-many relationship between Animal and Photos
