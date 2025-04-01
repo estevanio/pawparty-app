@@ -1,7 +1,8 @@
 import { PrismaClient } from '@prisma/client';
-import { Client } from "@petfinder/petfinder-js";
+import { Client } from "@petfinder/petfinder-js"; 
+import { APIKEY, APISECRET }from '.env';
 
-const client = new Client ({apiKey: "tBHcqot1An29KV6N0AEj41m6YBJ8gMp2t1bs9R6BoaDZ8Kmk6F", secret: "icOCF7J1IzCRzHI7nX8XsMPxWOMwCuST3n00pgks"});
+const client = new Client ({apiKey: APIKEY, secret: APISECRET});
 const prisma = new PrismaClient();
 
 async function loadOrgs(org){
