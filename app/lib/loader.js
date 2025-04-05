@@ -5,70 +5,31 @@ import { APIKEY, APISECRET }from '.env';
 const client = new Client ({apiKey: APIKEY, secret: APISECRET});
 const prisma = new PrismaClient();
 
-async function loadOrgs(org){
-    try{
-        const organization = new Map(Object.entries(org));
-
-        await prisma.organization.create({
-            data:{
-                // organization_id: String(organization.get('id')),
-                name: organization.get('name'),
-                email: organization.get('email'),
-                phone_number: organization.get('phone'),
-                website_url: organization.get('website'),
-            },
-        });
-
-    } catch (error) {
-        console.error('Error Loading organizations:', error);
-        throw error;
-    }
-}
-
-async function getOrgs() {
-    try{
-        let page = 1;
-        let insertedOrgs = 0;
-
-        do{
-            var orglist = await client.organization.search({
-                page,
-            });
-            orglist.data.organizations.forEach(async function(org){
-                await loadOrgs(org);
-                insertedOrgs++;
-            });
-            page++;
-        }while(orglist.data.pagination && orglist.data.total_pages >= page);
-        
-        console.log(`Loaded ${insertedOrgs} organizations`);
-
-        return;
-    } catch (error) {
-        console.error('Error Loading organizations:', error);
-        throw error;
-    }
-    
-}
-
 async function loadPhotos(animal) {
     try {
-        let num = 0;
+        var PHOTOS = {};
+        var pics = [];
         const urls = Object.values(animal.photos).flatMap(Object.values);
         for(let i = 0; i < urls.length; i++){
-            await prisma.photo.create({ 
-                data:{
-                    url: urls[i],
-                    animal_id: String(animal.id),
-                    name: animal.name + " Photo #" + i,
-                    is_cover:false,
-                }
-            });
-            num++;
+            PHOTOS = {};
+            PHOTOS.animal_id = String(animal.id);
+            PHOTOS.name = animal.name + " Photo #" + (i+1);
+            PHOTOS.url = urls[i];
+            PHOTOS.is_cover = false;
+            pics.push(PHOTOS)
         }
+        const insertedPhotos = await prisma.photo.createMany({ 
+            data: pics.map((photo) => ({
+                photo_id: photo.id,
+                url: photo.url,
+                animal_id: photo.animal_id,
+                name: photo.name,
+                is_cover: photo.is_cover,
+            }))
+        });
         // Insert data into the "photos" table
   
-        console.log(`loaded ${num} photos`);
+        console.log(`loaded ${insertedPhotos.count} photos`);
   
         return;
     } catch (error) {
@@ -81,7 +42,14 @@ async function loadAnimals(ani){
     try{
         const animal = new Map(Object.entries(ani));
 
-        if(prisma.animal.findFirst({where:{animal_id: String(animal.get('id'))}})){
+        const existingAnimal = await prisma.animal.findFirst({
+            where:{animal_id: String(animal.get('id'))}
+        });
+
+        if(existingAnimal){
+            if (Object.keys(ani.photos).length !== 0) {
+                await loadPhotos(ani);
+            }
             return;
         }
         else{ 
@@ -102,8 +70,13 @@ async function loadAnimals(ani){
                 },
             });
             if (Object.keys(ani.photos).length !== 0) {
-                await loadPhotos(ani);
-        
+                const aniExists = await prisma.animal.findFirst({
+                    where:{animal_id: String(animal.get('id'))}
+                });
+                
+                if(aniExists){
+                    await loadPhotos(ani);
+                }
                 return;
             }
             else{
@@ -144,7 +117,6 @@ async function getAnimals(tp){
 }
 
 async function main(){
-    // await getOrgs();
     await getAnimals("dog");
     await getAnimals("cat");
 
