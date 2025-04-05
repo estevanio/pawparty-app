@@ -27,7 +27,7 @@ export default function MatchCard({animal}: InterfaceProps) {
           <Container>
             <Typography sx={styles.largeText}>{animal.name}</Typography>
             <Typography sx={styles.smallText}>{animal.breed}</Typography>
-            <Typography sx={styles.smallText}>{animal.shelter.location}</Typography>
+            {/* <Typography sx={styles.smallText}>{animal.shelter.location}</Typography> */}
           </Container>
       </Card>
     )
