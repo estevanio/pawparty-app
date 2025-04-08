@@ -47,9 +47,6 @@ async function loadAnimals(ani){
         });
 
         if(existingAnimal){
-            if (Object.keys(ani.photos).length !== 0) {
-                await loadPhotos(ani);
-            }
             return;
         }
         else{ 
