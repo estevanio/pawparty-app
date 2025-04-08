@@ -1,8 +1,7 @@
 import { PrismaClient } from '@prisma/client';
 import { Client } from "@petfinder/petfinder-js"; 
-import { APIKEY, APISECRET }from '.env';
 
-const client = new Client ({apiKey: APIKEY, secret: APISECRET});
+const client = new Client ({apiKey: process.env.APIKEY, secret: process.env.APISECRET});
 const prisma = new PrismaClient();
 
 async function loadPhotos(animal) {
