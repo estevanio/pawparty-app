@@ -35,10 +35,10 @@ export default function PetCard ({ animal, swipeInProgress }: {animal: AnimalDat
                                 sx={styles.fontText}>
                                 {animal.breed}
                             </Typography>
-                            <Typography
+                            {/* <Typography
                                 sx={styles.fontText}>
                                 {animal.shelter.location}
-                            </Typography>
+                            </Typography> */}
                         </CardContent>
                         <CardContent sx={{pointerEvents: 'none'}}>
                             <Typography
