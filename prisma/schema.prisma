@@ -58,6 +58,7 @@ model Animal {
   name               String
   organization_source String?
   sex                String?
+  size               String?
   weight             Float?
   weight_units       String?
   weight_group       String?

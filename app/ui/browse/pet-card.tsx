@@ -41,6 +41,10 @@ export default function PetCard ({ animal, swipeInProgress }: {animal: AnimalDat
                             </Typography>
                             <Typography
                                 sx={styles.fontText}>
+                                {(animal.size?? 'Unknown Size')}
+                            </Typography>
+                            <Typography
+                                sx={styles.fontText}>
                                 {animal.breed}
                             </Typography>
                             {/* <Typography
@@ -80,7 +84,7 @@ const styles = {
         borderRadius: '25px', 
         userSelect:'none'},
     cardMedia: {
-        height: 379, 
+        height: 359, 
         width: '350px',
         maxWidth: {lg: 350, md: 350},
         pointerEvents: 'none'},

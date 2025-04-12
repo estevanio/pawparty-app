@@ -46,6 +46,25 @@ async function loadAnimals(ani){
         });
 
         if(existingAnimal){
+            await prisma.animal.update({
+                data:{
+                    name: animal.get('name'),
+                    sex: animal.get('gender'),
+                    size: animal.get('size'),
+                    age_group: animal.get('age'),
+                    species: animal.get('species'),
+                    breed: animal.get('breeds').primary,
+                    secondary_breed: animal.get('breeds').secondary,
+                    primary_color: animal.get('colors').primary,
+                    secondary_color: animal.get('colors').secondary,
+                    intake_date: new Date(animal.get('published_at')),
+                    available: animal.get('status') === 'adoptable',
+                    last_updated: new Date(animal.get('status_changed_at')),
+                },
+                where:{
+                    animal_id: String(animal.get('id'))
+                }
+            });
             return;
         }
         else{ 
@@ -54,6 +73,7 @@ async function loadAnimals(ani){
                     animal_id: String(animal.get('id')),
                     name: animal.get('name'),
                     sex: animal.get('gender'),
+                    size: animal.get('size'),
                     age_group: animal.get('age'),
                     species: animal.get('species'),
                     breed: animal.get('breeds').primary,

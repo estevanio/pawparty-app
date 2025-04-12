@@ -22,6 +22,10 @@ export default async function Page({params}: {params: {id: string}}) {
           fontFamily:'Montserrat', 
           pointerEvents: 'none', 
           fontSize: 20}}>{animal.age_group} {animal.sex}</Typography>
+        <Typography sx={{
+          fontFamily:'Montserrat', 
+          pointerEvents: 'none', 
+          fontSize: 20}}>{(animal.size?? 'Unknown Size')}</Typography>
         {/* <Typography sx={{
           fontFamily:'Montserrat', 
           pointerEvents: 'none', 
