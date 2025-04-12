@@ -26,6 +26,8 @@ export default function MatchCard({animal}: InterfaceProps) {
           <Avatar src={animal.photos[0]?.url} sx={styles.avatar}/>
           <Container>
             <Typography sx={styles.largeText}>{animal.name}</Typography>
+            <Typography sx={styles.smallText}>{animal.age_group}</Typography>
+            <Typography sx={styles.smallText}>{animal.sex}</Typography>
             <Typography sx={styles.smallText}>{animal.breed}</Typography>
             {/* <Typography sx={styles.smallText}>{animal.shelter.location}</Typography> */}
           </Container>

@@ -33,6 +33,14 @@ export default function PetCard ({ animal, swipeInProgress }: {animal: AnimalDat
                             </Typography>
                             <Typography
                                 sx={styles.fontText}>
+                                {animal.age_group}
+                            </Typography>
+                            <Typography
+                                sx={styles.fontText}>
+                                {animal.sex}
+                            </Typography>
+                            <Typography
+                                sx={styles.fontText}>
                                 {animal.breed}
                             </Typography>
                             {/* <Typography
