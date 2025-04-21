@@ -1,71 +1,129 @@
 import { PrismaClient } from '@prisma/client';
-import { default as crawler } from '@/app/lib/crawler';
-import shelters from './sources.json' assert {type:'json'};
+import { Client } from "@petfinder/petfinder-js"; 
 
-var animal
+const client = new Client ({apiKey: process.env.APIKEY, secret: process.env.APISECRET});
 const prisma = new PrismaClient();
 
-async function loadAnimals(animal,shelter){
+async function loadPhotos(animal) {
     try {
-        // Insert data into the "animals" table
-        const insertedAnimals = await Promise.all(
-          animal.map((animal) => prisma.animal.create({
-            data: {
-              animal_id: animal.Id,
-              name: animal.Name,
-              sex: animal.Sex,
-              species: animal.Species,
-              breed: animal.Breed,
-              primary_color: animal.Color,
-              intake_date: new Date(animal.IntakeDate),
-              shelter_id: shelter.id, //"2d9c9052-e776-4d9f-b74d-4a6a5e394dd4", //bad practice, this shouldn't be hardcoded
-            },
-          })),
-        );
-    
-        console.log(`Loaded ${insertedAnimals.length} animals`);
-    
-        return insertedAnimals;
-      } catch (error) {
+        var PHOTOS = {};
+        var pics = [];
+        const urls = Object.values(animal.photos).flatMap(Object.values);
+        for(let i = 0; i < urls.length; i++){
+            PHOTOS = {};
+            PHOTOS.animal_id = String(animal.id);
+            PHOTOS.name = animal.name + " Photo #" + (i+1);
+            PHOTOS.url = urls[i];
+            PHOTOS.is_cover = false;
+            pics.push(PHOTOS)
+        }
+        const insertedPhotos = await prisma.photo.createMany({ 
+            data: pics.map((photo) => ({
+                photo_id: photo.id,
+                url: photo.url,
+                animal_id: photo.animal_id,
+                name: photo.name,
+                is_cover: photo.is_cover,
+            }))
+        });
+        // Insert data into the "photos" table
+  
+        console.log(`loaded ${insertedPhotos.count} photos`);
+  
+        return;
+    } catch (error) {
+        console.error('Error seeding photos:', error);
+        throw error;
+    }
+}
+
+async function loadAnimals(ani){
+    try{
+        const animal = new Map(Object.entries(ani));
+
+        const existingAnimal = await prisma.animal.findFirst({
+            where:{animal_id: String(animal.get('id'))}
+        });
+
+        if(existingAnimal){
+            return;
+        }
+        else{ 
+            await prisma.animal.create({
+                data:{
+                    animal_id: String(animal.get('id')),
+                    name: animal.get('name'),
+                    sex: animal.get('gender'),
+                    age_group: animal.get('age'),
+                    species: animal.get('species'),
+                    breed: animal.get('breeds').primary,
+                    secondary_breed: animal.get('breeds').secondary,
+                    primary_color: animal.get('colors').primary,
+                    secondary_color: animal.get('colors').secondary,
+                    intake_date: new Date(animal.get('published_at')),
+                    available: animal.get('status') === 'adoptable',
+                    last_updated: new Date(animal.get('status_changed_at')),
+                },
+            });
+            if (Object.keys(ani.photos).length !== 0) {
+                const aniExists = await prisma.animal.findFirst({
+                    where:{animal_id: String(animal.get('id'))}
+                });
+                
+                if(aniExists){
+                    await loadPhotos(ani);
+                }
+                return;
+            }
+            else{
+                return;
+            }
+        }
+
+    } catch (error) {
         console.error('Error Loading animals:', error);
         throw error;
-      }
+    }
 }
 
-async function loadPhotos(animal) {
-  try {
-    // Insert data into the "photos" table
-    const insertedPhotos = await prisma.photo.createMany({ 
-      data: animal.Photos.map((photos) =>({
-        url: photos.url,
-        animal_id: photos.animal_id,
-      }))
-    });
+async function getAnimals(tp){
+    try{
+        let page = 1;
+        let insertedAnimals = 0;
 
-    console.log(`Seeded ${insertedPhotos.count} photos`);
+        do{
+            var anilist = await client.animal.search({
+                type:tp,
+                page,
+            });
+            anilist.data.animals.forEach(async function(animal){
+                await loadAnimals(animal);
+                insertedAnimals++;
+            });
+            page++;
+        }while(anilist.data.pagination && anilist.data.total_pages >= page);
+        
+        console.log(`Loaded ${insertedAnimals} ${tp}`);
 
-    return insertedPhotos;
-  } catch (error) {
-    console.error('Error seeding photos:', error);
-    throw error;
-  }
+        return;
+    } catch (error) {
+        console.error('Error Loading animals:', error);
+        throw error;
+    }
 }
 
-async function main() {
-  for(let z = 0; z < shelters.length; z++){
-    animal = await crawler(shelters[z]);
-    await loadAnimals(animal,shelters[z]);
-    await loadPhotos(animal);
-  }
+async function main(){
+    await getAnimals("dog");
+    await getAnimals("cat");
 
-  await prisma.$disconnect();
+    await prisma.$disconnect();
 }
-  
+
 main().catch((err) => {
-  console.error(
-    'An error occurred while attempting to load the database:',
-    err,
-  );
+    console.error(
+        'An error occurred while attempting to load the database:',
+        err,
+    );
 });
 
 export default main;

@@ -5,7 +5,7 @@ import {
     Card, Container, Avatar, Typography
 } from "@mui/material";
 import { AnimalData, Pet } from "@/app/lib/definitions";
-import { useRouter } from "next/navigation";
+import useNavigation from "@/app/lib/custom-hooks/useNavigation";
 
 interface InterfaceProps {
   animal: AnimalData
@@ -13,10 +13,10 @@ interface InterfaceProps {
 
 export default function MatchCard({animal}: InterfaceProps) {
 
-  const router = useRouter()
+  const { navigateDetails } = useNavigation();
 
   const handleClick = () => {
-      router.push(`/matchmaker/details/${animal.animal_id}`)
+      navigateDetails(animal.animal_id)
   }    
 
     return(
@@ -27,7 +27,7 @@ export default function MatchCard({animal}: InterfaceProps) {
           <Container>
             <Typography sx={styles.largeText}>{animal.name}</Typography>
             <Typography sx={styles.smallText}>{animal.breed}</Typography>
-            <Typography sx={styles.smallText}>{animal.shelter.location}</Typography>
+            {/* <Typography sx={styles.smallText}>{animal.shelter.location}</Typography> */}
           </Container>
       </Card>
     )

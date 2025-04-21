@@ -6,7 +6,6 @@ import { fetchAnimals } from "@/app/lib/data";
 export default async function Page() {
 
   const animals: any = await fetchAnimals()
-  console.log(animals)
 
   return (
     <>       
