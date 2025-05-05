@@ -1,5 +1,5 @@
 'use client'
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, lazy, Suspense} from "react";
 import TinderCard from 'react-tinder-card'
 import PetCard from "./pet-card";
 import { Container, Snackbar } from "@mui/material";
@@ -16,6 +16,7 @@ export default function SwipeStack (props: any) {
     const [snackOpen, setSnackOpen] = useState(false)
     const [lastSwipedName, setLastSwipedName] = useState('')
     const [matchIds, setMatchIds ] = useState<String[]>([]) 
+    const [index, setIndex] = useState(0)
 
     useEffect(() => {
       localStorage.getItem('questionsAnswered') ? null : navigatePath(`/matchmaker/questionnaire`)
@@ -44,8 +45,8 @@ export default function SwipeStack (props: any) {
         arrayIds.push(animal.animal_id)
       })
 
-      if ((animal.species.toLowerCase() == localStorage.getItem('species')?.toLowerCase()) || 
-            localStorage.getItem('species')?.toLowerCase() == 'both' && 
+      if ((animal.species.toLowerCase() == localStorage.getItem('species')?.toLowerCase() || 
+            localStorage.getItem('species')?.toLowerCase() == 'both') && 
             direction == 'right') {
         arrayIds.includes(animal.animal_id) ? null: matchArray.push(animal)
         setSnackOpen(true)    
@@ -53,11 +54,13 @@ export default function SwipeStack (props: any) {
 
       localStorage.setItem('matches', JSON.stringify(matchArray))
       arrayIds = []
+
+      setIndex(index + 1)
       setLastSwipedName(animal.name)
       setSwipeInProgress(false)
     }
 
-    const displayAnimals = animals?.filter((animal: Animal) => !matchIds.includes(animal.animal_id))
+    const displayAnimals = animals?.slice(index, index+3).filter((animal: Animal) => !matchIds.includes(animal.animal_id))
       .map((animal: AnimalData) => {        
         
         return(
@@ -66,13 +69,12 @@ export default function SwipeStack (props: any) {
                 key={animal.animal_id} 
                 onSwipe={() => {
                   setSnackOpen(false)
-                  setSwipeInProgress(true)}} 
+                  setSwipeInProgress(true)
+                  setTimeout(() => {
+                    setSwipeInProgress(false)
+                  }, 1000)}}
                 onCardLeftScreen={(dir) => outOfFrame(animal, dir)}
-                preventSwipe={['up', 'down']}
-                onSwipeRequirementUnfulfilled={() => {
-                  console.log('swipe requirement unfulfilled')
-                  setTimeout(()=> setSwipeInProgress(false), 1000)
-                  }}>
+                preventSwipe={['up', 'down']}>
                 <PetCard animal={animal} swipeInProgress={swipeInProgress}/>
             </TinderCard>
         )

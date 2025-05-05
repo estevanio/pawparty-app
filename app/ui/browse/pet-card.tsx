@@ -8,8 +8,7 @@ export default function PetCard ({ animal, swipeInProgress }: {animal: AnimalDat
 
     const handleClick = () => {
         if (swipeInProgress == false){ 
-            console.log(`${animal.name} was clicked.`)
-            // router.push(`/matchmaker/details/${animal.animal_id}`)
+           navigateDetails(animal.animal_id)
         }        
     }
 
@@ -37,7 +36,7 @@ export default function PetCard ({ animal, swipeInProgress }: {animal: AnimalDat
                             </Typography>
                             <Typography
                                 sx={styles.fontText}>
-                                {animal.shelter.location}
+                                {animal.shelter?.location}
                             </Typography>
                         </CardContent>
                         <CardContent sx={{pointerEvents: 'none'}}>
