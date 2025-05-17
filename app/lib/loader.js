@@ -6,29 +6,32 @@ const prisma = new PrismaClient();
 
 async function updatePhotos(animal){
     try {
-        var pics = [];
         const urls = Object.values(animal.photos).flatMap(Object.values);
         const trueUrls = urls.filter(url => typeof url === 'string' && !url.includes('width='));
         for(let i = 0; i < trueUrls.length; i++){
-            pics.push({
-                animal_id: String(animal.id),
-                name: animal.name + " Photo #" + (i+1),
-                url: urls[i],
-                is_cover: false,
-            })
+            await prisma.photo.upsert({
+                where: {
+                    animal_id_url: {
+                        animal_id: String(animal.id),
+                        url: trueUrls[i],
+                    }
+                },
+                update: {
+                    name: animal.name + " Photo #" + (i+1),
+                    is_cover: false,
+                },
+                create: {
+                    animal_id: String(animal.id),
+                    name: animal.name + " Photo #" + (i+1),
+                    url: trueUrls[i],
+                    is_cover: false,
+                },
+            });
         }
-        const updatedPhotos = await prisma.photo.updateMany({
-            where: {
-                animal_id: String(animal.id),
-            },
-            data: pics,
-        });
-
-        console.log(`Updated ${updatedPhotos.count} photos for animal ${animal.id}`);
+        console.log(`Updated ${trueUrls.length} photos for animal ${animal.id}`);
         
         return;
-    }
-    catch (error) {
+    } catch (error) {
         console.error('Error updating photos:', error);
         throw error;
     }
@@ -43,7 +46,7 @@ async function loadPhotos(animal) {
             pics.push({
                 animal_id: String(animal.id),
                 name: animal.name + " Photo #" + (i+1),
-                url: urls[i],
+                url: trueUrls[i],
                 is_cover: false,
             })
         }

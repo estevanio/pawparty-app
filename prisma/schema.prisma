@@ -103,6 +103,7 @@ model Photo {
   is_cover           Boolean
   // Define the many-to-one relationship between Photo and Animal
   animal             Animal    @relation(fields: [animal_id], references: [animal_id])
+  @@unique([animal_id, url]) 
 }
 
 model SpecialNeeds {
