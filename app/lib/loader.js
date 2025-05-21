@@ -4,27 +4,54 @@ import { Client } from "@petfinder/petfinder-js";
 const client = new Client ({apiKey: process.env.APIKEY, secret: process.env.APISECRET});
 const prisma = new PrismaClient();
 
+async function updatePhotos(animal){
+    try {
+        const urls = Object.values(animal.photos).flatMap(Object.values);
+        const trueUrls = urls.filter(url => typeof url === 'string' && !url.includes('width='));
+        for(let i = 0; i < trueUrls.length; i++){
+            await prisma.photo.upsert({
+                where: {
+                    animal_id_url: {
+                        animal_id: String(animal.id),
+                        url: trueUrls[i],
+                    }
+                },
+                update: {
+                    name: animal.name + " Photo #" + (i+1),
+                    is_cover: false,
+                },
+                create: {
+                    animal_id: String(animal.id),
+                    name: animal.name + " Photo #" + (i+1),
+                    url: trueUrls[i],
+                    is_cover: false,
+                },
+            });
+        }
+        console.log(`Updated ${trueUrls.length} photos for animal ${animal.id}`);
+        
+        return;
+    } catch (error) {
+        console.error('Error updating photos:', error);
+        throw error;
+    }
+}
+
 async function loadPhotos(animal) {
     try {
-        var PHOTOS = {};
         var pics = [];
         const urls = Object.values(animal.photos).flatMap(Object.values);
-        for(let i = 0; i < urls.length; i++){
-            PHOTOS = {};
-            PHOTOS.animal_id = String(animal.id);
-            PHOTOS.name = animal.name + " Photo #" + (i+1);
-            PHOTOS.url = urls[i];
-            PHOTOS.is_cover = false;
-            pics.push(PHOTOS)
+        const trueUrls = urls.filter(url => typeof url === 'string' && !url.includes('width='));
+        for(let i = 0; i < trueUrls.length; i++){
+            pics.push({
+                animal_id: String(animal.id),
+                name: animal.name + " Photo #" + (i+1),
+                url: trueUrls[i],
+                is_cover: false,
+            })
         }
         const insertedPhotos = await prisma.photo.createMany({ 
-            data: pics.map((photo) => ({
-                photo_id: photo.id,
-                url: photo.url,
-                animal_id: photo.animal_id,
-                name: photo.name,
-                is_cover: photo.is_cover,
-            }))
+            data: pics
         });
         // Insert data into the "photos" table
   
@@ -65,7 +92,13 @@ async function loadAnimals(ani){
                     animal_id: String(animal.get('id'))
                 }
             });
-            return;
+            if (Object.keys(ani.photos).length !== 0) {                 
+                await updatePhotos(ani);
+                return;
+            }
+            else{
+                return;
+            }
         }
         else{ 
             await prisma.animal.create({
