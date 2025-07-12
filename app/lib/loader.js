@@ -4,7 +4,7 @@ import { Client } from "@petfinder/petfinder-js";
 const client = new Client ({apiKey: process.env.APIKEY, secret: process.env.APISECRET});
 const prisma = new PrismaClient();
 
-async function updatePhotos(animal){
+async function upsertPhotos(animal) {
     try {
         const urls = Object.values(animal.photos).flatMap(Object.values);
         const trueUrls = urls.filter(url => typeof url === 'string' && !url.includes('width='));
@@ -17,49 +17,58 @@ async function updatePhotos(animal){
                     }
                 },
                 update: {
-                    name: animal.name + " Photo #" + (i+1),
+                    name: animal.name + " Photo #" + (i + 1),
                     is_cover: false,
                 },
                 create: {
                     animal_id: String(animal.id),
-                    name: animal.name + " Photo #" + (i+1),
+                    name: animal.name + " Photo #" + (i + 1),
                     url: trueUrls[i],
                     is_cover: false,
                 },
             });
         }
-        console.log(`Updated ${trueUrls.length} photos for animal ${animal.id}`);
-        
+        console.log(`Loaded ${filteredUrls.length} photos for animal ${animal.id} (${animal.name})`);
         return;
     } catch (error) {
-        console.error('Error updating photos:', error);
+        console.error('Error with photos:', error);
         throw error;
     }
 }
 
-async function loadPhotos(animal) {
+async function delAnimals() {
     try {
-        var pics = [];
-        const urls = Object.values(animal.photos).flatMap(Object.values);
-        const trueUrls = urls.filter(url => typeof url === 'string' && !url.includes('width='));
-        for(let i = 0; i < trueUrls.length; i++){
-            pics.push({
-                animal_id: String(animal.id),
-                name: animal.name + " Photo #" + (i+1),
-                url: trueUrls[i],
-                is_cover: false,
-            })
-        }
-        const insertedPhotos = await prisma.photo.createMany({ 
-            data: pics
+        const animalsToDelete = await prisma.animal.findMany({
+            where: { 
+                OR: [
+                    { available:  null}, 
+                    { available: false }
+                ]},
+            select: { animal_id: true }
         });
-        // Insert data into the "photos" table
-  
-        console.log(`loaded ${insertedPhotos.count} photos`);
-  
+        const animalIds = animalsToDelete.map(a => a.animal_id);
+
+        await prisma.attribute.deleteMany({
+            where: { animal_id: { in: animalIds } }
+        });
+
+        await prisma.photo.deleteMany({
+            where: { animal_id: { in: animalIds } }
+        });
+
+        const anilist = await prisma.animal.deleteMany({
+            where: {
+                OR: [
+                    { available:  null}, 
+                    { available: false }
+                ]
+            },
+        });
+        console.log(`Removed ${anilist.count} animals`);
+
         return;
     } catch (error) {
-        console.error('Error seeding photos:', error);
+        console.error('Error removing animals:', error);
         throw error;
     }
 }
@@ -67,70 +76,54 @@ async function loadPhotos(animal) {
 async function loadAnimals(ani){
     try{
         const animal = new Map(Object.entries(ani));
-
-        const existingAnimal = await prisma.animal.findFirst({
-            where:{animal_id: String(animal.get('id'))}
+        
+        await prisma.animal.upsert({    
+            where:{animal_id: String(animal.get('id'))},
+            update:{
+                name: animal.get('name'),
+                sex: animal.get('gender'),
+                size: animal.get('size'),
+                age_group: animal.get('age'),
+                species: animal.get('species'),
+                breed: animal.get('breeds').primary,
+                secondary_breed: animal.get('breeds').secondary,
+                primary_color: animal.get('colors').primary,
+                secondary_color: animal.get('colors').secondary,
+                intake_date: new Date(animal.get('published_at')),
+                available: animal.get('status') === 'adoptable',
+                last_updated: new Date(animal.get('status_changed_at')),
+            },
+            create:{
+                animal_id: String(animal.get('id')),
+                name: animal.get('name'),
+                sex: animal.get('gender'),
+                size: animal.get('size'),
+                age_group: animal.get('age'),
+                species: animal.get('species'),
+                breed: animal.get('breeds').primary,
+                secondary_breed: animal.get('breeds').secondary,
+                primary_color: animal.get('colors').primary,
+                secondary_color: animal.get('colors').secondary,
+                intake_date: new Date(animal.get('published_at')),
+                available: animal.get('status') === 'adoptable',
+                last_updated: new Date(animal.get('status_changed_at')),
+            },
         });
-
-        if(existingAnimal){
-            await prisma.animal.update({
-                data:{
-                    name: animal.get('name'),
-                    sex: animal.get('gender'),
-                    size: animal.get('size'),
-                    age_group: animal.get('age'),
-                    species: animal.get('species'),
-                    breed: animal.get('breeds').primary,
-                    secondary_breed: animal.get('breeds').secondary,
-                    primary_color: animal.get('colors').primary,
-                    secondary_color: animal.get('colors').secondary,
-                    intake_date: new Date(animal.get('published_at')),
-                    available: animal.get('status') === 'adoptable',
-                    last_updated: new Date(animal.get('status_changed_at')),
-                },
-                where:{
-                    animal_id: String(animal.get('id'))
-                }
+        if (Object.keys(ani.photos).length !== 0) {                 
+            const aniExists = await prisma.animal.findFirst({
+                where:{animal_id: String(animal.get('id'))}
             });
-            if (Object.keys(ani.photos).length !== 0) {                 
-                await updatePhotos(ani);
-                return;
+            
+            if(aniExists){
+                await upsertPhotos(ani);
+                return
             }
             else{
                 return;
             }
         }
-        else{ 
-            await prisma.animal.create({
-                data:{
-                    animal_id: String(animal.get('id')),
-                    name: animal.get('name'),
-                    sex: animal.get('gender'),
-                    size: animal.get('size'),
-                    age_group: animal.get('age'),
-                    species: animal.get('species'),
-                    breed: animal.get('breeds').primary,
-                    secondary_breed: animal.get('breeds').secondary,
-                    primary_color: animal.get('colors').primary,
-                    secondary_color: animal.get('colors').secondary,
-                    intake_date: new Date(animal.get('published_at')),
-                    available: animal.get('status') === 'adoptable',
-                    last_updated: new Date(animal.get('status_changed_at')),
-                },
-            });
-            if (Object.keys(ani.photos).length !== 0) {
-                const aniExists = await prisma.animal.findFirst({
-                    where:{animal_id: String(animal.get('id'))}
-                });
-                
-                if(aniExists){
-                    await loadPhotos(ani);
-                }
-                return;
-            }
-            else{
-                return;
-            }
+        else{
+            return;
         }
 
     } catch (error) {
@@ -168,6 +161,7 @@ async function getAnimals(tp){
 async function main(){
     await getAnimals("dog");
     await getAnimals("cat");
+    await delAnimals();
 
     await prisma.$disconnect();
 }
