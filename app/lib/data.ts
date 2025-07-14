@@ -9,8 +9,7 @@ export async function fetchAnimals() {
     const animals: Animal[] = await prisma.animal.findMany({
       include: {
         photos: true,
-        attributes: true,
-        shelter: true
+        attributes: true
       },
     });
     return animals;
@@ -28,8 +27,7 @@ export async function fetchAnimalById(compare: string) {
       },
       include: {
         photos: true,
-        attributes: true,
-        shelter: true
+        attributes: true
       }
     })
     return animal;
@@ -47,8 +45,7 @@ export async function fetchAnimalsByMatches(compare: string[]) {
       },
       include: {
         photos: true,
-        attributes: true,
-        shelter: true
+        attributes: true
       }
     })
     return animals;
