@@ -18,7 +18,7 @@ export type Pet = {
 
 // 1: Define a type that includes the relation to `Animal`
 const animalData = Prisma.validator<Prisma.AnimalDefaultArgs>()({
-  include: { photos: true, shelter: true, attributes: true },
+  include: { photos: true, attributes: true },
 })
 
 // 2: define a type with specific selects
