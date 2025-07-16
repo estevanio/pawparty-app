@@ -28,7 +28,7 @@ async function upsertPhotos(animal) {
                 },
             });
         }
-        console.log(`Loaded ${filteredUrls.length} photos for animal ${animal.id} (${animal.name})`);
+        console.log(`Loaded ${trueUrls.length} photos for animal ${animal.id} (${animal.name})`);
         return;
     } catch (error) {
         console.error('Error with photos:', error);
