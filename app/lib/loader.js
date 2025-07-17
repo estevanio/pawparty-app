@@ -36,43 +36,6 @@ async function upsertPhotos(animal) {
     }
 }
 
-async function delAnimals() {
-    try {
-        const animalsToDelete = await prisma.animal.findMany({
-            where: { 
-                OR: [
-                    { available:  null}, 
-                    { available: false }
-                ]},
-            select: { animal_id: true }
-        });
-        const animalIds = animalsToDelete.map(a => a.animal_id);
-
-        await prisma.attribute.deleteMany({
-            where: { animal_id: { in: animalIds } }
-        });
-
-        await prisma.photo.deleteMany({
-            where: { animal_id: { in: animalIds } }
-        });
-
-        const anilist = await prisma.animal.deleteMany({
-            where: {
-                OR: [
-                    { available:  null}, 
-                    { available: false }
-                ]
-            },
-        });
-        console.log(`Removed ${anilist.count} animals`);
-
-        return;
-    } catch (error) {
-        console.error('Error removing animals:', error);
-        throw error;
-    }
-}
-
 async function loadAnimals(ani){
     try{
         const animal = new Map(Object.entries(ani));
@@ -161,7 +124,6 @@ async function getAnimals(tp){
 async function main(){
     await getAnimals("dog");
     await getAnimals("cat");
-    await delAnimals();
 
     await prisma.$disconnect();
 }
