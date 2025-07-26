@@ -4,6 +4,39 @@ import { Client } from "@petfinder/petfinder-js";
 const client = new Client ({apiKey: process.env.APIKEY, secret: process.env.APISECRET});
 const prisma = new PrismaClient();
 
+async function loadAttributes(animal) {
+    try {
+        const attributes = Object.entries(animal.attributes);
+        const affinity = Object.entries(animal.environment);
+        const animalId = String(animal.id);
+        for(var i=0; i < attributes.length; i++){
+            if(attributes[i][1] === true){
+                prisma.attribute.create({
+                    data: {
+                        animal_id: animalId,
+                        attribute: String(attributes[i][0]),
+                    }
+                });
+            }
+        }
+        for(var i=0; i < affinity.length; i++){
+            if(affinity[i][1] === true){
+                prisma.attribute.create({
+                    data: {
+                        animal_id: animalId,
+                        attribute: "Good with " + String(affinity[i][0]),
+                    }
+                });
+            }
+        }
+        return;    
+
+    } catch (error) {
+        console.error('Error loading attributes:', error);
+        throw error;
+    }
+}
+
 async function upsertPhotos(animal) {
     try {
         const urls = Object.values(animal.photos).flatMap(Object.values);
@@ -79,13 +112,17 @@ async function loadAnimals(ani){
             
             if(aniExists){
                 await upsertPhotos(ani);
-                return
+                await loadAttributes(ani);
             }
-            else{
-                return;
-            }
+            return;
         }
         else{
+            const aniExists = await prisma.animal.findFirst({
+                where:{animal_id: String(animal.get('id'))}
+            });
+            if(aniExists){
+                await loadAttributes(ani);
+            }
             return;
         }
 
