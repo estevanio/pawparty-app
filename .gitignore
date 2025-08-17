@@ -35,5 +35,13 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-# scratch
-/scripts/local
+# one-off scripts
+.scripts/local/
+
+package-lock.json
+yarn.lock
+./package-lock.json
+./yarn.lock
+scripts/local/
+package-lock.json
+yarn.lock

@@ -10,52 +10,15 @@ datasource db {
   // or you'll have dangling databases from migrations
   directUrl = env("POSTGRES_URL_NON_POOLING")
 }
- 
-// Define the Shelter model
-model Shelter {
-  shelter_id         String       @id @map("shelter_id") @default(uuid()) 
-  name               String
-  location           String
-  phone_number       String?
-  email              String?
-  website_url        String?
-  opening_hours      String?
-  closing_hours      String?
-  days_of_operation  String?
-  facility_size      String?
-  num_enclosures     Int?
-  cat_facilities     String?
-  dog_facilities     String?
-  staff_names        String?
-  volunteer_opportunities String?
-  volunteer_coordinator_contact String?
-  adoption_process_details String?
-  intake_process_details String?
-  adoption_fees      String?
-  veterinary_services String?
-  feeding_schedules  String?
-  exercise_programs  String?
-  adoption_events_schedule String?
-  educational_programs String?
-  community_outreach String?
-  donation_methods   String?
-  donation_collection_points String?
-  donation_needs     String?
-  licensing_details  String?
-  regulatory_compliance String?
-  insurance_coverage String?
-  shelter_history    String?
-  mission_statement  String?
-  // Define the one-to-many relationship between Shelter and Animal
-  animals            Animal[]  @relation("shelter_animals")
-}
 
 // Define the Animal model
 model Animal {
   animal_id          String       @id @map("animal_id") @default(uuid())
+  third_party_id     String?
   name               String
-  unique_id          String?
+  organization_source String?
   sex                String?
+  size               String?
   weight             Float?
   weight_units       String?
   weight_group       String?
@@ -68,13 +31,16 @@ model Animal {
   secondary_color    String?
   intake_date        DateTime
   public_url         String?
-  // Define the many-to-one relationship between Animal and Shelter
-  shelter            Shelter   @relation("shelter_animals", fields: [shelter_id], references: [shelter_id])
-  shelter_id         String
+  available          Boolean?
+  last_updated       DateTime?
+  location           String? 
   // Define the one-to-many relationship between Animal and Attributes
   attributes         Attribute[]
   // Define the one-to-many relationship between Animal and Photos
   photos             Photo[]
+  special_needs      SpecialNeeds[]
+  organization       Organization?   @relation("organization_animals", fields: [organization_id], references: [organization_id])
+  organization_id    String?
 }
 
 // Define the Attribute model
@@ -94,4 +60,66 @@ model Photo {
   is_cover           Boolean
   // Define the many-to-one relationship between Photo and Animal
   animal             Animal    @relation(fields: [animal_id], references: [animal_id])
+  @@unique([animal_id, url]) 
 }
+
+model SpecialNeeds {
+  special_needs_id   String       @id @default(uuid())
+  animal_id          String
+  special_need       String
+  // Define the many-to-one relationship between SpecialNeeds and Animal
+  animal             Animal    @relation(fields: [animal_id], references: [animal_id])
+}
+
+model Location {
+  location_id        String       @id @map("location_id") @default(uuid()) 
+  third_party_id     String?
+  street_address String?
+  city String
+  county String?
+  zip Int?
+  state String
+  organization Organization?
+}
+
+model Organization {
+  organization_id    String       @id @map("organization_id") @default(uuid())
+  website_url        String
+  mission_statement  String?
+  email              String?
+  staff_names        String?
+  name               String
+  phone_number       String
+  opening_hours      String?
+  closing_hours      String?
+  days_of_operation  String?
+  facility_size      String?
+  num_enclosures     Int?
+  cat_facilities     String?
+  dog_facilities     String?
+  location_history    String?
+  volunteer_opportunities String?
+  volunteer_coordinator_contact String?
+  adoption_process_details String?
+  intake_process_details String?
+  adoption_fees      String?
+  veterinary_services String?
+  feeding_schedules  String?
+  exercise_programs  String?
+  adoption_events_schedule String?
+  educational_programs String?
+  community_outreach String?
+  donation_methods   String?
+  donation_collection_points String?
+  donation_needs     String?
+  licensing_details  String?
+  regulatory_compliance String?
+  insurance_coverage String?
+  location           Location @relation(fields: [location_id], references: [location_id])
+  location_id        String   @unique
+  parent             Organization? @relation("ParentRelation", fields: [parent_id], references: [organization_id])
+  parent_organization Organization[] @relation("ParentRelation")
+  parent_id          String? // Made this nullable since not all organizations have a parent
+  animals            Animal[] @relation("organization_animals")
+}
+
