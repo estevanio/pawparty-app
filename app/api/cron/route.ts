@@ -4,9 +4,9 @@ import { default as remover } from '@/app/lib/remover';
 
 export const dynamic = 'force-dynamic'; 
  
-export function GET(request: Request) {
+export async function GET(request: Request) {
   // Call data collectors here
-  loader();
-  remover();
+  await loader();
+  await remover();
   return new Response(`Hello from ${process.env.VERCEL_REGION}`);
 }
