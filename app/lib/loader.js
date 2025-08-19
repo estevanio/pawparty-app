@@ -170,6 +170,7 @@ async function main(){
     await getAnimals("cat");
 
     await prisma.$disconnect();
+    return;
 }
 
 main().catch((err) => {
