@@ -32,9 +32,9 @@ const Hero = () => {
   const theme = useTheme();
 
   const infocontent = { 
-    title: "Designed secure. Built for anything", 
-    subtitle: "Forward thinking businesses use our cloud backup service to ensure data reliability and safety.",
-    image: "https://assets.maccarianagency.com/screenshots/dashboard.png"
+    title: "Join the Paw Party!", 
+    subtitle: "The only matchmaking app where you're guaranteed to find love.",
+    image: "/david-lezcano-m-Doa-GTrUw-unsplash(s).jpg"
   };
 
   return (
@@ -54,14 +54,14 @@ const Hero = () => {
               <Box marginBottom={2}>
                 <Typography
                   component={'span'}
-                  variant="h3"
+                  variant="h2"
                   sx={{ fontWeight: 700, color: 'common.white' }}
                 >
                   {infocontent.title}
                 </Typography>
               </Box>
               <Typography
-                variant="h6"
+                variant="h5"
                 component="p"
                 sx={{ color: 'common.white' }}
               >
@@ -73,9 +73,9 @@ const Hero = () => {
                 justifyContent={'flex-start'}
                 marginTop={2}
               >
-                <Link href={'/matchmaker/browse'} passHref>
+                <Link href={'/matchmaker/questionnaire'} passHref>
                   <Button type = "button" id= "linkToBrowse" variant='contained' size= 'large' color='success'>
-                      <span className="hidden md:block">Click here to find your new friend</span>
+                      <span className="hidden md:block">Click here to start your search for your new friend</span>
                   </Button>
                 </Link> 
               </Box>
@@ -107,9 +107,9 @@ const Hero = () => {
                     <Box
                       component={'img'}
                       src={infocontent.image}
-                      alt="Image Description"
+                      alt="Photo by David Lezcano on Unsplash"
                       width={450}
-                      height={325}
+                      height={650}
                       sx={{
                         objectFit: 'cover',
                         filter:
@@ -118,6 +118,7 @@ const Hero = () => {
                             : 'none',
                       }}
                     />
+                    {/* <span>Photo by <a href="https://unsplash.com/@_thedl?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">David Lezcano</a> on <a href="https://unsplash.com/photos/black-dog-m-Doa-GTrUw?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a></span> */}
                   </Box>
                 </Box>
               </Box>
