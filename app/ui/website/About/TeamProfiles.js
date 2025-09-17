@@ -17,32 +17,40 @@ import Container from '../Container';
 
 const mock = [
   {
-    name: 'Chary Smith',
-    title: 'SEO at Comoti',
+    name: 'Lawerence N/A',
+    title: 'N/A',
     avatar: 'https://assets.maccarianagency.com/avatars/img3.jpg',
-    about:
-      'I am an ambitious workaholic, but apart from that, pretty simple person.',
+    about: 'I am an ambitious workaholic, but apart from that, pretty simple person.',
   },
   {
-    name: 'Clara Bertoletti',
-    title: 'Junior Designer',
+    name: 'Estevan Saucedo',
+    title: 'N/A',
     avatar: 'https://assets.maccarianagency.com/avatars/img4.jpg',
-    about:
-      'I am an ambitious workaholic, but apart from that, pretty simple person.',
+    about: 'I am an ambitious workaholic, but apart from that, pretty simple person.',
   },
   {
-    name: 'Jhon Anderson',
-    title: 'Senior Frontend Developer',
+    name: 'Jayson Ambrose',
+    title: 'N/A',
     avatar: 'https://assets.maccarianagency.com/avatars/img5.jpg',
-    about:
-      'I am an ambitious workaholic, but apart from that, pretty simple person.',
+    about: 'Jayson Ambrose. Attended and completed a Software Engineering bootcamp through Flatiron School in Winter-Spring 2023. Jayson is an advocate for protecting animals and the environment. He has donated time to dog shelters and vet clinics by fostering animals.',
   },
   {
-    name: 'Chary Smith',
-    title: 'SEO at Comoti',
+    name: 'Alberto Perez',
+    title: 'N/A',
     avatar: 'https://assets.maccarianagency.com/avatars/img6.jpg',
-    about:
-      'I am an ambitious workaholic, but apart from that, pretty simple person.',
+    about:'Alberto Perez. Attended and graduated from California State University Fullerton with a bachelor of science in computer science. Alberto has 4 very energetic small dogs.',
+  },
+  {
+    name: 'James McMath',
+    title: 'N/A',
+    avatar: 'https://assets.maccarianagency.com/avatars/img6.jpg',
+    about:'James McMath. Currently an undergraduate computer science student at the University of Arkansas at Little Rock. James is a cat owner with a lasting love for animals and a commitment to their well-being.',
+  },
+  {
+    name: 'Becca N/A',
+    title: 'N/A',
+    avatar: 'https://assets.maccarianagency.com/avatars/img6.jpg',
+    about:'Becca. I am an ambitious workaholic, but apart from that, pretty simple person.',
   },
 ];
 
