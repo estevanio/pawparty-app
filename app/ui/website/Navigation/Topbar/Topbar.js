@@ -22,7 +22,6 @@ const Topbar = ({ onSidebarOpen, colorInvert = false }) => {
   const { mode } = theme.palette;
   const {
     home: homePages,
-    FAQ: faqPage,
     about: aboutPages,
     stories: storyPages,
     contact: contactPage,
@@ -113,14 +112,6 @@ const Topbar = ({ onSidebarOpen, colorInvert = false }) => {
                 title={'Contact Us'}
                 id={'contact-page'}
                 items={contactPage}
-                colorInvert={colorInvert}
-              />
-            </Box>
-            <Box marginLeft={4}>
-              <NavItem
-                title={'FAQ'}
-                id={'faqPage'}
-                items={faqPage}
                 colorInvert={colorInvert}
               />
             </Box>
