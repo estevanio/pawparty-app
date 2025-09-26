@@ -38,18 +38,6 @@ const pages = {
       },
       
     ],
-    FAQ: [
-      {
-        title: 'FAQ',
-        href: '/faq',
-      },
-    ],
-    contact: [
-      {
-        title: 'Contact Us',
-        href: '/contact',
-      },
-    ],
   };
   
   export default pages;

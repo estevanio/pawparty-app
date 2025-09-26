@@ -15,10 +15,8 @@ const SidebarNav = () => {
 
   const {
     home: homePages,
-    FAQ: faqPage,
     about: aboutPages,
     stories: storyPages,
-    contact: contactPage,
   } = pages;
 
   return (
@@ -55,9 +53,6 @@ const SidebarNav = () => {
         </Box>
         <Box>
           <NavItem title={'Contact Us'} items={contactPage} />
-        </Box>
-        <Box>
-          <NavItem title={'FAQ'} items={faqPage} />
         </Box>
         <Box marginTop={2}>
           <Link href={'/browse'} passHref>
