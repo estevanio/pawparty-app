@@ -44,12 +44,6 @@ const pages = {
         href: '/faq',
       },
     ],
-    contact: [
-      {
-        title: 'Contact Us',
-        href: '/contact',
-      },
-    ],
   };
   
   export default pages;
