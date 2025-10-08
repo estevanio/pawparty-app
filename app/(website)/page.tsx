@@ -8,7 +8,6 @@ import { default as Gallery } from '@/app/ui/website/Gallery';
 import { default as Hero } from '@/app/ui/website/Hero';
 import { default as Services } from '@/app/ui/website/Services';
 import { default as HowItWorks} from '@/app/ui/website/HowItWorks';
-import { default as Sponsors } from '@/app/ui/website/Sponsors';
 
 const Page = () => (
   <>
@@ -33,9 +32,6 @@ const Page = () => (
     </Container>
     <Container id='workssection'>
       <HowItWorks/>
-    </Container>
-    <Container id='sponsorsection'>
-      <Sponsors/>
     </Container>
   </>
 );
