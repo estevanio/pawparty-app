@@ -139,16 +139,6 @@ const Services = () => {
           <br />
           We will walk you through our smooth and simple process.
         </Typography>
-        <Box
-          marginTop={2}
-          display={'flex'}
-          justifyContent={'center'}
-          data-aos={'fade-up'}
-        >
-          <Button color={'primary'} variant={'contained'} size={'large'}>
-            Contact us
-          </Button>
-        </Box>
       </Box>
       <Grid container spacing={4}>
         {mock.map((item, i) => (
