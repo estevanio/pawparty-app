@@ -25,32 +25,32 @@ const mock = [
   {
     name: 'Estevan Saucedo',
     title: 'N/A',
-    avatar: 'https://assets.maccarianagency.com/avatars/img4.jpg',
-    about: 'I am an ambitious workaholic, but apart from that, pretty simple person.',
+    avatar: 'estevan.jpg',
+    about: 'Estevan Saucedo is the co-founder and lead of PawParty, blending his love for animals with a passion for technology. With over a decade of experience building innovative software, he brings both creativity and leadership to the mission. Estevan is dedicated to using tech to connect people with pets in need.',
   },
   {
     name: 'Jayson Ambrose',
     title: 'N/A',
-    avatar: 'https://assets.maccarianagency.com/avatars/img5.jpg',
+    avatar: 'jayson.jpg',
     about: 'Jayson Ambrose. Attended and completed a Software Engineering bootcamp through Flatiron School in Winter-Spring 2023. Jayson is an advocate for protecting animals and the environment. He has donated time to dog shelters and vet clinics by fostering animals.',
   },
   {
     name: 'Alberto Perez',
     title: 'N/A',
-    avatar: 'https://assets.maccarianagency.com/avatars/img6.jpg',
+    avatar: 'beto.jpg',
     about:'Alberto Perez. Attended and graduated from California State University Fullerton with a bachelor of science in computer science. Alberto has 4 very energetic small dogs.',
   },
   {
     name: 'James McMath',
     title: 'N/A',
-    avatar: 'https://assets.maccarianagency.com/avatars/img6.jpg',
+    avatar: 'james.png',
     about:'James McMath. Currently an undergraduate computer science student at the University of Arkansas at Little Rock. James is a cat owner with a lasting love for animals and a commitment to their well-being.',
   },
   {
-    name: 'Becca N/A',
+    name: 'Becca Verna',
     title: 'N/A',
-    avatar: 'https://assets.maccarianagency.com/avatars/img6.jpg',
-    about:'Becca. I am an ambitious workaholic, but apart from that, pretty simple person.',
+    avatar: 'becca.png',
+    about:'Becca is a senior UX strategist and designer who transforms complex systems into intuitive, high-performing digital experiences. With 25 years in design and marketing, she specializes in journey-led UX strategy and evidence-based interface design that scales enterprise and e-commerce platforms.',
   },
 ];
 
