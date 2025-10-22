@@ -60,7 +60,7 @@ const SidebarNav = () => {
           <NavItem title={'FAQ'} items={faqPage} />
         </Box>
         <Box marginTop={2}>
-          <Link href={'/browse'} passHref>
+          <Link href={'/matchmaker/browse'} passHref>
             <Button
               size={'large'}
               variant="contained"
