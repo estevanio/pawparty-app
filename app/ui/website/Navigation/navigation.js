@@ -12,10 +12,6 @@ const pages = {
         title: 'How it Works',
         href: '/#workssection',
       },
-      {
-        title: 'Sponsors',
-        href: '/#sponsorsection',
-      },
     ],
     stories: [
       {
@@ -42,12 +38,6 @@ const pages = {
       {
         title: 'FAQ',
         href: '/faq',
-      },
-    ],
-    contact: [
-      {
-        title: 'Contact Us',
-        href: '/contact',
       },
     ],
   };
