@@ -3,6 +3,8 @@ import { AppRouterCacheProvider } from '@mui/material-nextjs/v14-appRouter';
 import { ThemeProvider } from '@mui/material/styles';
 import { CssBaseline } from "@mui/material";
 import theme from '@/app/ui/theme';
+import { Typography, Container, Box } from '@mui/material';
+import Image from 'next/image';
 
 
 export default function RootLayout({
@@ -10,7 +12,11 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+
+  const siteLive: boolean = false;
+
   return (
+    siteLive ?
     <html lang="en">
       <head>
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" rel="stylesheet"/>
@@ -33,6 +39,17 @@ export default function RootLayout({
             {children}
           </ThemeProvider>
         </AppRouterCacheProvider>
+      </body>
+    </html> :
+
+    <html>
+      <body>
+        <Container>
+          <Box sx={{ textAlign: 'center', padding: 1, backgroundColor: 'primary.main', rounded: '8px' }}> 
+            <Image src="pawparty-logo.svg" alt="Logo" width={400} height={400} />
+          </Box>
+          <Typography sx={{textAlign: 'center', fontSize: 24, fontFamily: 'Montserrat', fontWeight: 'bold'}} >Site coming soon!</Typography>
+        </Container>
       </body>
     </html>
   );

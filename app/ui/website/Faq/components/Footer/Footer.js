@@ -32,17 +32,6 @@ const Footer = () => {
         justifyContent={'center'}
         alignItems={{ xs: 'stretched', sm: 'center' }}
       >
-      <Link href='/contact' passHref>
-        <Box
-          component={Button}
-          variant="contained"
-          color="primary"
-          size="large"
-          fullWidth={!isMd}
-        >
-          Contact Us Here
-        </Box>
-      </Link>
       </Box>
     </Box>
   );

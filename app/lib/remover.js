@@ -45,6 +45,8 @@ async function main(){
     await delAnimals();
 
     await prisma.$disconnect();
+    
+    return;
 }
 
 main().catch((err) => {
