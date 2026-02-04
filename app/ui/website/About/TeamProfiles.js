@@ -32,19 +32,19 @@ const mock = [
     name: 'Jayson Ambrose',
     title: 'N/A',
     avatar: 'jayson.jpg',
-    about: 'Jayson Ambrose. Attended and completed a Software Engineering bootcamp through Flatiron School in Winter-Spring 2023. Jayson is an advocate for protecting animals and the environment. He has donated time to dog shelters and vet clinics by fostering animals.',
+    about: 'Jayson Ambrose has attended and completed a Software Engineering bootcamp through Flatiron School in Winter-Spring 2023. Jayson is an advocate for protecting animals and the environment. He has donated time to dog shelters and vet clinics by fostering animals.',
   },
   {
     name: 'Alberto Perez',
     title: 'N/A',
     avatar: 'beto.jpg',
-    about:'Alberto Perez. Attended and graduated from California State University Fullerton with a bachelor of science in computer science. Alberto has 4 very energetic small dogs.',
+    about:'Alberto Perez is a graduate of California State University Fullerton with a bachelor of science in computer science. Alberto has 4 very energetic small dogs.',
   },
   {
     name: 'James McMath',
     title: 'N/A',
     avatar: 'james.png',
-    about:'James McMath. Currently an undergraduate computer science student at the University of Arkansas at Little Rock. James is a cat owner with a lasting love for animals and a commitment to their well-being.',
+    about:'James McMath is an associates computer science student at the University of Arkansas at Little Rock. James is a cat owner with a lasting love for animals and a commitment to their well-being.',
   },
   {
     name: 'Becca Verna',
