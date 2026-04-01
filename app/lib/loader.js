@@ -1,167 +1,139 @@
 import { PrismaClient } from '@prisma/client';
-import { Client } from "@petfinder/petfinder-js"; 
+import axios from 'axios';
+import dotenv from 'dotenv';
 
-const client = new Client ({apiKey: process.env.APIKEY, secret: process.env.APISECRET});
+dotenv.config({ path: '../../.env' });
+
+const apiKey = process.env.APIKEY;
+if (!apiKey) {
+throw new Error('APIKEY environment variable is not set');
+}
+
+const apiBase = process.env.APIBASE;
+if (!apiBase) {
+throw new Error('APIBASE environment variable is not set');
+}
+
 const prisma = new PrismaClient();
 
-async function loadAttributes(animal) {
+async function getAnimals(anitype) {
     try {
-        const attributes = Object.entries(animal.attributes);
-        const affinity = Object.entries(animal.environment);
-        const animalId = String(animal.id);
-        for(var i=0; i < attributes.length; i++){
-            if(attributes[i][1] === true){
-                prisma.attribute.create({
-                    data: {
-                        animal_id: animalId,
-                        attribute: String(attributes[i][0]),
-                    }
-                });
+ 
+        const responses = await axios.get(
+            apiBase,
+        {
+            params: {
+            'sort': 'random',
+            'animalType': anitype,
+            'hasPic': 'true'
+            },
+            headers: {
+            'Content-Type': 'application/vnd.api+json',
+            'Authorization': apiKey
             }
         }
-        for(var i=0; i < affinity.length; i++){
-            if(affinity[i][1] === true){
-                prisma.attribute.create({
-                    data: {
-                        animal_id: animalId,
-                        attribute: "Good with " + String(affinity[i][0]),
-                    }
-                });
-            }
-        }
-        return;    
+        );
+        const response = responses.data;
 
-    } catch (error) {
-        console.error('Error loading attributes:', error);
-        throw error;
-    }
-}
-
-async function upsertPhotos(animal) {
-    try {
-        const urls = Object.values(animal.photos).flatMap(Object.values);
-        const trueUrls = urls.filter(url => typeof url === 'string' && !url.includes('width='));
-        for(let i = 0; i < trueUrls.length; i++){
-            await prisma.photo.upsert({
-                where: {
-                    animal_id_url: {
-                        animal_id: String(animal.id),
-                        url: trueUrls[i],
-                    }
-                },
-                update: {
-                    name: animal.name + " Photo #" + (i + 1),
-                    is_cover: false,
-                },
-                create: {
-                    animal_id: String(animal.id),
-                    name: animal.name + " Photo #" + (i + 1),
-                    url: trueUrls[i],
-                    is_cover: false,
-                },
-            });
-        }
-        console.log(`Loaded ${trueUrls.length} photos for animal ${animal.id} (${animal.name})`);
-        return;
-    } catch (error) {
-        console.error('Error with photos:', error);
-        throw error;
-    }
-}
-
-async function loadAnimals(ani){
-    try{
-        const animal = new Map(Object.entries(ani));
+        // console.log(response);
+        var temppic = new Map();
+        var tempbreed = new Map();
+        var tempcolor = new Map();
+        var tempstatus = new Map();
         
-        await prisma.animal.upsert({    
-            where:{animal_id: String(animal.get('id'))},
-            update:{
-                name: animal.get('name'),
-                sex: animal.get('gender'),
-                size: animal.get('size'),
-                age_group: animal.get('age'),
-                species: animal.get('species'),
-                breed: animal.get('breeds').primary,
-                secondary_breed: animal.get('breeds').secondary,
-                primary_color: animal.get('colors').primary,
-                secondary_color: animal.get('colors').secondary,
-                intake_date: new Date(animal.get('published_at')),
-                available: animal.get('status') === 'adoptable',
-                last_updated: new Date(animal.get('status_changed_at')),
-            },
-            create:{
-                animal_id: String(animal.get('id')),
-                name: animal.get('name'),
-                sex: animal.get('gender'),
-                size: animal.get('size'),
-                age_group: animal.get('age'),
-                species: animal.get('species'),
-                breed: animal.get('breeds').primary,
-                secondary_breed: animal.get('breeds').secondary,
-                primary_color: animal.get('colors').primary,
-                secondary_color: animal.get('colors').secondary,
-                intake_date: new Date(animal.get('published_at')),
-                available: animal.get('status') === 'adoptable',
-                last_updated: new Date(animal.get('status_changed_at')),
-            },
-        });
-        if (Object.keys(ani.photos).length !== 0) {                 
-            const aniExists = await prisma.animal.findFirst({
-                where:{animal_id: String(animal.get('id'))}
-            });
+        for (const att of response.included) {
             
-            if(aniExists){
-                await upsertPhotos(ani);
-                await loadAttributes(ani);
+            if (att.type === 'pictures') {
+                temppic.set(att.id, att.attributes);
             }
-            return;
-        }
-        else{
-            const aniExists = await prisma.animal.findFirst({
-                where:{animal_id: String(animal.get('id'))}
-            });
-            if(aniExists){
-                await loadAttributes(ani);
+
+            if (att.type === 'breeds') {
+                tempbreed.set(att.id, att.attributes.name);
             }
-            return;
+
+            if (att.type === 'colors') {
+                tempcolor.set(att.id, att.attributes.name);
+            }
+
+            if (att.type === 'statuses') {
+                tempstatus.set(att.id, att.attributes.name);
+            }
         }
 
-    } catch (error) {
-        console.error('Error Loading animals:', error);
-        throw error;
-    }
-}
+        for(const animal of response.data){
 
-async function getAnimals(tp){
-    try{
-        let page = 1;
-        let insertedAnimals = 0;
-
-        do{
-            var anilist = await client.animal.search({
-                type:tp,
-                page,
+            await prisma.animal.upsert({    
+                where:{animal_id: String(animal.id)},
+                update:{
+                    name: animal.attributes.name,
+                    sex: animal.attributes.sex,
+                    size: animal.attributes.sizeGroup,
+                    age_group: animal.attributes.ageGroup,
+                    birthday: new Date(animal.attributes.birthDate),
+                    species: anitype,
+                    breed: animal.attributes.breedPrimary,
+                    primary_color: animal.attributes.colors.primary,
+                    intake_date: new Date(animal.attributes.createdDate),
+                    available: tempstatus.get(animal.relationships.statuses.data[0].id) === tempstatus.get("1"),
+                    last_updated: new Date(animal.attributes.updatedDate),
+                },
+                create:{
+                    animal_id: String(animal.id),
+                    name: animal.attributes.name,
+                    sex: animal.attributes.sex,
+                    size: animal.attributes.sizeGroup,
+                    age_group: animal.attributes.ageGroup,
+                    birthday: new Date(animal.attributes.birthDate),
+                    species: anitype,
+                    breed: animal.attributes.breedPrimary,
+                    primary_color: animal.relationships.colors.data[0] ? tempcolor.get(animal.relationships.colors.data[0].id) : null,
+                    intake_date: new Date(animal.attributes.createdDate),
+                    available: tempstatus.get(animal.relationships.statuses.data[0].id) === tempstatus.get("1"),
+                    last_updated: new Date(animal.attributes.updatedDate),
+                },
             });
-            anilist.data.animals.forEach(async function(animal){
-                await loadAnimals(animal);
-                insertedAnimals++;
-            });
-            page++;
-        }while(anilist.data.pagination && anilist.data.total_pages >= page);
-        
-        console.log(`Loaded ${insertedAnimals} ${tp}`);
 
-        return;
+            for(const pic of animal.relationships.pictures.data){
+                // console.log("id:", animal.id, "pic url:", temppic.get(pic.id).original.url);
+                if(await prisma.picture.findFirst({
+                    where: {
+                        animal_id_url: {
+                            animal_id: String(animal.id),
+                            url: String(temppic.get(pic.id).original.url)
+                        }
+                    }
+                })) {
+                    await prisma.picture.update({
+                        name: animal.attributes.name + " Photo #" + temppic.get(pic.id).order,
+                        is_cover: temppic.get(pic.id).order === 1 ? true : false,
+                    })
+
+                }
+                else{
+                    await prisma.picture.create({
+                        data:{
+                            animal_id: String(animal.id),
+                            url: String(temppic.get(pic.id).original.url),
+                            name: animal.attributes.name + " Photo #" + temppic.get(pic.id).order,
+                            is_cover: temppic.get(pic.id).order === 1 ? true : false,
+                        },
+                    });
+                }
+            }
+        }
+
+    return;
     } catch (error) {
-        console.error('Error Loading animals:', error);
-        throw error;
-    }
+            console.error('Error fetching animals:', error);
+            throw error;
+        }
 }
-
-async function main(){
-    await getAnimals("dog");
-    await getAnimals("cat");
-
+ 
+async function main() {
+ 
+    await getAnimals('cats');
+    await getAnimals('dogs');
+ 
     await prisma.$disconnect();
     return;
 }
@@ -172,5 +144,5 @@ main().catch((err) => {
         err,
     );
 });
-
+ 
 export default main;
