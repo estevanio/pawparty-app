@@ -25,7 +25,11 @@ async function getAnimals(anitype) {
             params: {
             'sort': 'random',
             'animalType': anitype,
-            'hasPic': 'true'
+            'hasPic': 'true',
+            'filterRadius':{
+                'miles': 100,
+                'postalCode': 81631
+            }
             },
             headers: {
             'Content-Type': 'application/vnd.api+json',
@@ -34,6 +38,11 @@ async function getAnimals(anitype) {
         }
         );
         const response = responses.data;
+
+        if(!response || !response.data || response.data.length === 0){
+            console.log(`No ${anitype} data found in the API response.`);
+            return;
+        }
 
         // console.log(response);
         var temppic = new Map();
@@ -62,6 +71,21 @@ async function getAnimals(anitype) {
 
         for(const animal of response.data){
 
+            // console.log(`Processing animal ID: ${animal.id}, Name: ${animal.attributes.name}`);
+
+            let birthDay = null;
+            if (animal.attributes.birthDate) {
+                const parsedDate = new Date(animal.attributes.birthDate);
+                if (!isNaN(parsedDate.getTime())) {
+                    birthDay = parsedDate;
+                }
+            }
+
+            let color = null;
+            if(animal.relationships.colors){
+                color = tempcolor.get(animal.relationships.colors.data[0].id);
+            }
+
             await prisma.animal.upsert({    
                 where:{animal_id: String(animal.id)},
                 update:{
@@ -69,10 +93,10 @@ async function getAnimals(anitype) {
                     sex: animal.attributes.sex,
                     size: animal.attributes.sizeGroup,
                     age_group: animal.attributes.ageGroup,
-                    birthday: new Date(animal.attributes.birthDate),
+                    birthday: birthDay,
                     species: anitype,
                     breed: animal.attributes.breedPrimary,
-                    primary_color: animal.attributes.colors.primary,
+                    primary_color: color,
                     intake_date: new Date(animal.attributes.createdDate),
                     available: tempstatus.get(animal.relationships.statuses.data[0].id) === tempstatus.get("1"),
                     last_updated: new Date(animal.attributes.updatedDate),
@@ -83,40 +107,36 @@ async function getAnimals(anitype) {
                     sex: animal.attributes.sex,
                     size: animal.attributes.sizeGroup,
                     age_group: animal.attributes.ageGroup,
-                    birthday: new Date(animal.attributes.birthDate),
+                    birthday: birthDay,
                     species: anitype,
                     breed: animal.attributes.breedPrimary,
-                    primary_color: animal.relationships.colors.data[0] ? tempcolor.get(animal.relationships.colors.data[0].id) : null,
+                    primary_color: color,
                     intake_date: new Date(animal.attributes.createdDate),
                     available: tempstatus.get(animal.relationships.statuses.data[0].id) === tempstatus.get("1"),
                     last_updated: new Date(animal.attributes.updatedDate),
                 },
             });
-
-            for(const pic of animal.relationships.pictures.data){
-                // console.log("id:", animal.id, "pic url:", temppic.get(pic.id).original.url);
-                if(await prisma.picture.findFirst({
-                    where: {
-                        animal_id_url: {
-                            animal_id: String(animal.id),
-                            url: String(temppic.get(pic.id).original.url)
-                        }
-                    }
-                })) {
-                    await prisma.picture.update({
-                        name: animal.attributes.name + " Photo #" + temppic.get(pic.id).order,
-                        is_cover: temppic.get(pic.id).order === 1 ? true : false,
-                    })
-
-                }
-                else{
-                    await prisma.picture.create({
-                        data:{
+            if(animal.relationships.pictures){
+                for(const pic of animal.relationships.pictures.data){
+                    // console.log("id:", animal.id, "pic url:", temppic.get(pic.id).original.url);
+                    
+                    await prisma.photo.upsert({
+                        where: {
+                            animal_id_url: {
+                                animal_id: String(animal.id),
+                                url: String(temppic.get(pic.id).original.url),
+                            }
+                        },
+                        update: {
+                            name: animal.attributes.name + " Photo #" + temppic.get(pic.id).order,
+                            is_cover: temppic.get(pic.id).order === 1 ? true : false,
+                        },
+                        create: {
                             animal_id: String(animal.id),
                             url: String(temppic.get(pic.id).original.url),
                             name: animal.attributes.name + " Photo #" + temppic.get(pic.id).order,
                             is_cover: temppic.get(pic.id).order === 1 ? true : false,
-                        },
+                        }
                     });
                 }
             }
