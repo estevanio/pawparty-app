@@ -1,13 +1,14 @@
-import { default as Topbar } from "@/app/ui/website/Navigation/Topbar/Topbar";
+'use client';
 
-export default function Layout({ children }: { children: React.ReactNode }) {
-    return (
-      <>
-      <Topbar/>
-        <div id="root"></div>
-        <div className='container'>{children}</div>
-        
-      </>
-    );
-  }
-  
+import { ThemeProvider } from '@mui/material/styles';
+import CssBaseline from '@mui/material/CssBaseline';
+import websiteTheme from '@/app/ui/website/theme';
+
+export default function WebsiteLayout({ children }: { children: React.ReactNode }) {
+  return (
+    <ThemeProvider theme={websiteTheme}>
+      <CssBaseline />
+      {children}
+    </ThemeProvider>
+  );
+}

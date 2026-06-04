@@ -1,42 +1,29 @@
-import React from 'react';
-import Box from '@mui/material/Box';
-import Container from '@/app/ui/website/Container';
-import Image from 'next/image';
-
-import { default as Features } from '@/app/ui/website/Features';
-import { default as Folio } from '@/app/ui/website/Folio';
-import { default as Gallery } from '@/app/ui/website/Gallery';
-import { default as Hero } from '@/app/ui/website/Hero';
-import { default as Services } from '@/app/ui/website/Services';
-import { default as HowItWorks} from '@/app/ui/website/HowItWorks';
-import { Typography } from '@mui/material';
+import {
+  NavBar,
+  Hero,
+  About,
+  MissionVision,
+  TheApp,
+  MatchingAParty,
+  LastingAndLooking,
+  PawPartyPeople,
+  JoinTheMovement,
+  Footer,
+} from '@/app/ui/website/sections/sections';
 
 const Page = () => (
   <>
-    <Container id='herosection'>
-      <Hero />
-    </Container>
-    <Container>
-      <Folio />
-    </Container>
-    <Box bgcolor={'alternate.main'}>
-      <Container>
-        <Services />
-      </Container>
-    </Box>
-    <Box bgcolor={'primary.main'}>
-      <Container>
-        <Features />
-      </Container>
-    </Box>
-    <Container>
-      <Gallery />
-    </Container>
-    <Container id='workssection'>
-      <HowItWorks/>
-    </Container>
-  </>  
-  
+    <NavBar />
+    <Hero />
+    <About />
+    <MissionVision />
+    <TheApp />
+    <MatchingAParty />
+    <LastingAndLooking />
+    <PawPartyPeople />
+    <JoinTheMovement />
+    <Footer />
+  </>
 );
 
 export default Page;
