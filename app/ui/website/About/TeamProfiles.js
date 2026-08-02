@@ -43,7 +43,7 @@ const mock = [
   {
     name: 'James McMath',
     title: 'Software Developer',
-    avatar: 'james.png',
+    avatar: 'james.jpg',
     about:'James McMath is a software developer with an associates degree in computer science from the University of Arkansas at Little Rock. James is a cat owner with a lasting love for his cat Stella.',
   },
   {
